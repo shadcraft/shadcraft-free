@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Monitor, Moon, MoonIcon, Sun, SunIcon } from "lucide-react";
+import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import * as React from "react";
 
@@ -31,26 +31,54 @@ export function ThemeToggle({ className, onClick, ...props }: React.ComponentPro
           size="icon"
           onClick={toggleTheme}
           className={cn("", className)}
+          title="Toggle theme"
           {...props}
         >
-          <SunIcon className="hidden dark:block" />
-          <MoonIcon className="block dark:hidden" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="size-4.5"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+            <path d="M12 3l0 18" />
+            <path d="M12 9l4.65 -4.65" />
+            <path d="M12 14.3l7.37 -7.37" />
+            <path d="M12 19.6l8.85 -8.85" />
+          </svg>
           <span className="sr-only">Toggle theme</span>
         </Button>
       </ContextMenuTrigger>
 
-      <ContextMenuContent alignOffset={50}>
-        <ContextMenuItem onClick={() => setTheme("light")}>
-          <Sun /> Light {theme === "light" && <Check className="ml-auto" />}
+      <ContextMenuContent className="[&_[data-active=true]]:bg-accent [&_[data-active=true]]:text-accent-foreground space-y-1">
+        <ContextMenuItem
+          data-active={theme === "light"}
+          onClick={() => setTheme("light")}
+          className="cursor-pointer"
+        >
+          <Sun /> Light
         </ContextMenuItem>
-        <ContextMenuItem onClick={() => setTheme("dark")}>
+        <ContextMenuItem
+          data-active={theme === "dark"}
+          onClick={() => setTheme("dark")}
+          className="cursor-pointer"
+        >
           <Moon />
           Dark
-          {theme === "dark" && <Check className="ml-auto" />}
         </ContextMenuItem>
-        <ContextMenuItem onClick={() => setTheme("system")}>
+        <ContextMenuItem
+          data-active={theme === "system"}
+          onClick={() => setTheme("system")}
+          className="cursor-pointer"
+        >
           <Monitor /> System
-          {theme === "system" && <Check className="ml-auto" />}
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

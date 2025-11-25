@@ -14,7 +14,9 @@ export function getRegistryRenderComponent(name: string) {
   return Index[name]?.component;
 }
 
-export async function getRegistryItems(filter?: (item: RegistryItem) => boolean) {
+export async function getRegistryItems(
+  filter?: (item: RegistryItem) => boolean
+): Promise<RegistryItem[]> {
   const entries = Object.values(Index);
 
   const filteredEntries = filter ? entries.filter(filter) : entries;
