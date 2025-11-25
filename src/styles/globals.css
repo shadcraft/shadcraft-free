@@ -125,7 +125,7 @@
 }
 
 @utility code-inline {
-  @apply text-muted-foreground bg-muted inline-flex w-fit rounded px-1.5 py-0.5 font-mono text-xs font-medium;
+  @apply text-muted-foreground bg-muted inline-flex w-fit rounded-sm px-1.5 py-0.5 font-mono text-xs font-medium;
 }
 
 @utility no-scrollbar {
