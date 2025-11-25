@@ -2,12 +2,12 @@ import { ArrowUpRight, Globe } from "lucide-react";
 import Link from "next/link";
 
 import { Logo } from "@/components/logo";
+import { GitHub } from "@/components/logos/github";
+import { XformerlyTwitter } from "@/components/logos/twitter";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Separator } from "@/components/ui/separator";
 import { getRegistryItems } from "@/lib/registry";
 import { groupBlocksByCategories } from "@/utils/registry";
-import { XformerlyTwitter } from "./logos/twitter";
-import { GitHub } from "./logos/github";
 
 const shadcraftLinks = [
   {
@@ -79,9 +79,9 @@ export async function Footer() {
             </ul>
           </div>
 
-          {/* Pro Marketing Components */}
+          {/* Marketing Components */}
           <div className="flex flex-col gap-6">
-            <h3 className="text-foreground text-sm font-medium">Pro Marketing Components</h3>
+            <h3 className="text-foreground text-sm font-medium">Marketing Components</h3>
             <ul className="grid gap-3">
               {resolvedComponentItems.map((item) => {
                 const href =
@@ -100,9 +100,9 @@ export async function Footer() {
             </ul>
           </div>
 
-          {/* Pro Marketing Blocks */}
+          {/* Marketing Blocks */}
           <div className="flex flex-col gap-6 md:col-span-2">
-            <h3 className="text-foreground text-sm font-medium">Pro Marketing Blocks</h3>
+            <h3 className="text-foreground text-sm font-medium">Marketing Blocks</h3>
             <ul className="grid gap-x-12 gap-y-3 md:grid-cols-2 lg:gap-x-9">
               {blockItemsByCategories.map((item) => (
                 <li key={item.slug} className="text-muted-foreground text-sm">
