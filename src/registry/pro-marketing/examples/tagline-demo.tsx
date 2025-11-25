@@ -1,6 +1,6 @@
 import { Tagline } from "@/registry/pro-marketing/ui/tagline";
 
-export default function TaglineExample() {
+export default function TaglineDemo() {
   return (
     <div className="flex flex-col gap-12 p-5 lg:p-8">
       {TAGLINE_VARIANTS.map(({ variant, label, description }) => (

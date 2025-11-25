@@ -29,7 +29,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {`;
   const { registry: importedRegistry } = await import("@/registry/index");
   const parseResult = registrySchema.safeParse(importedRegistry);
   if (!parseResult.success) {
-    console.error(`❌ Registry validation failed`);
+    console.error(`❌  Registry validation failed`);
     console.error(parseResult.error.format());
     throw new Error(`Invalid registry schema for imported registry index`);
   }
@@ -102,7 +102,7 @@ async function buildRegistryJsonFile() {
   const { registry: importedRegistry } = await import("@/registry/index");
   const parseResult = registrySchema.safeParse(importedRegistry);
   if (!parseResult.success) {
-    console.error(`❌ Registry validation failed`);
+    console.error(`❌  Registry validation failed`);
     console.error(parseResult.error.format());
     throw new Error(`Invalid registry schema for imported registry index`);
   }
@@ -162,7 +162,7 @@ async function buildRegistry() {
       if (code === 0) {
         // Post-process the generated JSON files to remove registry/${bundle} prefix
         // Not sure if this is needed, since shadcn dropped it in the last registry refactor.
-        console.log("📝 Cleaning up paths in generated JSON files...");
+        console.log("📝  Cleaning up paths in generated JSON files...");
         await cleanupGeneratedPaths("public/r");
 
         resolve(undefined);
@@ -233,7 +233,7 @@ async function cleanupGeneratedPaths(targetDir: string) {
     });
   }
 
-  console.log(`✨ Cleaned paths in ${jsonFiles.length} files`);
+  console.log(`✨  Cleaned paths in ${jsonFiles.length} files`);
 }
 
 function rewriteImports(
@@ -246,13 +246,18 @@ function rewriteImports(
 }
 
 try {
-  console.log("🗂️ Building registry/__index__.tsx...");
+  // Clean up public/r directory before building to prevent stale files
+  const outputDir = path.join(process.cwd(), "public/r");
+  console.log("🧹  Cleaning up public/r directory...");
+  rimraf.sync(outputDir);
+
+  console.log("🗂️  Building registry/__index__.tsx...");
   await buildRegistryIndex();
 
-  console.log("💅 Building registry.json...");
+  console.log("💅  Building registry.json...");
   await buildRegistryJsonFile();
 
-  console.log("🏗️ Building registry...");
+  console.log("🏗️  Building registry...");
   await buildRegistry();
 } catch (error) {
   console.error(error);

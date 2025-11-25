@@ -3,7 +3,7 @@ import { User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AvatarStack } from "@/registry/pro-marketing/ui/avatar-stack";
 
-export function AvatarStackExample() {
+export function AvatarStackDemo() {
   return (
     <div className="flex flex-col items-center gap-12 p-5 lg:p-8">
       <div className="flex flex-col items-center gap-2">

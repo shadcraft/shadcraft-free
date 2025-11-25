@@ -11,7 +11,7 @@ import {
 } from "@/registry/pro-marketing/components/page-heading";
 import { AvatarStack } from "@/registry/pro-marketing/ui/avatar-stack";
 
-export function PageHeadingExample() {
+export function PageHeadingDemo() {
   return (
     <div className="flex flex-col gap-8 px-5 py-12 lg:px-8 lg:py-20">
       {/* Section holding the Page Heading */}

@@ -6,7 +6,7 @@ import {
   ProfileCardName,
 } from "@/registry/pro-marketing/components/profile-card";
 
-export function ProfileCardExample() {
+export function ProfileCardDemo() {
   return (
     <div className="flex flex-col gap-12 p-5 lg:p-8">
       <ProfileCard>

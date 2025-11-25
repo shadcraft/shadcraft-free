@@ -13,8 +13,6 @@ export function getViewSegmentsForItem(item: RegistryItem): string[] {
     segments.push("blocks", item.name);
   } else if (item.type === "registry:example") {
     segments.push("examples", item.name);
-  } else if (item.type === "registry:ui" || item.type === "registry:component") {
-    segments.push("examples", `${item.name}-example`);
   }
 
   return segments;

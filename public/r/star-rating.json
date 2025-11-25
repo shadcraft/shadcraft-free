@@ -5,7 +5,7 @@
   "title": "Star Rating",
   "description": "A component that displays ratings with stars and an optional label. This component builds trust with visual feedback.",
   "registryDependencies": [
-    "TODO:/index.json"
+    "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [
     {

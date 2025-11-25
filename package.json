@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm r:build && next build",
     "start": "next start",
     "lint": "eslint",
     "r:build": "tsx ./src/scripts/build-registry.mts && prettier --log-level silent --write \"src/registry/**/*.{ts,tsx,json,mdx}\" --cache",

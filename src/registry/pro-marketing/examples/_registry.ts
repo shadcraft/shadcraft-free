@@ -4,117 +4,117 @@ import { getNamespacedRegistryDependency } from "@/utils/registry";
 
 export const examples: Registry["items"] = [
   {
-    name: "avatar-stack-example",
-    title: "Avatar Stack Example",
+    name: "avatar-stack-demo",
+    title: "Avatar Stack Demo",
     type: "registry:example",
     registryDependencies: ["avatar", getNamespacedRegistryDependency("avatar-stack")],
     files: [
       {
-        path: "examples/avatar-stack-example.tsx",
+        path: "examples/avatar-stack-demo.tsx",
         type: "registry:example",
       },
     ],
     meta: {},
   },
   {
-    name: "heading-example",
-    title: "Heading Example",
+    name: "heading-demo",
+    title: "Heading Demo",
     type: "registry:example",
     registryDependencies: [getNamespacedRegistryDependency("heading")],
     files: [
       {
-        path: "examples/heading-example.tsx",
+        path: "examples/heading-demo.tsx",
         type: "registry:example",
       },
     ],
     meta: {},
   },
   {
-    name: "marquee-example",
-    title: "Marquee Example",
+    name: "marquee-demo",
+    title: "Marquee Demo",
     type: "registry:example",
     registryDependencies: [getNamespacedRegistryDependency("marquee")],
     files: [
       {
-        path: "examples/marquee-example.tsx",
+        path: "examples/marquee-demo.tsx",
         type: "registry:example",
       },
     ],
     meta: {},
   },
   {
-    name: "page-heading-example",
-    title: "Page Heading Example",
+    name: "page-heading-demo",
+    title: "Page Heading Demo",
     type: "registry:example",
     registryDependencies: [getNamespacedRegistryDependency("page-heading")],
     files: [
       {
-        path: "examples/page-heading-example.tsx",
+        path: "examples/page-heading-demo.tsx",
         type: "registry:example",
       },
     ],
     meta: {},
   },
   {
-    name: "placeholder-logo-example",
-    title: "Placeholder Logo Example",
+    name: "placeholder-logo-demo",
+    title: "Placeholder Logo Demo",
     type: "registry:example",
     registryDependencies: [getNamespacedRegistryDependency("placeholder-logo")],
     files: [
       {
-        path: "examples/placeholder-logo-example.tsx",
+        path: "examples/placeholder-logo-demo.tsx",
         type: "registry:example",
       },
     ],
     meta: {},
   },
   {
-    name: "profile-card-example",
-    title: "Profile Card Example",
+    name: "profile-card-demo",
+    title: "Profile Card Demo",
     type: "registry:example",
     registryDependencies: [getNamespacedRegistryDependency("profile-card")],
     files: [
       {
-        path: "examples/profile-card-example.tsx",
+        path: "examples/profile-card-demo.tsx",
         type: "registry:example",
       },
     ],
     meta: {},
   },
   {
-    name: "section-heading-example",
-    title: "Section Heading Example",
+    name: "section-heading-demo",
+    title: "Section Heading Demo",
     type: "registry:example",
     registryDependencies: [getNamespacedRegistryDependency("section-heading")],
     files: [
       {
-        path: "examples/section-heading-example.tsx",
+        path: "examples/section-heading-demo.tsx",
         type: "registry:example",
       },
     ],
     meta: {},
   },
   {
-    name: "star-rating-example",
-    title: "Star Rating Example",
+    name: "star-rating-demo",
+    title: "Star Rating Demo",
     type: "registry:example",
     registryDependencies: [getNamespacedRegistryDependency("star-rating")],
     files: [
       {
-        path: "examples/star-rating-example.tsx",
+        path: "examples/star-rating-demo.tsx",
         type: "registry:example",
       },
     ],
     meta: {},
   },
   {
-    name: "tagline-example",
-    title: "Tagline Example",
+    name: "tagline-demo",
+    title: "Tagline Demo",
     type: "registry:example",
     registryDependencies: [getNamespacedRegistryDependency("tagline")],
     files: [
       {
-        path: "examples/tagline-example.tsx",
+        path: "examples/tagline-demo.tsx",
         type: "registry:example",
       },
     ],

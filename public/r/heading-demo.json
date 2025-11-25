@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "heading-demo",
+  "type": "registry:example",
+  "title": "Heading Demo",
+  "registryDependencies": [
+    "@shadcraft/heading"
+  ],
+  "files": [
+    {
+      "path": "examples/heading-demo.tsx",
+      "content": "import { Heading } from \"@/components/ui/heading\";\n\nexport function HeadingDemo() {\n  return (\n    <div className=\"flex flex-col gap-12 p-5 lg:p-8\">\n      <Heading level={1} size={\"3xl\"}>\n        Heading 1 <span className=\"text-muted-foreground\">Main Title</span>\n      </Heading>\n      <Heading level={2} size={\"2xl\"}>\n        Heading 2 <span className=\"text-muted-foreground\">Section Title</span>\n      </Heading>\n      <Heading level={3} size={\"lg\"}>\n        Heading 3 <span className=\"text-muted-foreground\">Sub-section Title</span>\n      </Heading>\n      <Heading level={4} size={\"md\"}>\n        Heading 4\n      </Heading>\n      <Heading level={5} size={\"sm\"}>\n        Heading 5\n      </Heading>\n      <Heading level={6} size={\"xs\"}>\n        Heading 6\n      </Heading>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  }
+}

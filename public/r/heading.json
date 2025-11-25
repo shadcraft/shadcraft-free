@@ -8,7 +8,7 @@
     "@radix-ui/react-slot"
   ],
   "registryDependencies": [
-    "TODO:/index.json"
+    "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [
     {

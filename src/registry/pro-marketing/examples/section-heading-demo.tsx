@@ -5,7 +5,7 @@ import {
   SectionHeadingTitle,
 } from "@/registry/pro-marketing/components/section-heading";
 
-export function SectionHeadingExample() {
+export function SectionHeadingDemo() {
   return (
     <div className="flex w-full flex-col gap-12 p-5 lg:p-8">
       <SectionHeading>

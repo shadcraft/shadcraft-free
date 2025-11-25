@@ -1,6 +1,6 @@
 import { StarRating } from "@/registry/pro-marketing/components/star-rating";
 
-export function StarRatingExample() {
+export function StarRatingDemo() {
   return (
     <div className="grid gap-12 p-5 md:grid-cols-2 lg:p-8">
       <div className="flex flex-col gap-8">

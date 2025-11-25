@@ -1,6 +1,6 @@
 import { Heading } from "@/registry/pro-marketing/ui/heading";
 
-export function HeadingExample() {
+export function HeadingDemo() {
   return (
     <div className="flex flex-col gap-12 p-5 lg:p-8">
       <Heading level={1} size={"3xl"}>

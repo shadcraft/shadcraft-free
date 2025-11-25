@@ -26,7 +26,7 @@
       "title": "Avatar Stack",
       "description": "A component that stacks and overlaps a list of avatars.",
       "registryDependencies": [
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -47,7 +47,7 @@
         "@radix-ui/react-slot"
       ],
       "registryDependencies": [
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -68,7 +68,7 @@
         "react-fast-marquee"
       ],
       "registryDependencies": [
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -86,7 +86,7 @@
       "title": "Tagline",
       "description": "A component that displays a tagline with different variants.",
       "registryDependencies": [
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -103,7 +103,7 @@
       "type": "registry:component",
       "title": "Page Heading",
       "registryDependencies": [
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -121,7 +121,7 @@
       "title": "Placeholder Logo",
       "description": "A component for that can be replaced with your brand's main logo. This component ensures layouts stay consistent before brand assets are applied.",
       "registryDependencies": [
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -140,7 +140,7 @@
       "description": "An extension of the avatar component with more details on the individual. Good for blog posts etc.",
       "registryDependencies": [
         "avatar",
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -158,7 +158,7 @@
       "title": "Section Heading",
       "description": "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
       "registryDependencies": [
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -176,7 +176,7 @@
       "title": "Star Rating",
       "description": "A component that displays ratings with stars and an optional label. This component builds trust with visual feedback.",
       "registryDependencies": [
-        "TODO:/index.json"
+        "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
         {
@@ -189,16 +189,16 @@
       }
     },
     {
-      "name": "avatar-stack-example",
+      "name": "avatar-stack-demo",
       "type": "registry:example",
-      "title": "Avatar Stack Example",
+      "title": "Avatar Stack Demo",
       "registryDependencies": [
         "avatar",
         "@shadcraft/avatar-stack"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/avatar-stack-example.tsx",
+          "path": "src/registry/pro-marketing/examples/avatar-stack-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -207,15 +207,15 @@
       }
     },
     {
-      "name": "heading-example",
+      "name": "heading-demo",
       "type": "registry:example",
-      "title": "Heading Example",
+      "title": "Heading Demo",
       "registryDependencies": [
         "@shadcraft/heading"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/heading-example.tsx",
+          "path": "src/registry/pro-marketing/examples/heading-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -224,15 +224,15 @@
       }
     },
     {
-      "name": "marquee-example",
+      "name": "marquee-demo",
       "type": "registry:example",
-      "title": "Marquee Example",
+      "title": "Marquee Demo",
       "registryDependencies": [
         "@shadcraft/marquee"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/marquee-example.tsx",
+          "path": "src/registry/pro-marketing/examples/marquee-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -241,15 +241,15 @@
       }
     },
     {
-      "name": "page-heading-example",
+      "name": "page-heading-demo",
       "type": "registry:example",
-      "title": "Page Heading Example",
+      "title": "Page Heading Demo",
       "registryDependencies": [
         "@shadcraft/page-heading"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/page-heading-example.tsx",
+          "path": "src/registry/pro-marketing/examples/page-heading-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -258,15 +258,15 @@
       }
     },
     {
-      "name": "placeholder-logo-example",
+      "name": "placeholder-logo-demo",
       "type": "registry:example",
-      "title": "Placeholder Logo Example",
+      "title": "Placeholder Logo Demo",
       "registryDependencies": [
         "@shadcraft/placeholder-logo"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/placeholder-logo-example.tsx",
+          "path": "src/registry/pro-marketing/examples/placeholder-logo-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -275,15 +275,15 @@
       }
     },
     {
-      "name": "profile-card-example",
+      "name": "profile-card-demo",
       "type": "registry:example",
-      "title": "Profile Card Example",
+      "title": "Profile Card Demo",
       "registryDependencies": [
         "@shadcraft/profile-card"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/profile-card-example.tsx",
+          "path": "src/registry/pro-marketing/examples/profile-card-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -292,15 +292,15 @@
       }
     },
     {
-      "name": "section-heading-example",
+      "name": "section-heading-demo",
       "type": "registry:example",
-      "title": "Section Heading Example",
+      "title": "Section Heading Demo",
       "registryDependencies": [
         "@shadcraft/section-heading"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/section-heading-example.tsx",
+          "path": "src/registry/pro-marketing/examples/section-heading-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -309,15 +309,15 @@
       }
     },
     {
-      "name": "star-rating-example",
+      "name": "star-rating-demo",
       "type": "registry:example",
-      "title": "Star Rating Example",
+      "title": "Star Rating Demo",
       "registryDependencies": [
         "@shadcraft/star-rating"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/star-rating-example.tsx",
+          "path": "src/registry/pro-marketing/examples/star-rating-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -326,15 +326,15 @@
       }
     },
     {
-      "name": "tagline-example",
+      "name": "tagline-demo",
       "type": "registry:example",
-      "title": "Tagline Example",
+      "title": "Tagline Demo",
       "registryDependencies": [
         "@shadcraft/tagline"
       ],
       "files": [
         {
-          "path": "src/registry/pro-marketing/examples/tagline-example.tsx",
+          "path": "src/registry/pro-marketing/examples/tagline-demo.tsx",
           "type": "registry:example"
         }
       ],

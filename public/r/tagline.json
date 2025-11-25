@@ -5,7 +5,7 @@
   "title": "Tagline",
   "description": "A component that displays a tagline with different variants.",
   "registryDependencies": [
-    "TODO:/index.json"
+    "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [
     {

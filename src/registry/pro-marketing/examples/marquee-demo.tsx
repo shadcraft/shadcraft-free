@@ -1,6 +1,6 @@
 import { Marquee, MarqueeContent, MarqueeItem } from "@/registry/pro-marketing/ui/marquee";
 
-export function MarqueeExample() {
+export function MarqueeDemo() {
   return (
     <div className="flex max-w-screen flex-col gap-12 p-5 lg:p-8">
       <Marquee>

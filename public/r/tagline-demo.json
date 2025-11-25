@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tagline-demo",
+  "type": "registry:example",
+  "title": "Tagline Demo",
+  "registryDependencies": [
+    "@shadcraft/tagline"
+  ],
+  "files": [
+    {
+      "path": "examples/tagline-demo.tsx",
+      "content": "import { Tagline } from \"@/components/ui/tagline\";\n\nexport default function TaglineDemo() {\n  return (\n    <div className=\"flex flex-col gap-12 p-5 lg:p-8\">\n      {TAGLINE_VARIANTS.map(({ variant, label, description }) => (\n        <div key={variant} className=\"flex flex-col gap-8\">\n          <div className=\"flex flex-col gap-3\">\n            <Tagline variant={variant}>{label}</Tagline>\n            <h1 className=\"text-foreground/25 text-5xl font-semibold tracking-tight lg:text-7xl\">\n              Example Heading\n            </h1>\n            <p className=\"text-muted-foreground/50 max-w-xl text-lg/7 font-normal\">{description}</p>\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nconst TAGLINE_VARIANTS = [\n  {\n    variant: \"default\",\n    label: \"Default variant\",\n    description: \"No background color, base foreground text color, no border, no rounded corners.\",\n  },\n  {\n    variant: \"primary\",\n    label: \"Primary variant\",\n    description: \"Primary text and background color, rounded corners, no border.\",\n  },\n  {\n    variant: \"secondary\",\n    label: \"Secondary variant\",\n    description: \"Secondary text and background color, rounded corners, no border.\",\n  },\n  {\n    variant: \"badge\",\n    label: \"Badge variant\",\n    description: \"Base foreground and background color, border, rounded full.\",\n  },\n  {\n    variant: \"outline\",\n    label: \"Outline variant\",\n    description: \"Transparent background, base foreground text color, border, rounded corners.\",\n  },\n  {\n    variant: \"ghost\",\n    label: \"Ghost variant\",\n    description:\n      \"Transparent background, muted foreground text color, no border, no rounded corners.\",\n  },\n] as const;\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  }
+}

@@ -5,7 +5,7 @@
   "title": "Avatar Stack",
   "description": "A component that stacks and overlaps a list of avatars.",
   "registryDependencies": [
-    "TODO:/index.json"
+    "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [
     {

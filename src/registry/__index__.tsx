@@ -15,7 +15,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:ui",
     title: "Avatar Stack",
     description: "A component that stacks and overlaps a list of avatars.",
-    registryDependencies: ["TODO:/index.json"],
+    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/ui/avatar-stack.tsx",
@@ -39,7 +39,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:ui",
     title: "Heading",
     description: "Pending",
-    registryDependencies: ["TODO:/index.json"],
+    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/ui/heading.tsx",
@@ -64,7 +64,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Marquee",
     description:
       "A component that displays a list of items in a horizontal or vertical scrolling motion.",
-    registryDependencies: ["TODO:/index.json"],
+    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/ui/marquee.tsx",
@@ -88,7 +88,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:ui",
     title: "Tagline",
     description: "A component that displays a tagline with different variants.",
-    registryDependencies: ["TODO:/index.json"],
+    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/ui/tagline.tsx",
@@ -112,7 +112,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:component",
     title: "Page Heading",
     description: "",
-    registryDependencies: ["TODO:/index.json"],
+    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/components/page-heading.tsx",
@@ -137,7 +137,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Placeholder Logo",
     description:
       "A component for that can be replaced with your brand's main logo. This component ensures layouts stay consistent before brand assets are applied.",
-    registryDependencies: ["TODO:/index.json"],
+    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/components/placeholder-logo.tsx",
@@ -162,7 +162,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Profile Card",
     description:
       "An extension of the avatar component with more details on the individual. Good for blog posts etc.",
-    registryDependencies: ["avatar", "TODO:/index.json"],
+    registryDependencies: ["avatar", "https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/components/profile-card.tsx",
@@ -187,7 +187,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Section Heading",
     description:
       "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
-    registryDependencies: ["TODO:/index.json"],
+    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/components/section-heading.tsx",
@@ -212,7 +212,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Star Rating",
     description:
       "A component that displays ratings with stars and an optional label. This component builds trust with visual feedback.",
-    registryDependencies: ["TODO:/index.json"],
+    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/components/star-rating.tsx",
@@ -231,21 +231,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "avatar-stack-example": {
-    name: "avatar-stack-example",
+  "avatar-stack-demo": {
+    name: "avatar-stack-demo",
     type: "registry:example",
-    title: "Avatar Stack Example",
+    title: "Avatar Stack Demo",
     description: "",
     registryDependencies: ["avatar", "@shadcraft/avatar-stack"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/avatar-stack-example.tsx",
+        path: "src/registry/pro-marketing/examples/avatar-stack-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/avatar-stack-example");
+      const mod = await import("@/registry/pro-marketing/examples/avatar-stack-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -255,21 +255,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "heading-example": {
-    name: "heading-example",
+  "heading-demo": {
+    name: "heading-demo",
     type: "registry:example",
-    title: "Heading Example",
+    title: "Heading Demo",
     description: "",
     registryDependencies: ["@shadcraft/heading"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/heading-example.tsx",
+        path: "src/registry/pro-marketing/examples/heading-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/heading-example");
+      const mod = await import("@/registry/pro-marketing/examples/heading-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -279,21 +279,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "marquee-example": {
-    name: "marquee-example",
+  "marquee-demo": {
+    name: "marquee-demo",
     type: "registry:example",
-    title: "Marquee Example",
+    title: "Marquee Demo",
     description: "",
     registryDependencies: ["@shadcraft/marquee"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/marquee-example.tsx",
+        path: "src/registry/pro-marketing/examples/marquee-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/marquee-example");
+      const mod = await import("@/registry/pro-marketing/examples/marquee-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -303,21 +303,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "page-heading-example": {
-    name: "page-heading-example",
+  "page-heading-demo": {
+    name: "page-heading-demo",
     type: "registry:example",
-    title: "Page Heading Example",
+    title: "Page Heading Demo",
     description: "",
     registryDependencies: ["@shadcraft/page-heading"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/page-heading-example.tsx",
+        path: "src/registry/pro-marketing/examples/page-heading-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/page-heading-example");
+      const mod = await import("@/registry/pro-marketing/examples/page-heading-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -327,21 +327,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "placeholder-logo-example": {
-    name: "placeholder-logo-example",
+  "placeholder-logo-demo": {
+    name: "placeholder-logo-demo",
     type: "registry:example",
-    title: "Placeholder Logo Example",
+    title: "Placeholder Logo Demo",
     description: "",
     registryDependencies: ["@shadcraft/placeholder-logo"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/placeholder-logo-example.tsx",
+        path: "src/registry/pro-marketing/examples/placeholder-logo-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/placeholder-logo-example");
+      const mod = await import("@/registry/pro-marketing/examples/placeholder-logo-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -351,21 +351,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "profile-card-example": {
-    name: "profile-card-example",
+  "profile-card-demo": {
+    name: "profile-card-demo",
     type: "registry:example",
-    title: "Profile Card Example",
+    title: "Profile Card Demo",
     description: "",
     registryDependencies: ["@shadcraft/profile-card"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/profile-card-example.tsx",
+        path: "src/registry/pro-marketing/examples/profile-card-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/profile-card-example");
+      const mod = await import("@/registry/pro-marketing/examples/profile-card-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -375,21 +375,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "section-heading-example": {
-    name: "section-heading-example",
+  "section-heading-demo": {
+    name: "section-heading-demo",
     type: "registry:example",
-    title: "Section Heading Example",
+    title: "Section Heading Demo",
     description: "",
     registryDependencies: ["@shadcraft/section-heading"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/section-heading-example.tsx",
+        path: "src/registry/pro-marketing/examples/section-heading-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/section-heading-example");
+      const mod = await import("@/registry/pro-marketing/examples/section-heading-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -399,21 +399,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "star-rating-example": {
-    name: "star-rating-example",
+  "star-rating-demo": {
+    name: "star-rating-demo",
     type: "registry:example",
-    title: "Star Rating Example",
+    title: "Star Rating Demo",
     description: "",
     registryDependencies: ["@shadcraft/star-rating"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/star-rating-example.tsx",
+        path: "src/registry/pro-marketing/examples/star-rating-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/star-rating-example");
+      const mod = await import("@/registry/pro-marketing/examples/star-rating-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -423,21 +423,21 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  "tagline-example": {
-    name: "tagline-example",
+  "tagline-demo": {
+    name: "tagline-demo",
     type: "registry:example",
-    title: "Tagline Example",
+    title: "Tagline Demo",
     description: "",
     registryDependencies: ["@shadcraft/tagline"],
     files: [
       {
-        path: "src/registry/pro-marketing/examples/tagline-example.tsx",
+        path: "src/registry/pro-marketing/examples/tagline-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/tagline-example");
+      const mod = await import("@/registry/pro-marketing/examples/tagline-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
