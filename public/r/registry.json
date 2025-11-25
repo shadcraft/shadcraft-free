@@ -1,0 +1,391 @@
+{
+  "name": "Shadcraft Free",
+  "homepage": "https://shadcraft-free.vercel.app",
+  "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "devDependencies": [
+        "tw-animate-css"
+      ],
+      "css": {
+        "@layer base": {
+          "button": {
+            "cursor": "pointer"
+          }
+        }
+      }
+    },
+    {
+      "name": "avatar-stack",
+      "type": "registry:ui",
+      "title": "Avatar Stack",
+      "description": "A component that stacks and overlaps a list of avatars.",
+      "registryDependencies": [
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/ui/avatar-stack.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "heading",
+      "type": "registry:ui",
+      "title": "Heading",
+      "description": "Pending",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/ui/heading.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "description": "A component that displays a list of items in a horizontal or vertical scrolling motion.",
+      "dependencies": [
+        "react-fast-marquee"
+      ],
+      "registryDependencies": [
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/ui/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "tagline",
+      "type": "registry:ui",
+      "title": "Tagline",
+      "description": "A component that displays a tagline with different variants.",
+      "registryDependencies": [
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/ui/tagline.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "page-heading",
+      "type": "registry:component",
+      "title": "Page Heading",
+      "registryDependencies": [
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/components/page-heading.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "placeholder-logo",
+      "type": "registry:component",
+      "title": "Placeholder Logo",
+      "description": "A component for that can be replaced with your brand's main logo. This component ensures layouts stay consistent before brand assets are applied.",
+      "registryDependencies": [
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/components/placeholder-logo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "profile-card",
+      "type": "registry:component",
+      "title": "Profile Card",
+      "description": "An extension of the avatar component with more details on the individual. Good for blog posts etc.",
+      "registryDependencies": [
+        "avatar",
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/components/profile-card.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "section-heading",
+      "type": "registry:component",
+      "title": "Section Heading",
+      "description": "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
+      "registryDependencies": [
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/components/section-heading.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "star-rating",
+      "type": "registry:component",
+      "title": "Star Rating",
+      "description": "A component that displays ratings with stars and an optional label. This component builds trust with visual feedback.",
+      "registryDependencies": [
+        "TODO:/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/components/star-rating.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "avatar-stack-example",
+      "type": "registry:example",
+      "title": "Avatar Stack Example",
+      "registryDependencies": [
+        "avatar",
+        "@shadcraft/avatar-stack"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/avatar-stack-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "heading-example",
+      "type": "registry:example",
+      "title": "Heading Example",
+      "registryDependencies": [
+        "@shadcraft/heading"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/heading-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "marquee-example",
+      "type": "registry:example",
+      "title": "Marquee Example",
+      "registryDependencies": [
+        "@shadcraft/marquee"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/marquee-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "page-heading-example",
+      "type": "registry:example",
+      "title": "Page Heading Example",
+      "registryDependencies": [
+        "@shadcraft/page-heading"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/page-heading-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "placeholder-logo-example",
+      "type": "registry:example",
+      "title": "Placeholder Logo Example",
+      "registryDependencies": [
+        "@shadcraft/placeholder-logo"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/placeholder-logo-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "profile-card-example",
+      "type": "registry:example",
+      "title": "Profile Card Example",
+      "registryDependencies": [
+        "@shadcraft/profile-card"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/profile-card-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "section-heading-example",
+      "type": "registry:example",
+      "title": "Section Heading Example",
+      "registryDependencies": [
+        "@shadcraft/section-heading"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/section-heading-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "star-rating-example",
+      "type": "registry:example",
+      "title": "Star Rating Example",
+      "registryDependencies": [
+        "@shadcraft/star-rating"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/star-rating-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "tagline-example",
+      "type": "registry:example",
+      "title": "Tagline Example",
+      "registryDependencies": [
+        "@shadcraft/tagline"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/examples/tagline-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "use-carousel",
+      "type": "registry:hook",
+      "dependencies": [
+        "embla-carousel",
+        "embla-carousel-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/hooks/use-carousel.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "use-click-outside",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/hooks/use-click-outside.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      }
+    }
+  ]
+}

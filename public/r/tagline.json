@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tagline",
+  "type": "registry:ui",
+  "title": "Tagline",
+  "description": "A component that displays a tagline with different variants.",
+  "registryDependencies": [
+    "TODO:/index.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/tagline.tsx",
+      "content": "import { Slot } from \"@radix-ui/react-slot\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst taglineVariants = cva(\n  \"inline-flex w-fit shrink-0 items-center justify-center gap-1 text-xs/4 font-medium whitespace-nowrap [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5 [&>svg]:pointer-events-none\",\n  {\n    variants: {\n      variant: {\n        default: \"text-foreground\",\n        primary:\n          \"bg-primary text-primary-foreground [a&]:hover:bg-primary/90 rounded-md px-2 py-0.5\",\n        secondary:\n          \"bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90 rounded-md px-2 py-0.5\",\n        badge:\n          \"bg-background text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground rounded-full border px-2 py-0.5\",\n        outline:\n          \"text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground rounded-md border bg-transparent px-2 py-0.5\",\n        ghost:\n          \"text-muted-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground bg-transparent\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n);\n\nfunction Tagline({\n  className,\n  variant,\n  asChild = false,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof taglineVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot : \"div\";\n\n  return (\n    <Comp\n      data-slot=\"tagline\"\n      data-variant={variant}\n      className={cn(taglineVariants({ variant }), className)}\n      {...props}\n    >\n      {children}\n    </Comp>\n  );\n}\n\nexport { Tagline, taglineVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  }
+}

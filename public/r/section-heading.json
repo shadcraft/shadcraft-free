@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "section-heading",
+  "type": "registry:component",
+  "title": "Section Heading",
+  "description": "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
+  "registryDependencies": [
+    "TODO:/index.json"
+  ],
+  "files": [
+    {
+      "path": "components/section-heading.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction SectionHeading({\n  alignment = \"left\",\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & { alignment?: \"left\" | \"center\" | \"right\" }) {\n  return (\n    <div\n      data-slot=\"section-heading\"\n      data-alignment={alignment}\n      className={cn(\n        \"group/section-heading flex flex-col gap-3\",\n        alignment === \"left\" && \"items-start text-left\",\n        alignment === \"center\" && \"items-center text-center\",\n        alignment === \"right\" && \"items-end text-right\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction SectionHeadingContentType({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"section-heading-content-type\"\n      className={cn(\"text-foreground font-sans text-base leading-6 font-medium\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction SectionHeadingTitle({ className, ...props }: React.ComponentProps<\"h2\">) {\n  return (\n    <h2\n      data-slot=\"section-heading-title\"\n      className={cn(\n        \"text-foreground scroll-m-20 text-4xl leading-none font-medium tracking-tight lg:text-5xl\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction SectionHeadingBody({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"section-heading-body\"\n      className={cn(\n        \"text-muted-foreground max-w-2xl text-base/6 font-normal text-pretty\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { SectionHeading, SectionHeadingBody, SectionHeadingContentType, SectionHeadingTitle };\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-carousel",
+  "type": "registry:hook",
+  "dependencies": [
+    "embla-carousel",
+    "embla-carousel-react"
+  ],
+  "files": [
+    {
+      "path": "hooks/use-carousel.ts",
+      "content": "import useEmblaCarousel, { type UseEmblaCarouselType } from \"embla-carousel-react\";\nimport * as React from \"react\";\n\ntype CarouselApi = UseEmblaCarouselType[1];\ntype UseCarouselParameters = Parameters<typeof useEmblaCarousel>;\ntype CarouselOptions = UseCarouselParameters[0];\ntype CarouselPlugin = UseCarouselParameters[1];\n\ninterface UseCarouselProps {\n  count: number;\n  initialIndex?: number;\n  orientation?: \"horizontal\" | \"vertical\";\n  opts?: CarouselOptions;\n  plugins?: CarouselPlugin;\n  setApi?: (api: CarouselApi) => void;\n}\n\nexport function useCarousel({\n  count,\n  initialIndex = 0,\n  orientation = \"horizontal\",\n  opts,\n  plugins,\n  setApi,\n}: UseCarouselProps) {\n  const [carouselRef, api] = useEmblaCarousel(\n    {\n      inViewThreshold: 1,\n      ...opts,\n      startIndex: initialIndex,\n      axis: orientation === \"horizontal\" ? \"x\" : \"y\",\n    },\n    plugins\n  );\n\n  const [activeIndex, setActiveIndex] = React.useState(initialIndex);\n  const [canScrollPrev, setCanScrollPrev] = React.useState(false);\n  const [canScrollNext, setCanScrollNext] = React.useState(count > 1);\n\n  const onSelect = React.useCallback((emblaApi: CarouselApi) => {\n    if (!emblaApi) return;\n    setActiveIndex(emblaApi.selectedScrollSnap());\n    setCanScrollPrev(emblaApi.canScrollPrev());\n    setCanScrollNext(emblaApi.canScrollNext());\n  }, []);\n\n  React.useEffect(() => {\n    if (!api) return;\n    onSelect(api);\n    api.on(\"select\", onSelect);\n    api.on(\"reInit\", onSelect);\n    return () => {\n      api.off(\"select\", onSelect);\n      api.off(\"reInit\", onSelect);\n    };\n  }, [api, onSelect]);\n\n  React.useEffect(() => {\n    if (!api || !setApi) return;\n    setApi(api);\n  }, [api, setApi]);\n\n  const scrollPrev = React.useCallback(() => {\n    api?.scrollPrev();\n  }, [api]);\n\n  const scrollNext = React.useCallback(() => {\n    api?.scrollNext();\n  }, [api]);\n\n  const scrollTo = React.useCallback(\n    (index: number) => {\n      if (!api) return;\n      const clamped = Math.max(0, Math.min(index, count - 1));\n      api.scrollTo(clamped);\n    },\n    [api, count]\n  );\n\n  const handleKeyDown = React.useCallback(\n    (event: React.KeyboardEvent<HTMLDivElement>) => {\n      if (event.key === \"ArrowLeft\") {\n        event.preventDefault();\n        scrollPrev();\n      } else if (event.key === \"ArrowRight\") {\n        event.preventDefault();\n        scrollNext();\n      }\n    },\n    [scrollPrev, scrollNext]\n  );\n\n  return {\n    carouselRef,\n    api,\n    opts,\n    orientation: orientation || (opts?.axis === \"y\" ? \"vertical\" : \"horizontal\"),\n    activeIndex,\n    canScrollPrev,\n    canScrollNext,\n    scrollPrev,\n    scrollNext,\n    scrollTo,\n    handleKeyDown,\n  } as const;\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  }
+}

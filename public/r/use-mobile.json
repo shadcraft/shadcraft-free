@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-mobile",
+  "type": "registry:hook",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "hooks/use-mobile.ts",
+      "content": "import * as React from \"react\";\n\nexport function useIsMobile(mobileBreakpoint = 768) {\n  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined);\n\n  React.useEffect(() => {\n    const mql = window.matchMedia(`(max-width: ${mobileBreakpoint - 1}px)`);\n    const onChange = () => {\n      setIsMobile(window.innerWidth < mobileBreakpoint);\n    };\n    mql.addEventListener(\"change\", onChange);\n    setIsMobile(window.innerWidth < mobileBreakpoint);\n    return () => mql.removeEventListener(\"change\", onChange);\n  }, [mobileBreakpoint]);\n\n  return !!isMobile;\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  }
+}

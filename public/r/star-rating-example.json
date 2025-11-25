@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "star-rating-example",
+  "type": "registry:example",
+  "title": "Star Rating Example",
+  "registryDependencies": [
+    "@shadcraft/star-rating"
+  ],
+  "files": [
+    {
+      "path": "examples/star-rating-example.tsx",
+      "content": "import { StarRating } from \"@/components/star-rating\";\n\nexport function StarRatingExample() {\n  return (\n    <div className=\"grid gap-12 p-5 md:grid-cols-2 lg:p-8\">\n      <div className=\"flex flex-col gap-8\">\n        <StarRating value={5} />\n        <StarRating value={1} label=\"Empty stars\" />\n        <StarRating value={2.5} label=\"Partial stars\" />\n        <StarRating value={5} label=\"Full stars\" />\n        <StarRating value={5} className=\"text-yellow-500\" label=\"Custom color\" />\n        <StarRating value={2} max={3} label=\"Custom quantity\" />\n        <StarRating value={4} max={7} label=\"Custom quantity\" />\n      </div>\n\n      <div className=\"flex flex-col gap-8\">\n        <StarRating value={5} size=\"sm\" label=\"Size small\" />\n        <StarRating value={5} size=\"md\" label=\"Size medium\" />\n        <StarRating value={5} size=\"lg\" label=\"Size large\" />\n        <StarRating value={5} size=\"sm\" label=\"Size small\" orientation=\"horizontal\" />\n        <StarRating value={5} size=\"md\" label=\"Size medium\" orientation=\"horizontal\" />\n        <StarRating value={5} size=\"lg\" label=\"Size large\" orientation=\"horizontal\" />\n        <StarRating\n          value={5}\n          size=\"sm\"\n          label=\"Size small\"\n          orientation=\"horizontal\"\n          containerClassName=\"flex-row-reverse\"\n        />\n        <StarRating\n          value={5}\n          size=\"md\"\n          label=\"Size medium\"\n          orientation=\"horizontal\"\n          containerClassName=\"flex-row-reverse\"\n        />\n        <StarRating\n          value={5}\n          size=\"lg\"\n          label=\"Size large\"\n          orientation=\"horizontal\"\n          containerClassName=\"flex-row-reverse\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  }
+}

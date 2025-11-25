@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marquee-example",
+  "type": "registry:example",
+  "title": "Marquee Example",
+  "registryDependencies": [
+    "@shadcraft/marquee"
+  ],
+  "files": [
+    {
+      "path": "examples/marquee-example.tsx",
+      "content": "import { Marquee, MarqueeContent, MarqueeItem } from \"@/components/ui/marquee\";\n\nexport function MarqueeExample() {\n  return (\n    <div className=\"flex max-w-screen flex-col gap-12 p-5 lg:p-8\">\n      <Marquee>\n        <MarqueeContent>\n          {Array.from({ length: 5 }).map((_, index) => (\n            <MarqueeItem key={index}>\n              <div className=\"bg-primary size-20 rounded-full\" />\n            </MarqueeItem>\n          ))}\n        </MarqueeContent>\n      </Marquee>\n\n      <Marquee fade=\"horizontal\">\n        <MarqueeContent>\n          {Array.from({ length: 5 }).map((_, index) => (\n            <MarqueeItem key={index}>\n              <div className=\"bg-primary size-16 rounded-full\" />\n            </MarqueeItem>\n          ))}\n        </MarqueeContent>\n      </Marquee>\n\n      <Marquee fade=\"horizontal\">\n        <MarqueeContent pauseOnHover speed={100}>\n          {Array.from({ length: 5 }).map((_, index) => (\n            <MarqueeItem key={index}>\n              <div className=\"bg-primary text-primary-foreground grid size-24 place-items-center rounded-full font-mono text-xs font-medium\">\n                hover me\n              </div>\n            </MarqueeItem>\n          ))}\n        </MarqueeContent>\n      </Marquee>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  }
+}
