@@ -57,7 +57,7 @@ export function ThemeToggle({ className, onClick, ...props }: React.ComponentPro
         </Button>
       </ContextMenuTrigger>
 
-      <ContextMenuContent className="[&_[data-active=true]]:bg-accent [&_[data-active=true]]:text-accent-foreground space-y-1">
+      <ContextMenuContent className="*:data-[active=true]:bg-accent *:data-[active=true]:text-accent-foreground space-y-1">
         <ContextMenuItem
           data-active={theme === "light"}
           onClick={() => setTheme("light")}
