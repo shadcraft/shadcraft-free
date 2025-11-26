@@ -32,7 +32,7 @@ export function getRegistryItemJsonUrl(name: string): string {
  * @param name - Component/block name
  * @returns Namespaced registry key (e.g. "@shadcraft/avatar-stack")
  */
-export function getNamespacedRegistryDependency(name: string): string {
+export function buildNamespacedRegistryDependency(name: string): string {
   return `@shadcraft/${name}`;
 }
 
@@ -41,8 +41,18 @@ export function getNamespacedRegistryDependency(name: string): string {
  * @param names - Component/block names
  * @returns Array of namespaced registry keys (e.g. ["@shadcraft/avatar-stack", "@shadcraft/section-heading"])
  */
-export function getNamespacedRegistryDependencies(...names: string[]): string[] {
-  return names.map((name) => getNamespacedRegistryDependency(name));
+export function buildNamespacedRegistryDependencies(...names: string[]): string[] {
+  return names.map((name) => buildNamespacedRegistryDependency(name));
+}
+
+/**
+ * Returns an array of namespaced registry dependencies.
+ * @param registryDeps - Registry dependencies
+ * @returns Array of namespaced registry keys (e.g. ["@shadcraft/avatar-stack", "@shadcraft/section-heading"])
+ */
+export function filterNamespacedRegistryDependencies(registryDeps: string[] | undefined): string[] {
+  if (!registryDeps || registryDeps.length === 0) return [];
+  return registryDeps.filter((dep) => dep.startsWith("@shadcraft/"));
 }
 
 export function appendIndexToRegistryItem(item: RegistryItem): RegistryItem {
