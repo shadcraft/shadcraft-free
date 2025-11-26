@@ -12,6 +12,8 @@ import {
   FolderOpen,
   Fullscreen,
   HelpCircle,
+  Menu,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
@@ -40,12 +42,14 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarHeader,
+  SidebarInset,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarProvider,
+  SidebarRail,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
@@ -228,6 +232,11 @@ function DemoViewerCode() {
     return files?.find((file) => file.target === activeFile);
   }, [files, activeFile]);
 
+  const { tree } = useDemoViewer();
+  const isMobile = useIsMobile();
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
   if (!file) {
     return null;
   }
@@ -235,132 +244,68 @@ function DemoViewerCode() {
   const language = file.path.split(".").pop() ?? "tsx";
   const FileIcon = language === "tsx" ? ReactLogo : File;
 
+  const FileTreeTrigger = isMobile ? (
+    <Button
+      variant="ghost"
+      size="icon-sm"
+      className="size-7"
+      onClick={toggleMenu}
+      title={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+      aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+    >
+      {isMenuOpen ? (
+        <X className="animate-in zoom-in-50" />
+      ) : (
+        <Menu className="animate-in zoom-in-50" />
+      )}
+    </Button>
+  ) : (
+    <SidebarTrigger title="Toggle Sidebar" aria-label="Toggle Sidebar" />
+  );
+
   return (
     <div className="isolate size-full group-data-[view=preview]/demo-view-wrapper:hidden">
       <div className="bg-code text-code-foreground relative size-full content-center overflow-hidden rounded-lg border text-center md:rounded-xl">
-        <div className="flex size-full">
-          <DemoViewerFileTreeSidebar />
-          <figure className="m-0! flex size-full min-w-0 flex-col rounded-xl border-none">
-            <figcaption
-              className="flex h-12 shrink-0 items-center gap-2 border-b px-4 py-2"
-              data-language={language}
-            >
-              <FileIcon className="text-muted-foreground size-3.5 shrink-0" />
-              <span className="text-foreground line-clamp-1 font-mono text-sm">{file.target}</span>
-              <div className="ml-auto flex items-center gap-2">
-                <DemoCopyCodeButton />
-              </div>
-            </figcaption>
+        <SidebarProvider
+          className="size-full min-h-min"
+          style={{ "--sidebar-width-icon": 0 } as React.CSSProperties}
+        >
+          {/* Sidebar that shows the file tree on screen larger than md */}
+          <DemoViewerFileTreeSidebar className="group-data-[state=collapsed]:border-none" />
 
-            <CodeBlock
-              language={language as BundledLanguage}
-              code={file?.content}
-              showLineNumbers
-              className="scrollbar-thin overflow-auto overscroll-contain rounded-none border-none text-left"
-            />
-          </figure>
-        </div>
+          <SidebarInset className="overflow-hidden">
+            <figure className="bg-background grid size-full min-w-0 grid-rows-[auto_1fr]">
+              <div className="flex flex-col border-b">
+                <figcaption
+                  className="flex h-12 shrink-0 items-center gap-2 px-4 py-2"
+                  data-language={language}
+                >
+                  {!!tree && FileTreeTrigger}
+
+                  <FileIcon className="text-muted-foreground size-3.5 shrink-0" />
+                  <span className="text-foreground line-clamp-1 text-left font-mono text-sm">
+                    {file.target}
+                  </span>
+                  <div className="ml-auto flex items-center gap-2">
+                    <DemoCopyCodeButton className="size-7" />
+                  </div>
+                </figcaption>
+
+                {/* Mobile menu that shows the file tree on screen smaller than md */}
+                <DemoViewerFileTreeMobileMenu isMenuOpen={isMenuOpen} />
+              </div>
+
+              <CodeBlock
+                language={language as BundledLanguage}
+                code={file?.content}
+                showLineNumbers
+                className="scrollbar-thin overflow-auto overscroll-contain rounded-none border-none text-left"
+              />
+            </figure>
+          </SidebarInset>
+        </SidebarProvider>
       </div>
     </div>
-  );
-}
-
-function DemoViewerFileTreeSidebar() {
-  const { tree } = useDemoViewer();
-
-  if (!tree || tree.length === 0) {
-    return null;
-  }
-
-  return (
-    <SidebarProvider className="flex min-h-full! w-72">
-      <Sidebar collapsible="none" className="isolate border-r">
-        <SidebarHeader className="flex h-12 flex-row items-center justify-between gap-2 border-b px-4 text-left">
-          <span className="text-muted-foreground line-clamp-1 font-mono text-sm font-medium">
-            Files
-          </span>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <HelpCircle className="text-muted-foreground size-3.5" />
-            </TooltipTrigger>
-            <TooltipContent className="max-w-[25ch] text-balance">
-              The resulting files structure after running the CLI command.
-            </TooltipContent>
-          </Tooltip>
-        </SidebarHeader>
-
-        <SidebarContent className="gap-0">
-          <SidebarGroup className="m-0 p-0">
-            <SidebarGroupContent>
-              <SidebarMenu className="translate-x-0 gap-1.5 font-mono">
-                {tree.map((file, index) => (
-                  <Tree key={index} item={file} index={1} />
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        </SidebarContent>
-      </Sidebar>
-    </SidebarProvider>
-  );
-}
-
-function Tree({ item, index }: { item: FileTree; index: number }) {
-  const { activeFile, setActiveFile } = useDemoViewer();
-
-  if (!item.children) {
-    const Icon = item.path?.endsWith(".tsx") ? ReactLogo : File;
-    return (
-      <SidebarMenuItem>
-        <SidebarMenuButton
-          isActive={item.path === activeFile}
-          onClick={() => item.path && setActiveFile(item.path)}
-          className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 gap-2 rounded-none pl-(--index) whitespace-nowrap"
-          data-index={index}
-          style={
-            {
-              "--index": `${index * 0.875}rem`,
-            } as React.CSSProperties
-          }
-        >
-          <Icon className="ml-2 size-3.5!" />
-          <span className="line-clamp-1">{item.name}</span>
-        </SidebarMenuButton>
-      </SidebarMenuItem>
-    );
-  }
-
-  return (
-    <SidebarMenuItem>
-      <Collapsible
-        className="group/collapsible [&[data-state=closed]>button>[data-slot=folder-open-icon]]:hidden [&[data-state=open]>button>[data-slot=folder-closed-icon]]:hidden [&[data-state=open]>button>svg:first-child]:rotate-90"
-        defaultOpen
-      >
-        <CollapsibleTrigger asChild>
-          <SidebarMenuButton
-            className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 gap-2 rounded-none pl-(--index) whitespace-nowrap"
-            style={
-              {
-                "--index": `${index * 0.875}rem`,
-              } as React.CSSProperties
-            }
-          >
-            <ChevronRight className="size-3.5! transition-transform" />
-            <Folder data-slot="folder-closed-icon" className="size-3.5!" />
-            <FolderOpen data-slot="folder-open-icon" className="size-3.5!" />
-
-            {item.name}
-          </SidebarMenuButton>
-        </CollapsibleTrigger>
-        <CollapsibleContent>
-          <SidebarMenuSub className="m-0 w-full translate-x-0 border-none p-0">
-            {item.children.map((subItem, key) => (
-              <Tree key={key} item={subItem} index={index + 1} />
-            ))}
-          </SidebarMenuSub>
-        </CollapsibleContent>
-      </Collapsible>
-    </SidebarMenuItem>
   );
 }
 
@@ -396,6 +341,138 @@ function DemoCopyCodeButton({
     >
       {children ?? <Icon className="animate-in zoom-in-50" />}
     </Button>
+  );
+}
+
+function DemoViewerFileTreeSidebar({ className, ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { tree } = useDemoViewer();
+
+  if (!tree || tree.length === 0) {
+    return null;
+  }
+
+  return (
+    <Sidebar
+      collapsible="icon"
+      className={cn("relative isolate m-0 h-full p-0", className)}
+      {...props}
+    >
+      <div className="relative overflow-hidden border-b text-left group-data-[state=collapsed]:hidden">
+        <div className="flex h-12 w-full shrink-0 items-center gap-2 px-4 py-2">
+          <span className="text-muted-foreground line-clamp-1 font-mono text-sm font-medium">
+            Files
+          </span>
+
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <HelpCircle className="text-muted-foreground size-3.5" />
+            </TooltipTrigger>
+            <TooltipContent className="max-w-[25ch] text-balance">
+              The resulting files structure after running the CLI command.
+            </TooltipContent>
+          </Tooltip>
+        </div>
+      </div>
+
+      <SidebarContent className="group-data-[state=collapsed]:hidden">
+        <SidebarGroup className="p-0">
+          <SidebarGroupContent>
+            <DemoViewerFileTree tree={tree} />
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+
+      <SidebarRail />
+    </Sidebar>
+  );
+}
+
+function DemoViewerFileTreeMobileMenu({ isMenuOpen }: { isMenuOpen: boolean }) {
+  const { tree } = useDemoViewer();
+
+  if (!tree || tree.length === 0) {
+    return null;
+  }
+
+  return (
+    <div
+      className={cn(
+        "grid transition-all ease-in-out md:hidden",
+        isMenuOpen ? "grid-rows-[1fr] opacity-100" : "pointer-events-none grid-rows-[0fr] opacity-0"
+      )}
+    >
+      <div className="overflow-hidden" inert={!isMenuOpen || undefined} aria-hidden={!isMenuOpen}>
+        <DemoViewerFileTree tree={tree} />
+      </div>
+    </div>
+  );
+}
+
+function DemoViewerFileTree({ tree }: { tree: FileTree[] }) {
+  return (
+    <SidebarMenu className="font-mono">
+      {tree.map((file, index) => (
+        <Tree key={index} item={file} index={1} />
+      ))}
+    </SidebarMenu>
+  );
+}
+
+function Tree({ item, index }: { item: FileTree; index: number }) {
+  const { activeFile, setActiveFile } = useDemoViewer();
+
+  if (!item.children) {
+    const Icon = item.path?.endsWith(".tsx") ? ReactLogo : File;
+    return (
+      <SidebarMenuItem>
+        <SidebarMenuButton
+          isActive={item.path === activeFile}
+          onClick={() => item.path && setActiveFile(item.path)}
+          className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 text-sidebar-foreground/80 gap-2 rounded-none pl-(--index) whitespace-nowrap transition-colors"
+          data-index={index}
+          style={
+            {
+              "--index": `${index * 0.875}rem`,
+            } as React.CSSProperties
+          }
+        >
+          <Icon className="ml-2 size-3.5!" />
+          <span className="line-clamp-1">{item.name}</span>
+        </SidebarMenuButton>
+      </SidebarMenuItem>
+    );
+  }
+
+  return (
+    <SidebarMenuItem>
+      <Collapsible
+        className="group/collapsible [&[data-state=closed]>button>[data-slot=folder-open-icon]]:hidden [&[data-state=open]>button>[data-slot=folder-closed-icon]]:hidden [&[data-state=open]>button>svg:first-child]:rotate-90"
+        defaultOpen
+      >
+        <CollapsibleTrigger asChild>
+          <SidebarMenuButton
+            className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 text-sidebar-foreground/80 gap-2 rounded-none pl-(--index) whitespace-nowrap transition-colors"
+            style={
+              {
+                "--index": `${index * 0.875}rem`,
+              } as React.CSSProperties
+            }
+          >
+            <ChevronRight className="size-3.5! transition-transform" />
+            <Folder data-slot="folder-closed-icon" className="size-3.5!" />
+            <FolderOpen data-slot="folder-open-icon" className="size-3.5!" />
+            <span className="line-clamp-1">{item.name}</span>
+          </SidebarMenuButton>
+        </CollapsibleTrigger>
+        <CollapsibleContent>
+          <SidebarMenuSub className="m-0 w-full translate-x-0 border-none p-0">
+            {item.children.map((subItem, key) => (
+              <Tree key={key} item={subItem} index={index + 1} />
+            ))}
+          </SidebarMenuSub>
+        </CollapsibleContent>
+      </Collapsible>
+    </SidebarMenuItem>
   );
 }
 
