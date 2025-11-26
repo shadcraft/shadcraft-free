@@ -140,6 +140,11 @@ function DemoViewerToolbar() {
     setView(value as "preview" | "code");
   };
 
+  const forceTabSwitchToPreview = () => {
+    if (view === "preview") return;
+    setView("preview");
+  };
+
   return (
     <div className="flex w-full items-center gap-2">
       <Tabs value={view} onValueChange={handleTabChange} className="shrink-0">
@@ -157,7 +162,7 @@ function DemoViewerToolbar() {
 
       <ButtonGroup className="ml-auto">
         <ButtonGroup>
-          <ReloadIframeButton />
+          <ReloadIframeButton onClick={forceTabSwitchToPreview} />
           <Button variant="outline" size="icon-sm" asChild title="Open in New Tab">
             <Link href={url} target="_blank">
               <span className="sr-only">Open in New Tab</span>
@@ -168,9 +173,9 @@ function DemoViewerToolbar() {
 
         {!isMobile && (
           <ButtonGroup>
-            <MobileBreakpointButton />
-            <TabletBreakpointButton />
-            <DesktopBreakpointButton />
+            <MobileBreakpointButton onClick={forceTabSwitchToPreview} />
+            <TabletBreakpointButton onClick={forceTabSwitchToPreview} />
+            <DesktopBreakpointButton onClick={forceTabSwitchToPreview} />
           </ButtonGroup>
         )}
 

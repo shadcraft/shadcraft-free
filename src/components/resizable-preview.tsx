@@ -340,7 +340,7 @@ function PreviewIframe({ className, ...props }: React.ComponentProps<"iframe">) 
   );
 }
 
-function ReloadIframeButton({ ...props }: React.ComponentProps<typeof Button>) {
+function ReloadIframeButton({ onClick, ...props }: React.ComponentProps<typeof Button>) {
   const { reloadIframe } = useResizablePreview();
 
   return (
@@ -350,7 +350,10 @@ function ReloadIframeButton({ ...props }: React.ComponentProps<typeof Button>) {
       size="icon-sm"
       title="Reload Preview"
       aria-label="Reload Preview"
-      onClick={reloadIframe}
+      onClick={(e) => {
+        reloadIframe();
+        onClick?.(e);
+      }}
       {...props}
     >
       <RefreshCcw />
@@ -358,9 +361,7 @@ function ReloadIframeButton({ ...props }: React.ComponentProps<typeof Button>) {
   );
 }
 
-function DesktopBreakpointButton({
-  ...props
-}: Omit<React.ComponentProps<typeof Button>, "onClick">) {
+function DesktopBreakpointButton({ onClick, ...props }: React.ComponentProps<typeof Button>) {
   const { breakpoint, setBreakpoint } = useResizablePreview();
   const isActive = breakpoint === "desktop";
 
@@ -369,7 +370,10 @@ function DesktopBreakpointButton({
       data-slot="desktop-breakpoint-button"
       variant="outline"
       size="icon-sm"
-      onClick={() => setBreakpoint("desktop")}
+      onClick={(e) => {
+        setBreakpoint("desktop");
+        onClick?.(e);
+      }}
       title="Desktop"
       aria-label="Desktop breakpoint"
       aria-pressed={isActive}
@@ -380,9 +384,7 @@ function DesktopBreakpointButton({
   );
 }
 
-function TabletBreakpointButton({
-  ...props
-}: Omit<React.ComponentProps<typeof Button>, "onClick">) {
+function TabletBreakpointButton({ onClick, ...props }: React.ComponentProps<typeof Button>) {
   const { breakpoint, setBreakpoint } = useResizablePreview();
   const isActive = breakpoint === "tablet";
 
@@ -391,7 +393,10 @@ function TabletBreakpointButton({
       data-slot="tablet-breakpoint-button"
       variant="outline"
       size="icon-sm"
-      onClick={() => setBreakpoint("tablet")}
+      onClick={(e) => {
+        setBreakpoint("tablet");
+        onClick?.(e);
+      }}
       title="Tablet"
       aria-label="Tablet breakpoint"
       aria-pressed={isActive}
@@ -402,9 +407,7 @@ function TabletBreakpointButton({
   );
 }
 
-function MobileBreakpointButton({
-  ...props
-}: Omit<React.ComponentProps<typeof Button>, "onClick">) {
+function MobileBreakpointButton({ onClick, ...props }: React.ComponentProps<typeof Button>) {
   const { breakpoint, setBreakpoint } = useResizablePreview();
   const isActive = breakpoint === "mobile";
 
@@ -413,7 +416,10 @@ function MobileBreakpointButton({
       data-slot="mobile-breakpoint-button"
       variant="outline"
       size="icon-sm"
-      onClick={() => setBreakpoint("mobile")}
+      onClick={(e) => {
+        setBreakpoint("mobile");
+        onClick?.(e);
+      }}
       title="Mobile"
       aria-label="Mobile breakpoint"
       aria-pressed={isActive}
