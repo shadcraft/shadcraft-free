@@ -2,7 +2,7 @@ import { Marquee, MarqueeContent, MarqueeItem } from "@/registry/pro-marketing/u
 
 export function MarqueeDemo() {
   return (
-    <div className="flex max-w-screen flex-col gap-12 p-5 lg:p-8">
+    <div className="flex max-w-screen flex-col gap-12 py-5 lg:py-8">
       <Marquee>
         <MarqueeContent>
           {Array.from({ length: 5 }).map((_, index) => (
