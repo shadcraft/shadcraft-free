@@ -315,15 +315,15 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
         <SidebarMenuButton
           isActive={item.path === activeFile}
           onClick={() => item.path && setActiveFile(item.path)}
-          className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 rounded-none pl-(--index) whitespace-nowrap"
+          className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 gap-2 rounded-none pl-(--index) whitespace-nowrap"
           data-index={index}
           style={
             {
-              "--index": `${index * (index === 1 ? 1 : 1)}rem`,
+              "--index": `${index * 0.875}rem`,
             } as React.CSSProperties
           }
         >
-          <Icon className="ml-2" />
+          <Icon className="ml-2 size-3.5!" />
           <span className="line-clamp-1">{item.name}</span>
         </SidebarMenuButton>
       </SidebarMenuItem>
@@ -338,16 +338,16 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton
-            className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 rounded-none pl-(--index) whitespace-nowrap"
+            className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 gap-2 rounded-none pl-(--index) whitespace-nowrap"
             style={
               {
-                "--index": `${index * (index === 1 ? 1 : 1)}rem`,
+                "--index": `${index * 0.875}rem`,
               } as React.CSSProperties
             }
           >
-            <ChevronRight className="transition-transform" />
-            <Folder data-slot="folder-closed-icon" />
-            <FolderOpen data-slot="folder-open-icon" />
+            <ChevronRight className="size-3.5! transition-transform" />
+            <Folder data-slot="folder-closed-icon" className="size-3.5!" />
+            <FolderOpen data-slot="folder-open-icon" className="size-3.5!" />
 
             {item.name}
           </SidebarMenuButton>
