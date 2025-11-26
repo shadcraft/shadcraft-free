@@ -200,11 +200,11 @@ function DemoViewerPreview() {
 
   return (
     <div className="size-full group-data-[view=code]/demo-view-wrapper:hidden">
-      <ResizablePreview>
-        <div className="relative grid size-full">
+      <div className="bg-muted/25 relative size-full rounded-xl border">
+        <ResizablePreview>
           <div className="absolute inset-1 right-2 bg-[radial-gradient(var(--border)_1px,transparent_1px)] bg-size-[16px_16px] opacity-50" />
 
-          <ResizablePreviewContainer className="bg-muted/25 isolate rounded-xl border md:p-1.5">
+          <ResizablePreviewContainer className="md:p-1.5">
             <ResizablePreviewContent
               className={cn(
                 "relative isolate size-full overflow-hidden rounded-[calc(var(--radius-xl)-4px)] shadow-md",
@@ -220,8 +220,8 @@ function DemoViewerPreview() {
 
             {!isMobile && <ResizablePreviewHandle />}
           </ResizablePreviewContainer>
-        </div>
-      </ResizablePreview>
+        </ResizablePreview>
+      </div>
     </div>
   );
 }
@@ -265,7 +265,7 @@ function DemoViewerCode() {
 
   return (
     <div className="isolate size-full group-data-[view=preview]/demo-view-wrapper:hidden">
-      <div className="bg-code text-code-foreground relative size-full content-center overflow-hidden rounded-lg border text-center md:rounded-xl">
+      <div className="relative size-full overflow-hidden rounded-xl border">
         <SidebarProvider
           className="size-full min-h-min"
           style={{ "--sidebar-width-icon": 0 } as React.CSSProperties}
@@ -358,16 +358,14 @@ function DemoViewerFileTreeSidebar({ className, ...props }: React.ComponentProps
       {...props}
     >
       <div className="relative overflow-hidden border-b text-left group-data-[state=collapsed]:hidden">
-        <div className="flex h-12 w-full shrink-0 items-center gap-2 px-4 py-2">
-          <span className="text-muted-foreground line-clamp-1 font-mono text-sm font-medium">
-            Files
-          </span>
+        <div className="flex h-12 w-full shrink-0 items-center justify-between gap-2 px-4 py-2">
+          <span className="text-sidebar-foreground line-clamp-1 font-mono text-sm">Files</span>
 
           <Tooltip>
             <TooltipTrigger asChild>
               <HelpCircle className="text-muted-foreground size-3.5" />
             </TooltipTrigger>
-            <TooltipContent className="max-w-[25ch] text-balance">
+            <TooltipContent className="max-w-[25ch] text-center text-balance">
               The resulting files structure after running the CLI command.
             </TooltipContent>
           </Tooltip>
