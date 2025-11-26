@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import React from "react";
 
+import { DemoDisplay } from "@/components/demo-display";
 import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 import { getRegistryItem, getRegistryItems } from "@/lib/registry";
 
@@ -41,10 +42,6 @@ export default async function Page({ params }: PageProps<"/ui/[name]">) {
       <DemoDisplay key={item.name} name={item.name} />
     </>
   );
-}
-
-function DemoDisplay({ name }: { name: string }) {
-  return <div>{name}</div>;
 }
 
 const getCachedRegistryItem = React.cache(async (name: string) => {

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import { DemoDisplay } from "@/components/demo-display";
 import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 import { getBlocksByCategories } from "@/lib/registry";
 import { registryCategories } from "@/lib/registry/blocks-categories";
@@ -44,13 +45,9 @@ export default async function Page({ params }: PageProps<"/blocks/[category]">) 
             No blocks found in this category
           </div>
         ) : (
-          blocks.map((block) => <DemoDisplay key={block.name} name={block.name} />)
+          blocks.map((block) => <DemoDisplay key={block.name} name={block.name} showHeader />)
         )}
       </div>
     </>
   );
-}
-
-function DemoDisplay({ name }: { name: string }) {
-  return <div>{name}</div>;
 }
