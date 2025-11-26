@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/footer";
 
 import { Header } from "@/components/header";
+import { ScreenSizeIndicator } from "@/components/screen-size-indicator";
+import { ShadcraftBanner } from "@/components/shadcraft-banner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SITE_CONFIG } from "@/config/site";
 import { fontVariables } from "@/lib/fonts";
@@ -52,12 +54,16 @@ export default function RootLayoutApp({ children }: LayoutProps<"/">) {
       <body className={`${fontVariables} overscroll-none font-sans antialiased`}>
         <ThemeProvider>
           <div className="isolate flex size-full min-h-svh flex-col [--header-height:calc(--spacing(16))]">
+            <ShadcraftBanner />
+
             <Header />
             <div className="relative isolate w-full flex-1">
               <div className="container mx-auto">{children}</div>
             </div>
             <Footer />
           </div>
+
+          <ScreenSizeIndicator showTooltip className="fixed right-2 bottom-2" />
         </ThemeProvider>
       </body>
     </html>

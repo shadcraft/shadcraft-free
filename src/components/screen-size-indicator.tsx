@@ -7,12 +7,12 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { cn } from "@/lib/utils";
 
 export function ScreenSizeIndicator({
-  showInProduction = false,
+  enabled = process.env.NODE_ENV === "development",
   showTooltip = false,
   className,
   ...props
 }: Omit<React.ComponentProps<"div">, "children"> & {
-  showInProduction?: boolean;
+  enabled?: boolean;
   showTooltip?: boolean;
 }) {
   const [screenSize, setScreenSize] = React.useState<{ width: number; height: number }>({
@@ -29,7 +29,7 @@ export function ScreenSizeIndicator({
     return () => window.removeEventListener("resize", updateScreenSize);
   }, []);
 
-  if (process.env.NODE_ENV === "production" && showInProduction === false) {
+  if (!enabled) {
     return null;
   }
 

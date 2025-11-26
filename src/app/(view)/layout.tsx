@@ -52,7 +52,7 @@ export default function RootLayoutView({ children }: LayoutProps<"/">) {
       <body className={`${fontVariables} overscroll-none font-sans antialiased`}>
         <ThemeProvider storageKey="view-theme">
           {children}
-          <ScreenSizeIndicator showInProduction showTooltip className="fixed bottom-2 left-2" />
+          <ScreenSizeIndicator enabled showTooltip className="fixed bottom-2 left-2" />
           <ThemeToggle className="fixed right-2 bottom-2" variant="secondary" size="icon-sm" />
           <Toaster position="top-center" />
         </ThemeProvider>

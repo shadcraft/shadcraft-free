@@ -1,4 +1,3 @@
-import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
 
 import { Logo } from "@/components/logo";
@@ -14,13 +13,13 @@ export function Header() {
         <div className="flex size-full items-center justify-between gap-2 px-4 lg:px-8">
           <Link href="/" className="flex items-center gap-2" aria-label="Go to home page">
             <Logo />
-            <span className="flex items-center gap-2 text-xl font-semibold lowercase">
+            <span className="flex items-center gap-2 text-lg font-semibold lowercase sm:text-xl">
               shadcraft <span className="code-inline">free</span>
             </span>
           </Link>
 
           <div className="flex items-center gap-1">
-            <Button asChild variant="ghost" size="icon">
+            <Button asChild variant="ghost" size="icon-sm">
               <Link
                 href="https://github.com/shadcraft/shadcraft-free"
                 target="_blank"
@@ -30,7 +29,7 @@ export function Header() {
               </Link>
             </Button>
 
-            <Button asChild variant="ghost" size="icon">
+            <Button asChild variant="ghost" size="icon-sm" className="hidden sm:flex">
               <Link
                 href="https://x.com/shadcraft_"
                 target="_blank"
@@ -40,16 +39,18 @@ export function Header() {
               </Link>
             </Button>
 
-            <ThemeToggle />
+            <ThemeToggle size="icon-sm" />
 
-            <Button asChild className="gap-1.5">
+            <Button asChild size="sm" className="gap-1.5">
               <Link
                 href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
                 target="_blank"
                 aria-label="Go to Shadcraft Pro React"
               >
-                Buy Pro React
-                <ArrowUpRightIcon />
+                <span>
+                  <span>Buy Pro </span>
+                  <span className="hidden sm:inline">React</span>
+                </span>
               </Link>
             </Button>
           </div>
