@@ -9,7 +9,9 @@ import {
   Eye,
   File,
   Folder,
+  FolderOpen,
   Fullscreen,
+  HelpCircle,
 } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
@@ -38,6 +40,7 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -51,6 +54,7 @@ import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry";
 import { cn } from "@/lib/utils";
 import { RegistryItemFile } from "@/types/shadcn-patch";
 import { getViewPathForItem } from "@/utils/registry/view";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 type RegistryItemFileWithContent = RegistryItemFile & {
   content: string;
@@ -271,13 +275,22 @@ function DemoViewerFileTreeSidebar() {
   return (
     <SidebarProvider className="flex min-h-full! w-72">
       <Sidebar collapsible="none" className="isolate border-r">
-        <SidebarContent>
-          <div className="h-12 content-center border-b px-4 py-2 text-left">
-            <span className="text-muted-foreground line-clamp-1 font-mono text-sm font-medium">
-              Files
-            </span>
-          </div>
-          <SidebarGroup className="p-0">
+        <SidebarHeader className="flex h-12 flex-row items-center justify-between gap-2 border-b px-4 text-left">
+          <span className="text-muted-foreground line-clamp-1 font-mono text-sm font-medium">
+            Files
+          </span>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <HelpCircle className="text-muted-foreground size-3.5" />
+            </TooltipTrigger>
+            <TooltipContent className="max-w-[25ch] text-balance">
+              The resulting files structure after running the CLI command.
+            </TooltipContent>
+          </Tooltip>
+        </SidebarHeader>
+
+        <SidebarContent className="gap-0">
+          <SidebarGroup className="m-0 p-0">
             <SidebarGroupContent>
               <SidebarMenu className="translate-x-0 gap-1.5 font-mono">
                 {tree.map((file, index) => (
@@ -296,6 +309,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
   const { activeFile, setActiveFile } = useDemoViewer();
 
   if (!item.children) {
+    const Icon = item.path?.endsWith(".tsx") ? ReactLogo : File;
     return (
       <SidebarMenuItem>
         <SidebarMenuButton
@@ -305,12 +319,11 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
           data-index={index}
           style={
             {
-              "--index": `${index * (index === 2 ? 1.2 : 1.3)}rem`,
+              "--index": `${index * (index === 1 ? 1 : 1)}rem`,
             } as React.CSSProperties
           }
         >
-          <ChevronRight className="invisible" />
-          <File className="size-4" />
+          <Icon className="ml-2" />
           <span className="line-clamp-1">{item.name}</span>
         </SidebarMenuButton>
       </SidebarMenuItem>
@@ -320,7 +333,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
   return (
     <SidebarMenuItem>
       <Collapsible
-        className="group/collapsible [&[data-state=open]>button>svg:first-child]:rotate-90"
+        className="group/collapsible [&[data-state=closed]>button>[data-slot=folder-open-icon]]:hidden [&[data-state=open]>button>[data-slot=folder-closed-icon]]:hidden [&[data-state=open]>button>svg:first-child]:rotate-90"
         defaultOpen
       >
         <CollapsibleTrigger asChild>
@@ -328,12 +341,14 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
             className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 rounded-none pl-(--index) whitespace-nowrap"
             style={
               {
-                "--index": `${index * (index === 1 ? 1 : 1.2)}rem`,
+                "--index": `${index * (index === 1 ? 1 : 1)}rem`,
               } as React.CSSProperties
             }
           >
             <ChevronRight className="transition-transform" />
-            <Folder />
+            <Folder data-slot="folder-closed-icon" />
+            <FolderOpen data-slot="folder-open-icon" />
+
             {item.name}
           </SidebarMenuButton>
         </CollapsibleTrigger>
