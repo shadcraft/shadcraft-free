@@ -52,41 +52,9 @@ export function AvatarStackDemo() {
 
       <div className="flex flex-col items-center gap-2">
         <span className="text-muted-foreground text-sm font-medium text-balance">
-          Overlap Ratio -0.1 (10% of avatar size)
-        </span>
-        <AvatarStack overlapRatio={-0.1}>
-          {avatarsSrc.map((src) => (
-            <Avatar key={src}>
-              <AvatarImage src={src} />
-              <AvatarFallback>
-                <User />
-              </AvatarFallback>
-            </Avatar>
-          ))}
-        </AvatarStack>
-      </div>
-
-      <div className="flex flex-col items-center gap-2">
-        <span className="text-muted-foreground text-sm font-medium text-balance">
           Overlap Ratio 0.3 (30% of avatar size)
         </span>
         <AvatarStack overlapRatio={0.3}>
-          {avatarsSrc.map((src) => (
-            <Avatar key={src}>
-              <AvatarImage src={src} />
-              <AvatarFallback>
-                <User />
-              </AvatarFallback>
-            </Avatar>
-          ))}
-        </AvatarStack>
-      </div>
-
-      <div className="flex flex-col items-center gap-2">
-        <span className="text-muted-foreground text-sm font-medium text-balance">
-          Custom size 48px
-        </span>
-        <AvatarStack max={3} size={48}>
           {avatarsSrc.map((src) => (
             <Avatar key={src}>
               <AvatarImage src={src} />
