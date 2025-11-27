@@ -2,8 +2,11 @@ import { cn } from "@/lib/utils";
 
 function PageHeader({ className, children, ...props }: React.ComponentProps<"section">) {
   return (
-    <section className={cn("pb-12 md:pb-16", className)} {...props}>
-      <div className="container flex flex-col gap-2 xl:gap-4">{children}</div>
+    <section
+      className={cn("container flex flex-col gap-2 pb-12 md:pb-16 xl:gap-4", className)}
+      {...props}
+    >
+      {children}
     </section>
   );
 }
@@ -29,8 +32,8 @@ function PageHeaderDescription({ className, ...props }: React.ComponentProps<"p"
   );
 }
 
-function PageActions({ className, ...props }: React.ComponentProps<"div">) {
-  return <div className={cn("flex w-full items-center gap-2 pt-2", className)} {...props} />;
+function PageHeaderActions({ className, ...props }: React.ComponentProps<"div">) {
+  return <div className={cn("flex w-full flex-row items-center gap-2", className)} {...props} />;
 }
 
-export { PageActions, PageHeader, PageHeaderDescription, PageHeaderHeading };
+export { PageHeader, PageHeaderActions, PageHeaderDescription, PageHeaderHeading };
