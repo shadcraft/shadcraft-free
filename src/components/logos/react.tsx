@@ -1,8 +1,15 @@
 import type { SVGProps } from "react";
 
-export function React(props: SVGProps<SVGSVGElement>) {
+import { cn } from "@/lib/utils";
+
+export function React({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} viewBox="0 0 569 512" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg
+      {...props}
+      viewBox="0 0 569 512"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      className={cn("text-[#58C4DC]", className)}
+    >
       <g fill="none" fillRule="evenodd">
         <g transform="translate(-227, -256)" fill="currentColor" fillRule="nonzero">
           <g transform="translate(227, 256)">

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 
 import { GitHub } from "@/components/logos/github";
+import { React as ReactLogo } from "@/components/logos/react";
 import {
   PageHeader,
   PageHeaderActions,
@@ -17,13 +18,17 @@ export default function Home() {
   return (
     <main className="relative isolate w-full overflow-hidden px-4 pt-6 pb-12 lg:px-8 lg:pt-10 lg:pb-20">
       <div className="relative isolate px-4 pt-6 lg:pt-10">
-        {/* Background gradient effect and border beam */}
-        <div className="from-muted absolute inset-0 z-[-1] rounded-t-3xl bg-linear-to-b to-transparent">
-          <div className="border-beam rounded-inherit absolute inset-0 rounded-t-3xl mask-b-from-0% antialiased" />
-        </div>
+        {/* Background gradient effect */}
+        <div className="from-muted absolute inset-0 z-[-1] rounded-t-3xl bg-linear-to-b to-transparent" />
 
         <motion.div variants={headerContainerVariants} initial="hidden" animate="visible">
           <PageHeader className="relative items-center justify-center text-center">
+            <motion.div variants={headerItemVariants}>
+              <div className="bg-background flex size-14 items-center justify-center rounded-xl border p-2">
+                <ReactLogo className="size-8" />
+              </div>
+            </motion.div>
+
             <motion.div variants={headerItemVariants}>
               <Tagline variant="badge">New release</Tagline>
             </motion.div>
