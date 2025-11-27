@@ -17,5 +17,8 @@
     "ui": "@/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"
+  },
+  "registries": {
+    "@shadcraft": "https://shadcraft-free.vercel.app/r/{name}.json"
   }
 }
