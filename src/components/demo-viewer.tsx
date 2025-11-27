@@ -13,6 +13,7 @@ import {
   Fullscreen,
   HelpCircle,
   Menu,
+  MoreHorizontal,
   X,
 } from "lucide-react";
 import Link from "next/link";
@@ -35,8 +36,14 @@ import {
   TabletBreakpointButton,
 } from "@/components/resizable-preview";
 import { Button } from "@/components/ui/button";
-import { ButtonGroup } from "@/components/ui/button-group";
+import { ButtonGroup, ButtonGroupSeparator } from "@/components/ui/button-group";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Sidebar,
   SidebarContent,
@@ -52,13 +59,13 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry";
 import { cn } from "@/lib/utils";
 import { RegistryItemFile } from "@/types/shadcn-patch";
 import { getViewPathForItem } from "@/utils/registry/view";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 type RegistryItemFileWithContent = RegistryItemFile & {
   content: string;
@@ -131,7 +138,6 @@ function DemoViewerProvider({
 
 function DemoViewerToolbar() {
   const { setView, view, item } = useDemoViewer();
-  const { copyToClipboard, isCopied } = useCopyToClipboard();
   const isMobile = useIsMobile();
 
   const url = getViewPathForItem(item);
@@ -179,22 +185,65 @@ function DemoViewerToolbar() {
           </ButtonGroup>
         )}
 
-        <ButtonGroup>
-          <Button
-            size="sm"
-            className="border font-mono"
-            onClick={() => {
-              copyToClipboard(`npx shadcn@latest add @shadcraft/${item.name}`);
-            }}
-            title="Copy CLI Command"
-          >
-            {isCopied ? <Check /> : <Copy />}
-            <span className="max-sm:hidden">{item.name}</span>
-            <span className="sm:hidden">CLI Command</span>
-          </Button>
-        </ButtonGroup>
+        <CopyCLICommand />
       </ButtonGroup>
     </div>
+  );
+}
+
+function CopyCLICommand() {
+  const { item } = useDemoViewer();
+  const { copyToClipboard, isCopied } = useCopyToClipboard();
+
+  const handleCopyCommand = (type: "url" | "namespace") => {
+    const commandPrefix = `npx shadcn@latest add`;
+    if (type === "url") {
+      copyToClipboard(`${commandPrefix} https://shadcraft-free.vercel.app/r/${item.name}.json`);
+    } else if (type === "namespace") {
+      copyToClipboard(`${commandPrefix} @shadcraft/${item.name}`);
+    }
+  };
+
+  return (
+    <ButtonGroup className="">
+      <Button
+        size="sm"
+        className="font-mono"
+        onClick={() => handleCopyCommand("namespace")}
+        title="Copy CLI Command"
+      >
+        {isCopied ? <Check /> : <Copy />}
+        <span className="max-sm:hidden">{item.name}</span>
+        <span className="sm:hidden">CLI Command</span>
+      </Button>
+      <ButtonGroupSeparator />
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button size="icon-sm" title="Copy options">
+            <MoreHorizontal />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          <DropdownMenuItem onClick={() => handleCopyCommand("url")} className="cursor-pointer">
+            <Copy className="size-4" />
+            URL
+            <span className="text-muted-foreground ml-auto pl-4 font-mono text-xs">
+              /r/{item.name}.json
+            </span>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => handleCopyCommand("namespace")}
+            className="cursor-pointer"
+          >
+            <Copy className="size-4" />
+            Namespace
+            <span className="text-muted-foreground ml-auto pl-4 font-mono text-xs">
+              @shadcraft/{item.name}
+            </span>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </ButtonGroup>
   );
 }
 
