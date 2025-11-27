@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "Profile Card Demo",
   "registryDependencies": [
-    "@shadcraft/profile-card"
+    "https://shadcraft-free.vercel.app/r/profile-card.json"
   ],
   "files": [
     {

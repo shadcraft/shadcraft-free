@@ -174,7 +174,7 @@
       "title": "Avatar Stack Demo",
       "registryDependencies": [
         "avatar",
-        "@shadcraft/avatar-stack"
+        "https://shadcraft-free.vercel.app/r/avatar-stack.json"
       ],
       "files": [
         {
@@ -191,7 +191,7 @@
       "type": "registry:example",
       "title": "Marquee Demo",
       "registryDependencies": [
-        "@shadcraft/marquee"
+        "https://shadcraft-free.vercel.app/r/marquee.json"
       ],
       "files": [
         {
@@ -208,7 +208,7 @@
       "type": "registry:example",
       "title": "Page Heading Demo",
       "registryDependencies": [
-        "@shadcraft/page-heading"
+        "https://shadcraft-free.vercel.app/r/page-heading.json"
       ],
       "files": [
         {
@@ -225,7 +225,7 @@
       "type": "registry:example",
       "title": "Placeholder Logo Demo",
       "registryDependencies": [
-        "@shadcraft/placeholder-logo"
+        "https://shadcraft-free.vercel.app/r/placeholder-logo.json"
       ],
       "files": [
         {
@@ -242,7 +242,7 @@
       "type": "registry:example",
       "title": "Profile Card Demo",
       "registryDependencies": [
-        "@shadcraft/profile-card"
+        "https://shadcraft-free.vercel.app/r/profile-card.json"
       ],
       "files": [
         {
@@ -259,7 +259,7 @@
       "type": "registry:example",
       "title": "Section Heading Demo",
       "registryDependencies": [
-        "@shadcraft/section-heading"
+        "https://shadcraft-free.vercel.app/r/section-heading.json"
       ],
       "files": [
         {
@@ -276,7 +276,7 @@
       "type": "registry:example",
       "title": "Star Rating Demo",
       "registryDependencies": [
-        "@shadcraft/star-rating"
+        "https://shadcraft-free.vercel.app/r/star-rating.json"
       ],
       "files": [
         {
@@ -293,7 +293,7 @@
       "type": "registry:example",
       "title": "Tagline Demo",
       "registryDependencies": [
-        "@shadcraft/tagline"
+        "https://shadcraft-free.vercel.app/r/tagline.json"
       ],
       "files": [
         {

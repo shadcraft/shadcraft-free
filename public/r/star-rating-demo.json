@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "Star Rating Demo",
   "registryDependencies": [
-    "@shadcraft/star-rating"
+    "https://shadcraft-free.vercel.app/r/star-rating.json"
   ],
   "files": [
     {

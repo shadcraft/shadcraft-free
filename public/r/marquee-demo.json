@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "Marquee Demo",
   "registryDependencies": [
-    "@shadcraft/marquee"
+    "https://shadcraft-free.vercel.app/r/marquee.json"
   ],
   "files": [
     {

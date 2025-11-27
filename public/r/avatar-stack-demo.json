@@ -5,7 +5,7 @@
   "title": "Avatar Stack Demo",
   "registryDependencies": [
     "avatar",
-    "@shadcraft/avatar-stack"
+    "https://shadcraft-free.vercel.app/r/avatar-stack.json"
   ],
   "files": [
     {

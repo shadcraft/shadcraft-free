@@ -33,7 +33,7 @@ export function getRegistryItemJsonUrl(name: string): string {
  * @param name - Component/block name
  * @returns Namespaced registry key (e.g. "@shadcraft/avatar-stack")
  */
-export function buildNamespacedRegistryDependency(name: string): string {
+export function getNamespacedRegistryDependency(name: string): string {
   return `@shadcraft/${name}`;
 }
 
@@ -42,8 +42,8 @@ export function buildNamespacedRegistryDependency(name: string): string {
  * @param names - Component/block names
  * @returns Array of namespaced registry keys (e.g. ["@shadcraft/avatar-stack", "@shadcraft/section-heading"])
  */
-export function buildNamespacedRegistryDependencies(...names: string[]): string[] {
-  return names.map((name) => buildNamespacedRegistryDependency(name));
+export function getNamespacedRegistryDependencies(...names: string[]): string[] {
+  return names.map((name) => getNamespacedRegistryDependency(name));
 }
 
 /**

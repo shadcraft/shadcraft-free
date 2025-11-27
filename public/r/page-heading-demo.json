@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "Page Heading Demo",
   "registryDependencies": [
-    "@shadcraft/page-heading"
+    "https://shadcraft-free.vercel.app/r/page-heading.json"
   ],
   "files": [
     {

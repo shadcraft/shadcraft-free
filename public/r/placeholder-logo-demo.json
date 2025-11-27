@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "Placeholder Logo Demo",
   "registryDependencies": [
-    "@shadcraft/placeholder-logo"
+    "https://shadcraft-free.vercel.app/r/placeholder-logo.json"
   ],
   "files": [
     {
