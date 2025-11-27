@@ -1,10 +1,12 @@
 export const SITE_CONFIG = {
   name: "Shadcraft Free",
-  domain: "shadcraft-free.vercel.app", // TODO: Change to the production domain
-  homepageUrl: "https://shadcraft-free.vercel.app", // TODO: Change to the production homepage URL
+  domain: "shadcraft-free.vercel.app",
+  homepageUrl: "https://shadcraft-free.vercel.app",
   title: "Shadcraft Free",
-  description: "Shadcraft Free is a free and open-source project that...", // TODO: Change to the production description
-  shortDescription: "Free and open-source UI component and blocks for modern web applications.",
+  description:
+    "Free and open-source shadcn/ui registry of polished components and marketing blocks built to production standards. Fast to use, easy to extend, and ready for any modern web project.",
+  shortDescription:
+    "Free and open-source components and marketing blocks for modern web applications.",
   keywords: [
     "Shadcraft",
     "Free",
