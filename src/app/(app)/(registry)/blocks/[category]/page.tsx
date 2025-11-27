@@ -1,7 +1,18 @@
+import { ArrowUpRight, Construction } from "lucide-react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { DemoDisplay } from "@/components/demo-display";
 import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
+import { Button } from "@/components/ui/button";
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty";
 import { getBlocksByCategories } from "@/lib/registry";
 import { registryCategories } from "@/lib/registry/blocks-categories";
 
@@ -32,7 +43,7 @@ export default async function Page({ params }: PageProps<"/blocks/[category]">) 
   return (
     <>
       <PageHeader>
-        <span className="code-inline w-fit font-mono font-medium">registry:block</span>
+        <span className="code-inline">registry:block</span>
         <PageHeaderHeading>{categoryData.title}</PageHeaderHeading>
         {categoryData.description && (
           <PageHeaderDescription>{categoryData.description}</PageHeaderDescription>
@@ -41,9 +52,33 @@ export default async function Page({ params }: PageProps<"/blocks/[category]">) 
 
       <div className="space-y-16">
         {blocks.length <= 0 ? (
-          <div className="text-muted-foreground font-mono text-sm">
-            No blocks found in this category
-          </div>
+          <Empty className="from-muted rounded-t-3xl bg-linear-to-b to-transparent">
+            <EmptyHeader>
+              <EmptyMedia variant="icon">
+                <Construction />
+              </EmptyMedia>
+              <EmptyTitle>Blocks Under Construction</EmptyTitle>
+              <EmptyDescription>
+                These blocks are still under construction. Check back soon!
+                <br />
+                In the meantime, you can view the{" "}
+                <span className="font-medium">Shadcraft Pro React </span>Kit to see the available
+                Pro Blocks.
+              </EmptyDescription>
+            </EmptyHeader>
+            <EmptyContent>
+              <Button asChild size="sm" className="gap-1.5">
+                <Link
+                  href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
+                  target="_blank"
+                  aria-label="Go to Shadcraft Pro React"
+                >
+                  View Pro Blocks Kit
+                  <ArrowUpRight />
+                </Link>
+              </Button>
+            </EmptyContent>
+          </Empty>
         ) : (
           blocks.map((block) => <DemoDisplay key={block.name} name={block.name} showHeader />)
         )}
