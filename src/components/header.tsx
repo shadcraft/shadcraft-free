@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export function Header() {
   return (
-    <header className="bg-background sticky top-0 z-50 h-(--header-height) w-full border-b">
+    <header className="bg-background/90 sticky top-0 z-50 h-(--header-height) w-full backdrop-blur">
       <div className="container mx-auto size-full">
         <div className="flex size-full items-center justify-between gap-2 px-4 lg:px-8">
           <Link href="/" className="flex items-center gap-2" aria-label="Go to home page">

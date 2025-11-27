@@ -15,7 +15,7 @@ export function ShadcraftBanner() {
     <aside
       role="banner"
       aria-label="Announcement banner"
-      className="bg-primary text-primary-foreground w-full py-2"
+      className="bg-background text-foreground w-full border-b border-dashed py-2"
     >
       {/* Banner Container*/}
       <div className="container mx-auto px-4 lg:px-8">
@@ -40,7 +40,12 @@ export function ShadcraftBanner() {
           </div>
 
           {/* Close Button */}
-          <Button size="icon-sm" className="size-6" onClick={() => setIsVisible(false)}>
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            className="size-6"
+            onClick={() => setIsVisible(false)}
+          >
             <X className="size-3.5" />
           </Button>
         </div>

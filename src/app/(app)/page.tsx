@@ -30,7 +30,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={headerItemVariants}>
-              <Tagline variant="badge">New release</Tagline>
+              <Tagline variant="default">New release</Tagline>
             </motion.div>
 
             <motion.div variants={headerItemVariants}>
