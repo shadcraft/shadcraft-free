@@ -13,6 +13,7 @@ export function formatComponentName(name: string): string {
 export function groupBlocksByCategories(blocks: RegistryItem[]) {
   const blocksByCategories = registryCategories.map((category) => ({
     title: category.title,
+    description: category.description,
     slug: category.slug,
     blocks: blocks.filter((block) => block.categories?.includes(category.slug)),
     amount: blocks.filter((block) => block.categories?.includes(category.slug)).length,

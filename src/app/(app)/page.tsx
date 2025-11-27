@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { GitHub } from "@/components/logos/github";
 import {
   PageHeader,
@@ -6,8 +8,7 @@ import {
   PageHeaderHeading,
 } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
-import { Tagline } from "@/registry/pro-marketing/ui/tagline";
-import Link from "next/link";
+import { Tagline } from "@/components/ui/tagline";
 
 export default function Home() {
   return (
