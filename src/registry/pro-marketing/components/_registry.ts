@@ -5,6 +5,8 @@ export const components: Registry["items"] = [
     name: "page-heading",
     title: "Page Heading",
     type: "registry:component",
+    description:
+      "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
     files: [
       {
         path: "components/page-heading.tsx",

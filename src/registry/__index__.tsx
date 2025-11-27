@@ -34,30 +34,6 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  heading: {
-    name: "heading",
-    type: "registry:ui",
-    title: "Heading",
-    description: "Pending",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
-    files: [
-      {
-        path: "src/registry/pro-marketing/ui/heading.tsx",
-        type: "registry:ui",
-        target: "",
-      },
-    ],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/ui/heading");
-      const exportName =
-        Object.keys(mod).find(
-          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
-        ) || item.name;
-      return { default: mod.default || mod[exportName] };
-    }),
-    categories: undefined,
-    meta: { bundle: "pro-marketing" },
-  },
   marquee: {
     name: "marquee",
     type: "registry:ui",
@@ -111,7 +87,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     name: "page-heading",
     type: "registry:component",
     title: "Page Heading",
-    description: "",
+    description:
+      "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
     registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
@@ -246,30 +223,6 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/pro-marketing/examples/avatar-stack-demo");
-      const exportName =
-        Object.keys(mod).find(
-          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
-        ) || item.name;
-      return { default: mod.default || mod[exportName] };
-    }),
-    categories: undefined,
-    meta: { bundle: "pro-marketing" },
-  },
-  "heading-demo": {
-    name: "heading-demo",
-    type: "registry:example",
-    title: "Heading Demo",
-    description: "",
-    registryDependencies: ["@shadcraft/heading"],
-    files: [
-      {
-        path: "src/registry/pro-marketing/examples/heading-demo.tsx",
-        type: "registry:example",
-        target: "",
-      },
-    ],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/heading-demo");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"

@@ -17,19 +17,6 @@ export const examples: Registry["items"] = [
     meta: {},
   },
   {
-    name: "heading-demo",
-    title: "Heading Demo",
-    type: "registry:example",
-    registryDependencies: [buildNamespacedRegistryDependency("heading")],
-    files: [
-      {
-        path: "examples/heading-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    meta: {},
-  },
-  {
     name: "marquee-demo",
     title: "Marquee Demo",
     type: "registry:example",

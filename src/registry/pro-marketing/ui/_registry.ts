@@ -15,20 +15,6 @@ export const ui: Registry["items"] = [
     meta: {},
   },
   {
-    name: "heading",
-    title: "Heading",
-    type: "registry:ui",
-    description: "Pending",
-    dependencies: ["@radix-ui/react-slot"],
-    files: [
-      {
-        path: "ui/heading.tsx",
-        type: "registry:ui",
-      },
-    ],
-    meta: {},
-  },
-  {
     name: "marquee",
     title: "Marquee",
     type: "registry:ui",

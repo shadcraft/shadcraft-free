@@ -3,6 +3,7 @@
   "name": "page-heading",
   "type": "registry:component",
   "title": "Page Heading",
+  "description": "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
   "registryDependencies": [
     "https://shadcraft-free.vercel.app/r/index.json"
   ],

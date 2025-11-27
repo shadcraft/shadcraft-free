@@ -39,27 +39,6 @@
       }
     },
     {
-      "name": "heading",
-      "type": "registry:ui",
-      "title": "Heading",
-      "description": "Pending",
-      "dependencies": [
-        "@radix-ui/react-slot"
-      ],
-      "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/index.json"
-      ],
-      "files": [
-        {
-          "path": "src/registry/pro-marketing/ui/heading.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "meta": {
-        "bundle": "pro-marketing"
-      }
-    },
-    {
       "name": "marquee",
       "type": "registry:ui",
       "title": "Marquee",
@@ -102,6 +81,7 @@
       "name": "page-heading",
       "type": "registry:component",
       "title": "Page Heading",
+      "description": "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
       "registryDependencies": [
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
@@ -199,23 +179,6 @@
       "files": [
         {
           "path": "src/registry/pro-marketing/examples/avatar-stack-demo.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "bundle": "pro-marketing"
-      }
-    },
-    {
-      "name": "heading-demo",
-      "type": "registry:example",
-      "title": "Heading Demo",
-      "registryDependencies": [
-        "@shadcraft/heading"
-      ],
-      "files": [
-        {
-          "path": "src/registry/pro-marketing/examples/heading-demo.tsx",
           "type": "registry:example"
         }
       ],
