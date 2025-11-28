@@ -463,6 +463,71 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: ["testimonials"],
     meta: { bundle: "pro-marketing" },
   },
+  "pricing-8": {
+    name: "pricing-8",
+    type: "registry:block",
+    title: "Pricing 8",
+    description: "",
+    registryDependencies: [
+      "card",
+      "button",
+      "tooltip",
+      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "https://shadcraft-free.vercel.app/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/pricing/8/index.tsx",
+        type: "registry:component",
+        target: "components/pricing-8.tsx",
+      },
+      {
+        path: "src/registry/pro-marketing/blocks/pricing/8/components/pricing-card.tsx",
+        type: "registry:component",
+        target: "components/pricing-card.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/pricing/8/index");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["pricing"],
+    meta: { bundle: "pro-marketing" },
+  },
+  "top-navigation-5": {
+    name: "top-navigation-5",
+    type: "registry:block",
+    title: "Top Navigation 5",
+    description: "",
+    registryDependencies: [
+      "button",
+      "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
+      "https://shadcraft-free.vercel.app/r/use-click-outside.json",
+      "https://shadcraft-free.vercel.app/r/use-mobile.json",
+      "https://shadcraft-free.vercel.app/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/top-navigation/5/index.tsx",
+        type: "registry:component",
+        target: "components/top-navigation-5.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/top-navigation/5/index");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["top-navigation"],
+    meta: { bundle: "pro-marketing" },
+  },
   "avatar-stack-demo": {
     name: "avatar-stack-demo",
     type: "registry:example",

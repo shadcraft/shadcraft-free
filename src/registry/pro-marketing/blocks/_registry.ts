@@ -138,4 +138,45 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["testimonials"],
   },
+  {
+    name: "pricing-8",
+    title: "Pricing 8",
+    type: "registry:block",
+    registryDependencies: [
+      "card",
+      "button",
+      "tooltip",
+      ...getRegistryItemsJsonUrls("section-heading"),
+    ],
+    files: [
+      {
+        path: "blocks/pricing/8/index.tsx",
+        type: "registry:component",
+        target: "components/pricing-8.tsx",
+      },
+      {
+        path: "blocks/pricing/8/components/pricing-card.tsx",
+        type: "registry:component",
+        target: "components/pricing-card.tsx",
+      },
+    ],
+    categories: ["pricing"],
+  },
+  {
+    name: "top-navigation-5",
+    title: "Top Navigation 5",
+    type: "registry:block",
+    registryDependencies: [
+      "button",
+      ...getRegistryItemsJsonUrls("placeholder-logo", "use-click-outside", "use-mobile"),
+    ],
+    files: [
+      {
+        path: "blocks/top-navigation/5/index.tsx",
+        type: "registry:component",
+        target: "components/top-navigation-5.tsx",
+      },
+    ],
+    categories: ["top-navigation"],
+  },
 ];

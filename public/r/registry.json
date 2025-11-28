@@ -383,6 +383,61 @@
       ]
     },
     {
+      "name": "pricing-8",
+      "type": "registry:block",
+      "title": "Pricing 8",
+      "registryDependencies": [
+        "card",
+        "button",
+        "tooltip",
+        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/pricing/8/index.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-8.tsx"
+        },
+        {
+          "path": "src/registry/pro-marketing/blocks/pricing/8/components/pricing-card.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-card.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "pricing"
+      ]
+    },
+    {
+      "name": "top-navigation-5",
+      "type": "registry:block",
+      "title": "Top Navigation 5",
+      "registryDependencies": [
+        "button",
+        "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
+        "https://shadcraft-free.vercel.app/r/use-click-outside.json",
+        "https://shadcraft-free.vercel.app/r/use-mobile.json",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/top-navigation/5/index.tsx",
+          "type": "registry:component",
+          "target": "components/top-navigation-5.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "top-navigation"
+      ]
+    },
+    {
       "name": "avatar-stack-demo",
       "type": "registry:example",
       "title": "Avatar Stack Demo",

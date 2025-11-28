@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pricing-8",
+  "type": "registry:block",
+  "title": "Pricing 8",
+  "registryDependencies": [
+    "card",
+    "button",
+    "tooltip",
+    "https://shadcraft-free.vercel.app/r/section-heading.json",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/pricing/8/index.tsx",
+      "content": "\"use client\";\r\n\r\nimport { PricingCard } from \"@/components/pricing-card\";\r\nimport {\r\n  SectionHeading,\r\n  SectionHeadingBody,\r\n  SectionHeadingContentType,\r\n  SectionHeadingTitle,\r\n} from \"@/components/section-heading\";\r\n\r\nexport function Pricing8() {\r\n  return (\r\n    <section className=\"py-12 lg:py-20\">\r\n      <div className=\"mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8\">\r\n        {/* Section Heading */}\r\n        <SectionHeading alignment=\"center\" className=\"mx-auto w-full max-w-3xl\">\r\n          <SectionHeadingContentType>Pricing</SectionHeadingContentType>\r\n          <SectionHeadingTitle>Our Plans</SectionHeadingTitle>\r\n          <SectionHeadingBody>\r\n            Acme Inc. has a plan designed to help you move faster.\r\n          </SectionHeadingBody>\r\n        </SectionHeading>\r\n\r\n        {/* Pricing Cards */}\r\n        <div className=\"grid place-items-center items-stretch gap-6 lg:grid-cols-3\">\r\n          {pricingPlans.map((plan) => (\r\n            <PricingCard\r\n              key={plan.name}\r\n              name={plan.name}\r\n              description={plan.description}\r\n              price={plan.price}\r\n              features={plan.features}\r\n              featured={plan.featured}\r\n            />\r\n          ))}\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n}\r\n\r\nconst pricingPlans = [\r\n  {\r\n    name: \"Starter\",\r\n    description: \"Perfect for individuals getting started\",\r\n    price: 15,\r\n    features: [\r\n      { label: \"Up to 5 projects\", tooltip: \"You can create up to 5 projects\" },\r\n      { label: \"Basic features\", tooltip: \"You can use basic features\" },\r\n      { label: \"Email support\", tooltip: \"You can get email support\" },\r\n      { label: \"5GB storage\", tooltip: \"You can store up to 5GB of data\" },\r\n    ],\r\n    featured: false,\r\n  },\r\n  {\r\n    name: \"Professional\",\r\n    description: \"Ideal for small teams\",\r\n    price: 35,\r\n    features: [\r\n      { label: \"Unlimited projects\", tooltip: \"You can create unlimited projects\" },\r\n      { label: \"Advanced features\", tooltip: \"You can use advanced features\" },\r\n      { label: \"Priority support\", tooltip: \"You can get priority support\" },\r\n      { label: \"50GB storage\", tooltip: \"You can store up to 50GB of data\" },\r\n      { label: \"Team collaboration\", tooltip: \"You can collaborate with your team\" },\r\n    ],\r\n    featured: true,\r\n  },\r\n  {\r\n    name: \"Enterprise\",\r\n    description: \"For large organizations\",\r\n    price: 75,\r\n    features: [\r\n      { label: \"Unlimited everything\", tooltip: \"You can use unlimited everything\" },\r\n      { label: \"All features\", tooltip: \"You can use all features\" },\r\n      { label: \"24/7 support\", tooltip: \"You can get 24/7 support\" },\r\n      { label: \"Unlimited storage\", tooltip: \"You can store unlimited data\" },\r\n      { label: \"Advanced security\", tooltip: \"You can use advanced security\" },\r\n      { label: \"Custom integrations\", tooltip: \"You can integrate with your custom integrations\" },\r\n    ],\r\n    featured: false,\r\n  },\r\n];\r\n",
+      "type": "registry:component",
+      "target": "components/pricing-8.tsx"
+    },
+    {
+      "path": "blocks/pricing/8/components/pricing-card.tsx",
+      "content": "import { Check, Info } from \"lucide-react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Card, CardContent, CardFooter, CardHeader } from \"@/components/ui/card\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/components/ui/tooltip\";\nimport { cn } from \"@/lib/utils\";\n\ninterface PricingCardProps {\n  name: string;\n  description: string;\n  price: number;\n  features: {\n    label: string;\n    tooltip: string;\n  }[];\n  featured?: boolean;\n}\n\nexport function PricingCard({\n  name,\n  description,\n  price,\n  features,\n  featured = false,\n}: PricingCardProps) {\n  return (\n    <Card\n      className={cn(\"w-full max-w-xl gap-4 border-2 py-5\", featured && \"border-primary border-2\")}\n    >\n      <CardHeader className=\"flex flex-col gap-2 px-5\">\n        <h3 className=\"text-foreground text-lg/7 font-medium\">{name}</h3>\n        <p className=\"text-muted-foreground text-sm/5 font-normal\">{description}</p>\n      </CardHeader>\n\n      <CardContent className=\"flex flex-col gap-4 px-5\">\n        <div className=\"flex items-baseline gap-1\">\n          <span className=\"text-foreground text-4xl leading-none font-semibold\">${price}</span>\n          <span className=\"text-muted-foreground text-base/6 font-normal\">/month</span>\n        </div>\n\n        <ul className=\"flex flex-col gap-3\">\n          {features.map((feature) => (\n            <li key={feature.label} className=\"flex items-start gap-2\">\n              <Check className=\"text-primary mt-0.5 size-4 shrink-0\" />\n              <span\n                className={cn(\n                  \"text-muted-foreground flex-1 text-sm/5 font-normal\",\n                  featured && \"text-foreground\"\n                )}\n              >\n                {feature.label}\n              </span>\n\n              {feature.tooltip && (\n                <Tooltip>\n                  <TooltipTrigger aria-label=\"More information\">\n                    <Info className=\"text-muted-foreground size-4 opacity-70 hover:opacity-100\" />\n                  </TooltipTrigger>\n                  <TooltipContent>{feature.tooltip}</TooltipContent>\n                </Tooltip>\n              )}\n            </li>\n          ))}\n        </ul>\n      </CardContent>\n\n      <CardFooter className=\"mt-auto px-5\">\n        <Button variant={featured ? \"default\" : \"outline\"} size=\"lg\" className=\"mt-auto w-full\">\n          Get started\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/pricing-card.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "pricing"
+  ]
+}
