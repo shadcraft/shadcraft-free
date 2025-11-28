@@ -488,7 +488,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
             } as React.CSSProperties
           }
         >
-          <Icon className="ml-2 size-3.5!" />
+          <Icon className="ml-2 size-3.5! text-inherit" />
           <span className="line-clamp-1">{item.name}</span>
         </SidebarMenuButton>
       </SidebarMenuItem>
