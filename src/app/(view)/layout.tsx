@@ -53,7 +53,11 @@ export default function RootLayoutView({ children }: LayoutProps<"/">) {
         <ThemeProvider storageKey="view-theme">
           {children}
           <ScreenSizeIndicator enabled showTooltip className="fixed bottom-2 left-2" />
-          <ThemeToggle className="fixed right-2 bottom-2" variant="secondary" size="icon-sm" />
+          <ThemeToggle
+            className="fixed right-2 bottom-2 border"
+            variant="secondary"
+            size="icon-sm"
+          />
           <Toaster position="top-center" />
         </ThemeProvider>
       </body>
