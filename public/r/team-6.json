@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "team-6",
+  "type": "registry:block",
+  "title": "Team 6",
+  "registryDependencies": [
+    "https://shadcraft-free.vercel.app/r/section-heading.json",
+    "https://shadcraft-free.vercel.app/r/profile-card.json",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/team/6/index.tsx",
+      "content": "import {\n  ProfileCard,\n  ProfileCardAvatar,\n  ProfileCardBody,\n  ProfileCardDetails,\n  ProfileCardName,\n} from \"@/components/profile-card\";\nimport {\n  SectionHeading,\n  SectionHeadingBody,\n  SectionHeadingContentType,\n  SectionHeadingTitle,\n} from \"@/components/section-heading\";\n\nexport function Team6() {\n  return (\n    <section className=\"bg-muted py-12 lg:py-20\">\n      <div className=\"mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8\">\n        {/* Section Heading */}\n        <SectionHeading alignment=\"center\" className=\"mx-auto w-full max-w-3xl\">\n          <SectionHeadingContentType>Team</SectionHeadingContentType>\n          <SectionHeadingTitle>Meet The People Behind Acme AI</SectionHeadingTitle>\n          <SectionHeadingBody>\n            We are a team of builders, designers, and problem-solvers dedicated to helping you work\n            smarter every day.\n          </SectionHeadingBody>\n        </SectionHeading>\n\n        {/* Team Members */}\n        <div className=\"grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9\">\n          {teamMembersData.map((member) => (\n            <ProfileCard\n              key={member.name}\n              variant=\"default\"\n              className=\"bg-background rounded-xl p-2\"\n            >\n              <ProfileCardAvatar\n                src={member.image}\n                name={member.name}\n                className=\"size-32 rounded-lg\"\n              />\n              <ProfileCardDetails className=\"border-primary self-end-safe border-l-2 pl-2\">\n                <ProfileCardName>{member.name}</ProfileCardName>\n                <ProfileCardBody>{member.title}</ProfileCardBody>\n              </ProfileCardDetails>\n            </ProfileCard>\n          ))}\n        </div>\n      </div>\n    </section>\n  );\n}\n\nconst teamMembersData = [\n  {\n    name: \"Sophie Tan\",\n    title: \"Founder & CEO\",\n    image: \"https://shadcraft-registry.vercel.app/assets/avatars/person-1.webp\",\n  },\n  {\n    name: \"Liam Johnson\",\n    title: \"Chief Technology Officer\",\n    image: \"https://shadcraft-registry.vercel.app/assets/avatars/person-2.webp\",\n  },\n  {\n    name: \"Ava Smith\",\n    title: \"Head of Marketing\",\n    image: \"https://shadcraft-registry.vercel.app/assets/avatars/person-3.webp\",\n  },\n  {\n    name: \"Noah Brown\",\n    title: \"Product Manager\",\n    image: \"https://shadcraft-registry.vercel.app/assets/avatars/person-4.webp\",\n  },\n  {\n    name: \"Emma Wilson\",\n    title: \"Lead Designer\",\n    image: \"https://shadcraft-registry.vercel.app/assets/avatars/person-5.webp\",\n  },\n  {\n    name: \"Oliver Lee\",\n    title: \"Data Analyst\",\n    image: \"https://shadcraft-registry.vercel.app/assets/avatars/person-6.webp\",\n  },\n];\n",
+      "type": "registry:component",
+      "target": "components/team-6.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "team"
+  ]
+}

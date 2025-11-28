@@ -214,6 +214,33 @@
       ]
     },
     {
+      "name": "contact-11",
+      "type": "registry:block",
+      "title": "Contact 11",
+      "registryDependencies": [
+        "button",
+        "label",
+        "input",
+        "textarea",
+        "checkbox",
+        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/contact/11/index.tsx",
+          "type": "registry:component",
+          "target": "components/contact-11.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "contact"
+      ]
+    },
+    {
       "name": "cta-9",
       "type": "registry:block",
       "title": "CTA 9",
@@ -282,6 +309,53 @@
       },
       "categories": [
         "footers"
+      ]
+    },
+    {
+      "name": "newsletter-signup-5",
+      "type": "registry:block",
+      "title": "Newsletter Signup 5",
+      "registryDependencies": [
+        "button",
+        "input",
+        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/newsletter-signup/5/index.tsx",
+          "type": "registry:component",
+          "target": "components/newsletter-signup-5.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "newsletter-signup"
+      ]
+    },
+    {
+      "name": "team-6",
+      "type": "registry:block",
+      "title": "Team 6",
+      "registryDependencies": [
+        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "https://shadcraft-free.vercel.app/r/profile-card.json",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/team/6/index.tsx",
+          "type": "registry:component",
+          "target": "components/team-6.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "team"
       ]
     },
     {

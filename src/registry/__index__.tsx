@@ -260,6 +260,38 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: ["benefits"],
     meta: { bundle: "pro-marketing" },
   },
+  "contact-11": {
+    name: "contact-11",
+    type: "registry:block",
+    title: "Contact 11",
+    description: "",
+    registryDependencies: [
+      "button",
+      "label",
+      "input",
+      "textarea",
+      "checkbox",
+      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "https://shadcraft-free.vercel.app/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/contact/11/index.tsx",
+        type: "registry:component",
+        target: "components/contact-11.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/contact/11/index");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["contact"],
+    meta: { bundle: "pro-marketing" },
+  },
   "cta-9": {
     name: "cta-9",
     type: "registry:block",
@@ -344,6 +376,63 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     }),
     categories: ["footers"],
     meta: { containerClassName: "min-h-svh content-end", bundle: "pro-marketing" },
+  },
+  "newsletter-signup-5": {
+    name: "newsletter-signup-5",
+    type: "registry:block",
+    title: "Newsletter Signup 5",
+    description: "",
+    registryDependencies: [
+      "button",
+      "input",
+      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "https://shadcraft-free.vercel.app/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/newsletter-signup/5/index.tsx",
+        type: "registry:component",
+        target: "components/newsletter-signup-5.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/newsletter-signup/5/index");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["newsletter-signup"],
+    meta: { bundle: "pro-marketing" },
+  },
+  "team-6": {
+    name: "team-6",
+    type: "registry:block",
+    title: "Team 6",
+    description: "",
+    registryDependencies: [
+      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "https://shadcraft-free.vercel.app/r/profile-card.json",
+      "https://shadcraft-free.vercel.app/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/team/6/index.tsx",
+        type: "registry:component",
+        target: "components/team-6.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/team/6/index");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["team"],
+    meta: { bundle: "pro-marketing" },
   },
   "testimonials-11": {
     name: "testimonials-11",

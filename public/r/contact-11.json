@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "contact-11",
+  "type": "registry:block",
+  "title": "Contact 11",
+  "registryDependencies": [
+    "button",
+    "label",
+    "input",
+    "textarea",
+    "checkbox",
+    "https://shadcraft-free.vercel.app/r/section-heading.json",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/contact/11/index.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { Textarea } from \"@/components/ui/textarea\";\nimport {\n  SectionHeading,\n  SectionHeadingBody,\n  SectionHeadingContentType,\n  SectionHeadingTitle,\n} from \"@/components/section-heading\";\n\nexport function Contact11() {\n  return (\n    <section className=\"py-12 lg:py-20\">\n      <div className=\"mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8\">\n        {/* Section Heading */}\n        <SectionHeading alignment=\"center\" className=\"mx-auto w-full max-w-xl\">\n          <SectionHeadingContentType>Support</SectionHeadingContentType>\n          <SectionHeadingTitle>Need Help? We&apos;re Here to Help</SectionHeadingTitle>\n          <SectionHeadingBody>\n            Our support team is available to assist you with any questions or issues you may have.\n          </SectionHeadingBody>\n        </SectionHeading>\n\n        {/* Contact Form */}\n        <div className=\"mx-auto w-full max-w-xl\">\n          <form className=\"grid gap-4\" aria-label=\"Contact form\">\n            <div className=\"grid w-full gap-2\">\n              <Label htmlFor=\"input-1\">Label</Label>\n              <Input id=\"input-1\" placeholder=\"Placeholder text\" />\n            </div>\n            <div className=\"grid w-full gap-2\">\n              <Label htmlFor=\"input-2\">Label</Label>\n              <Input id=\"input-2\" placeholder=\"Placeholder text\" />\n            </div>\n            <div className=\"grid w-full gap-2\">\n              <Label htmlFor=\"input-3\">Label</Label>\n              <Textarea id=\"input-3\" placeholder=\"Content\" className=\"h-32\" />\n            </div>\n            <div className=\"flex items-center gap-2 py-2\">\n              <Checkbox />\n              <span className=\"text-sm font-normal\">\n                You agree to our simple{\" \"}\n                <a href=\"#\" className=\"text-primary underline\">\n                  Privacy Policy\n                </a>\n              </span>\n            </div>\n            <Button type=\"submit\" className=\"w-full\">\n              Send message\n            </Button>\n          </form>\n        </div>\n      </div>\n    </section>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/contact-11.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "contact"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "newsletter-signup-5",
+  "type": "registry:block",
+  "title": "Newsletter Signup 5",
+  "registryDependencies": [
+    "button",
+    "input",
+    "https://shadcraft-free.vercel.app/r/section-heading.json",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/newsletter-signup/5/index.tsx",
+      "content": "\"use client\";\n\nimport { Mail } from \"lucide-react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Input } from \"@/components/ui/input\";\nimport {\n  SectionHeading,\n  SectionHeadingBody,\n  SectionHeadingTitle,\n} from \"@/components/section-heading\";\n\nexport function NewsletterSignup5() {\n  return (\n    <section className=\"py-12 lg:py-20\">\n      <div className=\"mx-auto max-w-7xl px-5 lg:px-8\">\n        <div className=\"bg-muted flex flex-col items-center justify-between gap-12 rounded-xl border px-5 py-12 lg:flex-row lg:items-end lg:gap-16 lg:px-16 lg:py-20\">\n          {/* Section Heading */}\n          <SectionHeading className=\"items-center text-center lg:items-start lg:text-left\">\n            <SectionHeadingTitle>Stay Updated</SectionHeadingTitle>\n            <SectionHeadingBody>\n              Get insights, product updates, and productivity tips straight to your inbox.\n            </SectionHeadingBody>\n          </SectionHeading>\n\n          {/* Newsletter Form */}\n          <div className=\"flex max-w-md flex-col gap-2 lg:gap-3\">\n            <form className=\"flex gap-2\">\n              <Input placeholder=\"email@example.com\" className=\"w-full\" />\n              <Button size=\"icon\" type=\"submit\" aria-label=\"Subscribe to newsletter\">\n                <Mail />\n              </Button>\n            </form>\n\n            {/* Privacy Policy */}\n            <span className=\"text-muted-foreground text-center text-xs/4 lg:text-right\" role=\"note\">\n              We respect your privacy.\n            </span>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/newsletter-signup-5.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "newsletter-signup"
+  ]
+}
