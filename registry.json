@@ -169,6 +169,98 @@
       }
     },
     {
+      "name": "banner-10",
+      "type": "registry:block",
+      "title": "Banner 10",
+      "registryDependencies": [
+        "button",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/banners/10/index.tsx",
+          "type": "registry:component",
+          "target": "components/banner-10.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "banners"
+      ]
+    },
+    {
+      "name": "benefits-13",
+      "type": "registry:block",
+      "title": "Benefits 13",
+      "registryDependencies": [
+        "card",
+        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/benefits/13/index.tsx",
+          "type": "registry:component",
+          "target": "components/benefits-13.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "benefits"
+      ]
+    },
+    {
+      "name": "cta-9",
+      "type": "registry:block",
+      "title": "CTA 9",
+      "registryDependencies": [
+        "button",
+        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/cta/9/index.tsx",
+          "type": "registry:component",
+          "target": "components/cta-9.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "faqs-4",
+      "type": "registry:block",
+      "title": "CTA 9",
+      "registryDependencies": [
+        "accordion",
+        "separator",
+        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "https://shadcraft-free.vercel.app/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/faqs/4/index.tsx",
+          "type": "registry:component",
+          "target": "components/faqs-4.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "faqs"
+      ]
+    },
+    {
       "name": "avatar-stack-demo",
       "type": "registry:example",
       "title": "Avatar Stack Demo",

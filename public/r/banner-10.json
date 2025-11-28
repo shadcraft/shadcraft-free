@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "banner-10",
+  "type": "registry:block",
+  "title": "Banner 10",
+  "registryDependencies": [
+    "button",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/banners/10/index.tsx",
+      "content": "\"use client\";\r\n\r\nimport { AlertCircle, X } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nexport function Banner10() {\r\n  const [isVisible, setIsVisible] = useState(true);\r\n\r\n  if (!isVisible) return null;\r\n\r\n  return (\r\n    // To make the banner fixed, add classes like `fixed top-0 inset-x-0 z-50` to the container element\r\n    <aside\r\n      role=\"banner\"\r\n      aria-label=\"Promotional banner\"\r\n      className=\"bg-secondary text-secondary-foreground w-full py-4\"\r\n    >\r\n      {/* Banner Container */}\r\n      <div className=\"mx-auto max-w-7xl px-5 lg:px-8\">\r\n        <div className=\"flex flex-row items-center justify-between gap-5\">\r\n          {/* Banner Content */}\r\n          <div className=\"flex flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:gap-2\">\r\n            <div className=\"flex items-center gap-2\">\r\n              <AlertCircle className=\"size-4\" />\r\n\r\n              <p className=\"text-base/6 font-normal text-pretty\">\r\n                <span className=\"font-semibold\">Limited time offer: </span>\r\n                Get 20% off your first month.{\" \"}\r\n                <a href=\"#\" className=\"underline\">\r\n                  Learn more\r\n                </a>\r\n              </p>\r\n            </div>\r\n          </div>\r\n\r\n          {/* Close Button */}\r\n          <div className=\"shrink-0\">\r\n            <Button\r\n              size=\"icon-sm\"\r\n              variant=\"ghost\"\r\n              onClick={() => setIsVisible(false)}\r\n              aria-label=\"Close banner\"\r\n            >\r\n              <X />\r\n            </Button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </aside>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/banner-10.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "banners"
+  ]
+}

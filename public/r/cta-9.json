@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-9",
+  "type": "registry:block",
+  "title": "CTA 9",
+  "registryDependencies": [
+    "button",
+    "https://shadcraft-free.vercel.app/r/section-heading.json",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/cta/9/index.tsx",
+      "content": "import { ArrowRightIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  SectionHeading,\r\n  SectionHeadingBody,\r\n  SectionHeadingTitle,\r\n} from \"@/components/section-heading\";\r\n\r\nexport function CTA9() {\r\n  return (\r\n    <section className=\"bg-primary text-primary-foreground py-12 lg:py-20\">\r\n      <div className=\"mx-auto flex max-w-7xl flex-col gap-8 px-5 lg:px-8\">\r\n        <div className=\"mx-auto flex w-full max-w-3xl flex-col gap-8 text-center\">\r\n          {/* Section Heading */}\r\n          <SectionHeading alignment=\"center\">\r\n            <SectionHeadingTitle className=\"text-primary-foreground\">\r\n              Ready to Work Smarter with AI?\r\n            </SectionHeadingTitle>\r\n            <SectionHeadingBody className=\"text-primary-foreground/90\">\r\n              Start today and see how Acme Inc. helps you finish projects faster, with clarity and\r\n              focus at every step.\r\n            </SectionHeadingBody>\r\n          </SectionHeading>\r\n\r\n          {/* CTA Buttons */}\r\n          <div className=\"flex flex-col gap-3 sm:flex-row sm:justify-center\">\r\n            <Button className=\"bg-primary-foreground text-primary hover:bg-primary-foreground/90\">\r\n              Learn More\r\n              <ArrowRightIcon className=\"size-4\" />\r\n            </Button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/cta-9.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "cta"
+  ]
+}

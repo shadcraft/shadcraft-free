@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "benefits-13",
+  "type": "registry:block",
+  "title": "Benefits 13",
+  "registryDependencies": [
+    "card",
+    "https://shadcraft-free.vercel.app/r/section-heading.json",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/benefits/13/index.tsx",
+      "content": "import { CheckCircle2, LifeBuoy, RefreshCcw, Rocket, Scale, ShieldCheck } from \"lucide-react\";\r\n\r\nimport { Card } from \"@/components/ui/card\";\r\nimport {\r\n  SectionHeading,\r\n  SectionHeadingBody,\r\n  SectionHeadingContentType,\r\n  SectionHeadingTitle,\r\n} from \"@/components/section-heading\";\r\n\r\nexport function Benefits13() {\r\n  return (\r\n    <section className=\"py-12 lg:py-20\">\r\n      <div className=\"mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8\">\r\n        {/* Section Heading */}\r\n        <SectionHeading alignment=\"center\" className=\"mx-auto w-full max-w-3xl\">\r\n          <SectionHeadingContentType>Benefits</SectionHeadingContentType>\r\n          <SectionHeadingTitle>Why Choose Acme Inc.</SectionHeadingTitle>\r\n          <SectionHeadingBody>\r\n            Discover the key advantages that make Acme Inc. the right choice for your team.\r\n          </SectionHeadingBody>\r\n        </SectionHeading>\r\n\r\n        {/* Benefits Grid */}\r\n        <div className=\"grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-9\">\r\n          {benefits.map((benefit) => (\r\n            <Card key={benefit.title} className=\"group p-6\">\r\n              <div className=\"flex flex-col gap-4\">\r\n                <div className=\"bg-primary/10 group-hover:bg-primary/20 grid size-10 place-items-center rounded-full transition-colors\">\r\n                  <benefit.icon className=\"text-primary size-5 shrink-0\" />\r\n                </div>\r\n                <div className=\"flex flex-col gap-2\">\r\n                  <h3 className=\"text-foreground text-lg/7 font-medium\">{benefit.title}</h3>\r\n                  <p className=\"text-muted-foreground text-sm/5 font-normal\">\r\n                    {benefit.description}\r\n                  </p>\r\n                </div>\r\n              </div>\r\n            </Card>\r\n          ))}\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n}\r\n\r\nconst benefits = [\r\n  {\r\n    icon: CheckCircle2,\r\n    title: \"Easy to Use\",\r\n    description:\r\n      \"Get started in minutes with an intuitive interface designed for teams of all sizes.\",\r\n  },\r\n  {\r\n    icon: Rocket,\r\n    title: \"Powerful Features\",\r\n    description: \"Access advanced tools and capabilities that help you work smarter and faster.\",\r\n  },\r\n  {\r\n    icon: LifeBuoy,\r\n    title: \"Reliable Support\",\r\n    description:\r\n      \"Get help when you need it with responsive customer support and comprehensive documentation.\",\r\n  },\r\n  {\r\n    icon: ShieldCheck,\r\n    title: \"Secure & Private\",\r\n    description: \"Your data is protected with enterprise-grade security and privacy controls.\",\r\n  },\r\n  {\r\n    icon: Scale,\r\n    title: \"Scalable Solution\",\r\n    description: \"Grow your team without limits with flexible plans that adapt to your needs.\",\r\n  },\r\n  {\r\n    icon: RefreshCcw,\r\n    title: \"Regular Updates\",\r\n    description: \"Benefit from continuous improvements and new features released regularly.\",\r\n  },\r\n];\r\n",
+      "type": "registry:component",
+      "target": "components/benefits-13.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "benefits"
+  ]
+}

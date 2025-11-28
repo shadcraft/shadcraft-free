@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faqs-4",
+  "type": "registry:block",
+  "title": "CTA 9",
+  "registryDependencies": [
+    "accordion",
+    "separator",
+    "https://shadcraft-free.vercel.app/r/section-heading.json",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/faqs/4/index.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/components/ui/accordion\";\r\nimport { Separator } from \"@/components/ui/separator\";\r\nimport {\r\n  SectionHeading,\r\n  SectionHeadingBody,\r\n  SectionHeadingContentType,\r\n  SectionHeadingTitle,\r\n} from \"@/components/section-heading\";\r\n\r\nexport function Faqs4() {\r\n  return (\r\n    <section className=\"py-12 lg:py-20\">\r\n      <div className=\"mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8\">\r\n        {/* Section Heading */}\r\n        <SectionHeading alignment=\"center\" className=\"mx-auto w-full max-w-3xl\">\r\n          <SectionHeadingContentType>Support</SectionHeadingContentType>\r\n          <SectionHeadingTitle>Questions?</SectionHeadingTitle>\r\n          <SectionHeadingBody>We&apos;ve got the answers.</SectionHeadingBody>\r\n        </SectionHeading>\r\n\r\n        {/* FAQs Accordion */}\r\n        <div className=\"mx-auto w-full max-w-2xl\">\r\n          <Accordion type=\"single\" collapsible className=\"w-full\">\r\n            {faqs.map((faq) => (\r\n              <AccordionItem key={faq.question} value={faq.question} className=\"border-none!\">\r\n                <AccordionTrigger className=\"text-left\">{faq.question}</AccordionTrigger>\r\n                <AccordionContent className=\"text-muted-foreground max-w-lg text-pretty\">\r\n                  {faq.answer}\r\n                </AccordionContent>\r\n              </AccordionItem>\r\n            ))}\r\n          </Accordion>\r\n        </div>\r\n\r\n        <Separator />\r\n\r\n        {/* Contact CTA */}\r\n        <div className=\"mx-auto text-center\">\r\n          <p className=\"text-muted-foreground text-base/6 font-normal\">\r\n            Still have questions? We&apos;re here to help.{\" \"}\r\n            <a href=\"#\" className=\"text-primary underline\">\r\n              Contact support\r\n            </a>\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n}\r\n\r\nconst faqs = [\r\n  {\r\n    question: \"What is Acme Inc.?\",\r\n    answer:\r\n      \"Acme Inc. is a productivity platform designed to help teams work smarter and faster. It provides tools for collaboration, project management, and workflow optimization.\",\r\n  },\r\n  {\r\n    question: \"How do I get started?\",\r\n    answer:\r\n      \"Getting started is easy. Sign up for a free account, complete the onboarding process, and you'll be ready to use Acme Inc. in minutes.\",\r\n  },\r\n  {\r\n    question: \"What are the pricing plans?\",\r\n    answer:\r\n      \"We offer flexible pricing plans to suit teams of all sizes. Visit our pricing page to see detailed information about each plan and choose the one that fits your needs.\",\r\n  },\r\n  {\r\n    question: \"Is there a free trial?\",\r\n    answer:\r\n      \"Yes, we offer a free trial period so you can explore all features before committing to a paid plan. No credit card required.\",\r\n  },\r\n  {\r\n    question: \"Can I cancel anytime?\",\r\n    answer:\r\n      \"Absolutely. You can cancel your subscription at any time from your account settings. There are no long-term contracts or cancellation fees.\",\r\n  },\r\n  {\r\n    question: \"Do you offer customer support?\",\r\n    answer:\r\n      \"Yes, we provide customer support via email and chat. Premium plans include priority support with faster response times.\",\r\n  },\r\n];\r\n",
+      "type": "registry:component",
+      "target": "components/faqs-4.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "faqs"
+  ]
+}
