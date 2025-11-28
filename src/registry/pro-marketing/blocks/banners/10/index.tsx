@@ -23,7 +23,7 @@ export function Banner10() {
           {/* Banner Content */}
           <div className="flex flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
             <div className="flex items-center gap-2">
-              <AlertCircle className="size-4" />
+              <AlertCircle className="size-4 shrink-0" />
 
               <p className="text-base/6 font-normal text-pretty">
                 <span className="font-semibold">Limited time offer: </span>
