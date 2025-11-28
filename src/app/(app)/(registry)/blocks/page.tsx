@@ -9,6 +9,12 @@ export default async function RegistryBlocksPage() {
   const items = await getRegistryItems((item) => item.type === "registry:block");
   const blockItemsByCategories = groupBlocksByCategories(items);
 
+  const blockAmountDisplayText = (amount: number) => {
+    if (amount === 0) return "No blocks yet";
+    if (amount === 1) return "1 block";
+    return `${amount} blocks`;
+  };
+
   return (
     <section className="flex flex-col gap-4">
       {blockItemsByCategories.map((item) => (
@@ -16,6 +22,7 @@ export default async function RegistryBlocksPage() {
           <Link href={`/blocks/${item.slug}`}>
             <ItemContent>
               <ItemTitle>{item.title}</ItemTitle>
+              <span className="border-l-2 pl-2">{blockAmountDisplayText(item.amount)}</span>
               <ItemDescription>{item.description}</ItemDescription>
             </ItemContent>
 
