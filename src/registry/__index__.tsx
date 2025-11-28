@@ -323,7 +323,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
   "faqs-4": {
     name: "faqs-4",
     type: "registry:block",
-    title: "CTA 9",
+    title: "FAQs 4",
     description: "",
     registryDependencies: [
       "accordion",

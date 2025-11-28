@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "faqs-4",
   "type": "registry:block",
-  "title": "CTA 9",
+  "title": "FAQs 4",
   "registryDependencies": [
     "accordion",
     "separator",

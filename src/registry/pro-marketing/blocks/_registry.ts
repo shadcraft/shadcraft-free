@@ -67,7 +67,7 @@ export const blocks: Registry["items"] = [
   },
   {
     name: "faqs-4",
-    title: "CTA 9",
+    title: "FAQs 4",
     type: "registry:block",
     registryDependencies: ["accordion", "separator", getRegistryItemJsonUrl("section-heading")],
     files: [
