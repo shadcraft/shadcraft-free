@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-4",
+  "type": "registry:block",
+  "title": "Footer 4",
+  "registryDependencies": [
+    "separator",
+    "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
+    "https://shadcraft-free.vercel.app/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/footers/4/index.tsx",
+      "content": "import { Globe } from \"lucide-react\";\n\nimport { Separator } from \"@/components/ui/separator\";\nimport { PlaceholderLogo } from \"@/components/placeholder-logo\";\n\nexport function Footer4() {\n  return (\n    <footer className=\"bg-background w-full border-t py-12 lg:py-20\" role=\"contentinfo\">\n      <div className=\"flex flex-col gap-12 lg:gap-9\">\n        <div className=\"mx-auto flex w-full max-w-7xl flex-col gap-x-5 gap-y-12 px-5 lg:flex-row lg:items-start lg:justify-between lg:gap-x-9 lg:px-8\">\n          {/* Logo and Description */}\n          <div className=\"flex max-w-xs flex-1 flex-col justify-between gap-9\">\n            <a href=\"/\" aria-label=\"Go to home page\">\n              {/* Replace with your real logo  */}\n              <PlaceholderLogo />\n            </a>\n\n            <div className=\"flex flex-col gap-4\">\n              <p className=\"text-muted-foreground text-sm/5 font-normal text-pretty\">\n                Building tools that help teams work smarter and faster.\n              </p>\n              <div className=\"flex items-center gap-2\">\n                <Globe className=\"size-4\" />\n                <Globe className=\"size-4\" />\n              </div>\n            </div>\n          </div>\n\n          {/* Navigation Links */}\n          <nav\n            className=\"grid flex-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9\"\n            aria-label=\"Footer navigation\"\n          >\n            {navigationData.map((section) => (\n              <div key={section.title} className=\"flex flex-col gap-2.5\">\n                <h3 className=\"text-muted-foreground text-sm/5 font-medium\">{section.title}</h3>\n                <ul className=\"flex flex-col gap-3\">\n                  {section.links.map((link) => (\n                    <li key={link.label} className=\"text-base/6 font-normal\">\n                      <a href={link.href}>{link.label}</a>\n                    </li>\n                  ))}\n                </ul>\n              </div>\n            ))}\n          </nav>\n        </div>\n\n        <Separator role=\"presentation\" aria-hidden=\"true\" />\n\n        {/* Social Links and Copyright */}\n        <div className=\"mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-5 text-center lg:flex-row lg:justify-between lg:px-8\">\n          <p className=\"text-muted-foreground text-sm/5 font-normal\">\n            &copy; Copyright Acme Inc. 2025. All right reserved.\n          </p>\n        </div>\n      </div>\n    </footer>\n  );\n}\n\nconst navigationData = [\n  {\n    title: \"Company\",\n    links: [\n      { label: \"About Us\", href: \"#\" },\n      { label: \"Careers\", href: \"#\" },\n      { label: \"Blog\", href: \"#\" },\n      { label: \"Press\", href: \"#\" },\n      { label: \"Leadership\", href: \"#\" },\n      { label: \"Partners\", href: \"#\" },\n      { label: \"Contact\", href: \"#\" },\n    ],\n  },\n  {\n    title: \"Resources\",\n    links: [\n      { label: \"Help Center\", href: \"#\" },\n      { label: \"FAQs\", href: \"#\" },\n      { label: \"Guides\", href: \"#\" },\n      { label: \"Community\", href: \"#\" },\n      { label: \"Case Studies\", href: \"#\" },\n      { label: \"Events\", href: \"#\" },\n      { label: \"Tutorials\", href: \"#\" },\n    ],\n  },\n  {\n    title: \"Legal\",\n    links: [\n      { label: \"Privacy Policy\", href: \"#\" },\n      { label: \"Terms of Service\", href: \"#\" },\n      { label: \"Security\", href: \"#\" },\n      { label: \"Cookie Settings\", href: \"#\" },\n      { label: \"Data Processing Agreement\", href: \"#\" },\n      { label: \"Compliance\", href: \"#\" },\n      { label: \"Accessibility\", href: \"#\" },\n    ],\n  },\n];\n",
+      "type": "registry:component",
+      "target": "components/footer-4.tsx"
+    }
+  ],
+  "meta": {
+    "containerClassName": "min-h-svh content-end",
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "footers"
+  ]
+}

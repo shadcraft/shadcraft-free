@@ -317,6 +317,63 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: ["faqs"],
     meta: { bundle: "pro-marketing" },
   },
+  "footer-4": {
+    name: "footer-4",
+    type: "registry:block",
+    title: "Footer 4",
+    description: "",
+    registryDependencies: [
+      "separator",
+      "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
+      "https://shadcraft-free.vercel.app/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/footers/4/index.tsx",
+        type: "registry:component",
+        target: "components/footer-4.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/footers/4/index");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["footers"],
+    meta: { containerClassName: "min-h-svh content-end", bundle: "pro-marketing" },
+  },
+  "testimonials-11": {
+    name: "testimonials-11",
+    type: "registry:block",
+    title: "Testimonials 11",
+    description: "",
+    registryDependencies: [
+      "card",
+      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "https://shadcraft-free.vercel.app/r/profile-card.json",
+      "https://shadcraft-free.vercel.app/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/testimonials/11/index.tsx",
+        type: "registry:component",
+        target: "components/testimonials-11.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/testimonials/11/index");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["testimonials"],
+    meta: { bundle: "pro-marketing" },
+  },
   "avatar-stack-demo": {
     name: "avatar-stack-demo",
     type: "registry:example",

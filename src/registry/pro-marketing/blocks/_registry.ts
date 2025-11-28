@@ -1,4 +1,4 @@
-import { getRegistryItemJsonUrl } from "@/utils/registry";
+import { getRegistryItemJsonUrl, getRegistryItemsJsonUrls } from "@/utils/registry";
 import { type Registry } from "shadcn/schema";
 
 export const blocks: Registry["items"] = [
@@ -57,5 +57,36 @@ export const blocks: Registry["items"] = [
       },
     ],
     categories: ["faqs"],
+  },
+  {
+    name: "footer-4",
+    title: "Footer 4",
+    type: "registry:block",
+    registryDependencies: ["separator", getRegistryItemJsonUrl("placeholder-logo")],
+    files: [
+      {
+        path: "blocks/footers/4/index.tsx",
+        type: "registry:component",
+        target: "components/footer-4.tsx",
+      },
+    ],
+    categories: ["footers"],
+    meta: {
+      containerClassName: "min-h-svh content-end",
+    },
+  },
+  {
+    name: "testimonials-11",
+    title: "Testimonials 11",
+    type: "registry:block",
+    registryDependencies: ["card", ...getRegistryItemsJsonUrls("section-heading", "profile-card")],
+    files: [
+      {
+        path: "blocks/testimonials/11/index.tsx",
+        type: "registry:component",
+        target: "components/testimonials-11.tsx",
+      },
+    ],
+    categories: ["testimonials"],
   },
 ];

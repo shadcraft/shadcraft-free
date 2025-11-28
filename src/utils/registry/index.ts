@@ -26,6 +26,10 @@ export function getRegistryItemJsonUrl(name: string): string {
   return `${PRODUCTION_REGISTRY_URL}/${name}.json`;
 }
 
+export function getRegistryItemsJsonUrls(...names: string[]): string[] {
+  return names.map((name) => getRegistryItemJsonUrl(name));
+}
+
 /**
  * Returns a namespaced registry dependency.
  * This allows the shadcn CLI to resolve the dependency through the @shadcraft registry
