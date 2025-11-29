@@ -287,7 +287,6 @@ function DemoViewerCode() {
   }, [files, activeFile]);
 
   const { tree } = useDemoViewer();
-  const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
@@ -297,25 +296,6 @@ function DemoViewerCode() {
 
   const language = file.path.split(".").pop() ?? "tsx";
   const FileIcon = language === "tsx" ? ReactLogo : File;
-
-  const FileTreeTrigger = isMobile ? (
-    <Button
-      variant="ghost"
-      size="icon-sm"
-      className="size-7"
-      onClick={toggleMenu}
-      title={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-      aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-    >
-      {isMenuOpen ? (
-        <X className="animate-in zoom-in-50" />
-      ) : (
-        <Menu className="animate-in zoom-in-50" />
-      )}
-    </Button>
-  ) : (
-    <SidebarTrigger title="Toggle Sidebar" aria-label="Toggle Sidebar" />
-  );
 
   return (
     <div className="isolate size-full group-data-[view=preview]/demo-view-wrapper:hidden">
@@ -334,7 +314,33 @@ function DemoViewerCode() {
                   className="flex h-12 shrink-0 items-center gap-2 px-4 py-2"
                   data-language={language}
                 >
-                  {!!tree && FileTreeTrigger}
+                  {/* File tree triggers, mobile and desktop showing in different breakpoints */}
+                  {!!tree && (
+                    <>
+                      {/* Shows in screens smaller than lg */}
+                      <Button
+                        variant="ghost"
+                        size="icon-sm"
+                        className="size-7 lg:hidden"
+                        onClick={toggleMenu}
+                        title={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                      >
+                        {isMenuOpen ? (
+                          <X className="animate-in zoom-in-50" />
+                        ) : (
+                          <Menu className="animate-in zoom-in-50" />
+                        )}
+                      </Button>
+
+                      {/* Shows in screens larger than lg */}
+                      <SidebarTrigger
+                        title="Toggle Sidebar"
+                        aria-label="Toggle Sidebar"
+                        className="max-lg:hidden"
+                      />
+                    </>
+                  )}
 
                   <FileIcon className="text-muted-foreground size-3.5 shrink-0" />
                   <span className="text-foreground line-clamp-1 text-left font-mono text-sm">
@@ -408,7 +414,7 @@ function DemoViewerFileTreeSidebar({ className, ...props }: React.ComponentProps
   return (
     <Sidebar
       collapsible="icon"
-      className={cn("relative isolate m-0 h-full p-0", className)}
+      className={cn("relative isolate m-0 h-full p-0 max-lg:hidden", className)}
       {...props}
     >
       <div className="relative overflow-hidden border-b text-left group-data-[state=collapsed]:hidden">
@@ -449,7 +455,7 @@ function DemoViewerFileTreeMobileMenu({ isMenuOpen }: { isMenuOpen: boolean }) {
   return (
     <div
       className={cn(
-        "grid transition-all ease-in-out md:hidden",
+        "grid transition-all ease-in-out lg:hidden",
         isMenuOpen ? "grid-rows-[1fr] opacity-100" : "pointer-events-none grid-rows-[0fr] opacity-0"
       )}
     >

@@ -1,10 +1,10 @@
 import * as React from "react";
+import { RegistryItem } from "shadcn/schema";
 
 import { DemoViewer } from "@/components/demo-viewer";
 import { createFileTreeForRegistryItemFiles, getRegistryItem } from "@/lib/registry";
 import { RegistryItemFile } from "@/types/shadcn-patch";
 import { formatComponentName } from "@/utils/registry";
-import { RegistryItem } from "shadcn/schema";
 
 export async function DemoDisplay({
   name,
