@@ -414,7 +414,7 @@ function DemoViewerFileTreeSidebar({ className, ...props }: React.ComponentProps
   return (
     <Sidebar
       collapsible="icon"
-      className={cn("relative isolate m-0 h-full p-0 max-lg:hidden", className)}
+      className={cn("bg-sidebar relative isolate m-0 h-full p-0 max-lg:hidden", className)}
       {...props}
     >
       <div className="relative overflow-hidden border-b text-left group-data-[state=collapsed]:hidden">
@@ -460,7 +460,9 @@ function DemoViewerFileTreeMobileMenu({ isMenuOpen }: { isMenuOpen: boolean }) {
       )}
     >
       <div className="overflow-hidden" inert={!isMenuOpen || undefined} aria-hidden={!isMenuOpen}>
-        <DemoViewerFileTree tree={tree} />
+        <div className="pb-2">
+          <DemoViewerFileTree tree={tree} />
+        </div>
       </div>
     </div>
   );
