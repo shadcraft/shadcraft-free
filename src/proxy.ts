@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 import { getRegistryItem } from "@/lib/registry";
 
-export async function proxy(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (pathname.startsWith("/r/") && pathname.endsWith(".json")) {
