@@ -17,8 +17,8 @@ export default async function proxy(request: NextRequest) {
       if (process.env.NODE_ENV === "production") {
         captureRegistryEvent(request, process.env.WANDRY_REGISTRY_TOKEN!);
       }
-    } catch {
-      console.error(`[proxy.ts]: Error getting registry item ${name}`);
+    } catch (error) {
+      console.error(`[proxy.ts]: Error getting registry item ${name}`, error);
     }
   }
 
