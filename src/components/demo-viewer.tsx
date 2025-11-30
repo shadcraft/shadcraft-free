@@ -488,7 +488,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
         <SidebarMenuButton
           isActive={item.path === activeFile}
           onClick={() => item.path && setActiveFile(item.path)}
-          className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 text-sidebar-foreground/80 gap-2 rounded-none pl-(--index) whitespace-nowrap transition-colors"
+          className="focus-visible:bg-sidebar-accent focus:bg-sidebar-accent data-[active=true]:bg-muted-foreground/15 group text-sidebar-foreground/80 relative gap-2 rounded-none pl-(--index) whitespace-nowrap transition-all"
           data-index={index}
           style={
             {
@@ -498,6 +498,10 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
         >
           <Icon className="ml-2 size-3.5! text-inherit" />
           <span className="line-clamp-1">{item.name}</span>
+          <div
+            className="bg-primary pointer-events-none absolute inset-y-0 left-0 h-full w-[2px] opacity-0 group-data-[active=true]:opacity-50"
+            aria-hidden="true"
+          />
         </SidebarMenuButton>
       </SidebarMenuItem>
     );
@@ -511,7 +515,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton
-            className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 text-sidebar-foreground/80 gap-2 rounded-none pl-(--index) whitespace-nowrap transition-colors"
+            className="focus-visible:bg-sidebar-accent focus:bg-sidebar-accent text-sidebar-foreground/80 gap-2 rounded-none pl-(--index) whitespace-nowrap transition-all"
             style={
               {
                 "--index": `${index * 0.875}rem`,
@@ -525,7 +529,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
           </SidebarMenuButton>
         </CollapsibleTrigger>
         <CollapsibleContent>
-          <SidebarMenuSub className="m-0 w-full translate-x-0 border-none p-0">
+          <SidebarMenuSub className="m-0 w-full translate-x-0 gap-0 border-none p-0">
             {item.children.map((subItem, key) => (
               <Tree key={key} item={subItem} index={index + 1} />
             ))}
