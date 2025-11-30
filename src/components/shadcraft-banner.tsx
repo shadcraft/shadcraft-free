@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { React as ReactLogo } from "@/components/logos/react";
 
 export function ShadcraftBanner() {
   const [isVisible, setIsVisible] = useState(true);
@@ -21,21 +22,19 @@ export function ShadcraftBanner() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="relative flex items-center justify-between gap-4">
           {/* Banner Content */}
-          <div className="flex w-full flex-1 flex-col items-start justify-between gap-5 md:flex-row md:items-center lg:gap-9">
+          <div className="flex w-full flex-1 items-center gap-2">
+            <ReactLogo className="text-foreground size-4 shrink-0" />
             <span className="text-sm">
-              <span>
-                Explore our latest{" "}
-                <Link
-                  className="inline-flex items-center gap-1.5 font-medium underline underline-offset-2"
-                  href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
-                  target="_blank"
-                  aria-label="Go to Shadcraft Pro React"
-                >
-                  Pro React
-                </Link>{" "}
-                shadcn/ui Kit.
-              </span>{" "}
-              <span className="font-medium">Plus it&apos;s Black Friday!</span>
+              Explore our latest{" "}
+              <Link
+                className="inline-flex items-center gap-1.5 font-medium underline underline-offset-2"
+                href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
+                target="_blank"
+                aria-label="Go to Shadcraft Pro React"
+              >
+                Pro React
+              </Link>{" "}
+              shadcn/ui kit
             </span>
           </div>
 
