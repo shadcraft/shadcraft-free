@@ -2,7 +2,7 @@ import { captureRegistryEvent } from "@wandry/analytics-sdk";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { getRegistryItem } from "@/lib/registry";
+import { getRegistryItemWithoutContent } from "@/lib/registry";
 
 export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -11,7 +11,7 @@ export default async function proxy(request: NextRequest) {
     const name = pathname.slice("/r/".length).replace(/\.json$/, "");
 
     try {
-      const item = await getRegistryItem(name);
+      const item = getRegistryItemWithoutContent(name);
       if (!item) return NextResponse.next();
 
       if (process.env.NODE_ENV === "production") {

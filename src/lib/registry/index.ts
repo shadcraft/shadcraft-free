@@ -93,9 +93,15 @@ async function getFileContent(file: RegistryItemFile) {
   code = fixImports(code);
   return code;
 }
+
 async function createTempSourceFile(filename: string) {
   const dir = await fs.mkdtemp(path.join(tmpdir(), "shadcn-"));
   return path.join(dir, filename);
+}
+
+export function getRegistryItemWithoutContent(name: string): RegistryItem | null {
+  const item = Index[name];
+  return item ?? null;
 }
 
 export async function getBlocksByCategories(categories: string[]) {
