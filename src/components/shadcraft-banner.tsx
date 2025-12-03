@@ -1,18 +1,14 @@
 "use client";
 
-import { ArrowUpRight, Check, Copy, X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 import { React as ReactLogo } from "@/components/logos/react";
 import { Button } from "@/components/ui/button";
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 
 export function ShadcraftBanner() {
   const [isVisible, setIsVisible] = useState(true);
-  const { isCopied, copyToClipboard } = useCopyToClipboard({
-    timeout: 2000,
-  });
 
   if (!isVisible) return null;
 
@@ -39,26 +35,7 @@ export function ShadcraftBanner() {
                 Pro React
                 <ArrowUpRight className="size-3.5 transition-transform group-hover:rotate-45" />
               </Link>{" "}
-              shadcn/ui kit.{" "}
-              <span>
-                <span className="font-semibold">40% off </span>
-                with code{" "}
-                <button
-                  type="button"
-                  className="group inline-flex items-center gap-1.5 font-mono font-semibold transition-opacity hover:opacity-80"
-                  onClick={() => {
-                    copyToClipboard("CYBERMONDAY25");
-                  }}
-                  aria-label="Copy promo code CYBERMONDAY25"
-                >
-                  <span>CYBERMONDAY25</span>
-                  {isCopied ? (
-                    <Check className="text-muted-foreground size-3.5 transition-opacity" />
-                  ) : (
-                    <Copy className="text-muted-foreground size-3.5 transition-opacity" />
-                  )}
-                </button>
-              </span>
+              shadcn/ui kit
             </span>
           </div>
 
