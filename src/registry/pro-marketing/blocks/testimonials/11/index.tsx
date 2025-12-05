@@ -65,7 +65,7 @@ const testimonials = [
     name: "Paula Rodriguez",
     role: "Head of Operations",
     rating: 5,
-    imageSrc: "https://shadcraft-registry.vercel.app/assets/avatars/person-7.webp",
+    imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-7.webp",
   },
   {
     id: 2,
@@ -74,7 +74,7 @@ const testimonials = [
     name: "Marcus Lee",
     role: "Client Success Manager",
     rating: 4.5,
-    imageSrc: "https://shadcraft-registry.vercel.app/assets/avatars/person-2.webp",
+    imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-2.webp",
   },
   {
     id: 3,
@@ -83,7 +83,7 @@ const testimonials = [
     name: "Vivian Chen",
     role: "CTO",
     rating: 5,
-    imageSrc: "https://shadcraft-registry.vercel.app/assets/avatars/person-5.webp",
+    imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-5.webp",
   },
   {
     id: 4,
@@ -92,7 +92,7 @@ const testimonials = [
     name: "Sean O'Malley",
     role: "Project Coordinator",
     rating: 4,
-    imageSrc: "https://shadcraft-registry.vercel.app/assets/avatars/person-4.webp",
+    imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-4.webp",
   },
   {
     id: 5,
@@ -101,7 +101,7 @@ const testimonials = [
     name: "Linda Kim",
     role: "Customer Experience Lead",
     rating: 5,
-    imageSrc: "https://shadcraft-registry.vercel.app/assets/avatars/person-3.webp",
+    imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-3.webp",
   },
   {
     id: 6,
@@ -110,6 +110,6 @@ const testimonials = [
     name: "Hanna Lee",
     role: "VP of Marketing",
     rating: 5,
-    imageSrc: "https://shadcraft-registry.vercel.app/assets/avatars/person-6.webp",
+    imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-6.webp",
   },
 ];

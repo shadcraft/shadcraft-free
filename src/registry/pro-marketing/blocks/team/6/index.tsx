@@ -55,31 +55,31 @@ const teamMembersData = [
   {
     name: "Sophie Tan",
     title: "Founder & CEO",
-    image: "https://shadcraft-registry.vercel.app/assets/avatars/person-1.webp",
+    image: "https://shadcraft-free.vercel.app/assets/avatars/person-1.webp",
   },
   {
     name: "Liam Johnson",
     title: "Chief Technology Officer",
-    image: "https://shadcraft-registry.vercel.app/assets/avatars/person-2.webp",
+    image: "https://shadcraft-free.vercel.app/assets/avatars/person-2.webp",
   },
   {
     name: "Ava Smith",
     title: "Head of Marketing",
-    image: "https://shadcraft-registry.vercel.app/assets/avatars/person-3.webp",
+    image: "https://shadcraft-free.vercel.app/assets/avatars/person-3.webp",
   },
   {
     name: "Noah Brown",
     title: "Product Manager",
-    image: "https://shadcraft-registry.vercel.app/assets/avatars/person-4.webp",
+    image: "https://shadcraft-free.vercel.app/assets/avatars/person-4.webp",
   },
   {
     name: "Emma Wilson",
     title: "Lead Designer",
-    image: "https://shadcraft-registry.vercel.app/assets/avatars/person-5.webp",
+    image: "https://shadcraft-free.vercel.app/assets/avatars/person-5.webp",
   },
   {
     name: "Oliver Lee",
     title: "Data Analyst",
-    image: "https://shadcraft-registry.vercel.app/assets/avatars/person-6.webp",
+    image: "https://shadcraft-free.vercel.app/assets/avatars/person-6.webp",
   },
 ];
