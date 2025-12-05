@@ -1,3 +1,5 @@
+import { Quote } from "lucide-react";
+
 import { Card } from "@/components/ui/card";
 import {
   ProfileCard,
@@ -29,18 +31,12 @@ export function Testimonial11() {
         {/* Testimonials Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="group gap-0 p-6">
-              <div className="flex flex-col">
-                <div className="text-muted-foreground group-hover:text-foreground text-2xl font-bold transition-colors md:text-3xl/10 lg:text-4xl/11">
-                  “
-                </div>
-                <blockquote className="text-foreground text-base/6 font-normal text-pretty lg:text-lg/7">
-                  {testimonial.quote}
-                </blockquote>
-                <div className="text-muted-foreground group-hover:text-foreground self-end text-2xl font-bold transition-colors md:text-3xl/10 lg:text-4xl/11">
-                  ”
-                </div>
-              </div>
+            <Card key={testimonial.id} className="group gap-4 p-6">
+              <Quote className="text-muted-foreground group-hover:text-foreground size-4 rotate-180 transition-colors" />
+              <blockquote className="text-foreground text-base/6 font-normal text-pretty lg:text-lg/7">
+                {testimonial.quote}
+              </blockquote>
+              <Quote className="text-muted-foreground group-hover:text-foreground size-4 self-end transition-colors" />
 
               <ProfileCard className="mt-auto">
                 <ProfileCardAvatar src={testimonial.imageSrc} name={testimonial.name} />
