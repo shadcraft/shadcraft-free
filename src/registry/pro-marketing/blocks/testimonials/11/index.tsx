@@ -60,7 +60,6 @@ const testimonials = [
       "From onboarding to ongoing support, Acme Inc. has impressed us every step of the way. The tools are robust, yet easy to use.",
     name: "Paula Rodriguez",
     role: "Head of Operations",
-    rating: 5,
     imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-7.webp",
   },
   {
@@ -69,7 +68,6 @@ const testimonials = [
       "I love how seamlessly everything integrates. Our workflows are smoother and our clients have noticed the difference.",
     name: "Marcus Lee",
     role: "Client Success Manager",
-    rating: 4.5,
     imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-2.webp",
   },
   {
@@ -78,7 +76,6 @@ const testimonials = [
       "The constant updates and improvements show Acme Inc. truly cares about its users. Highly recommended for any growing company.",
     name: "Vivian Chen",
     role: "CTO",
-    rating: 5,
     imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-5.webp",
   },
   {
@@ -87,7 +84,6 @@ const testimonials = [
       "Acme Inc. made our project launches less stressful and more organized. The dashboard is a delight to work with each day.",
     name: "Sean O'Malley",
     role: "Project Coordinator",
-    rating: 4,
     imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-4.webp",
   },
   {
@@ -96,7 +92,6 @@ const testimonials = [
       "The feedback from our own customers has been overwhelmingly positive ever since we switched to Acme's platform.",
     name: "Linda Kim",
     role: "Customer Experience Lead",
-    rating: 5,
     imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-3.webp",
   },
   {
@@ -105,7 +100,6 @@ const testimonials = [
       "Powerful features, beautiful UI, and a support team that listens. I can't recommend Acme Inc. highly enough.",
     name: "Hanna Lee",
     role: "VP of Marketing",
-    rating: 5,
     imageSrc: "https://shadcraft-free.vercel.app/assets/avatars/person-6.webp",
   },
 ];
