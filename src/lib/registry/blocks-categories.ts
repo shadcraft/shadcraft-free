@@ -13,7 +13,7 @@ type ProMarketingCategorySlug =
   | "cta"
   | "faqs"
   | "footers"
-  | "headers"
+  | "heroes"
   | "metrics"
   | "newsletter-signup"
   | "pricing"
@@ -72,10 +72,10 @@ const proMarketingCategories: RegistryCategory[] = [
     slug: "footers",
   },
   {
-    title: "Headers",
+    title: "Heroes",
     description:
-      "shadcn/ui Header blocks that combine striking visuals with headings and navigation. Designed to make a strong first impression, with options for image backgrounds and guidance on maintaining text contrast for accessibility.",
-    slug: "headers",
+      "shadcn/ui Hero blocks that combine striking visuals with headings and navigation. Designed to make a strong first impression, with options for image backgrounds and guidance on maintaining text contrast for accessibility.",
+    slug: "heroes",
   },
   {
     title: "Metrics",
