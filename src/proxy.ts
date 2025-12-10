@@ -12,6 +12,8 @@ export default async function proxy(request: NextRequest) {
 
     try {
       const item = getRegistryItemWithoutContent(name);
+      console.log("[proxy.ts]: Getting registry item:", name, item);
+
       if (!item) return NextResponse.next();
 
       if (process.env.NODE_ENV === "production") {
