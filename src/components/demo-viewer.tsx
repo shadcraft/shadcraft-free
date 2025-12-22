@@ -254,7 +254,7 @@ function DemoViewerPreview() {
 
   return (
     <div className="size-full group-data-[view=code]/demo-view-wrapper:hidden">
-      <div className="bg-muted/25 relative size-full rounded-xl border">
+      <div className="bg-muted/25 relative size-full overflow-hidden rounded-xl border">
         <ResizablePreview>
           <div className="absolute inset-1 right-2 bg-[radial-gradient(var(--border)_1px,transparent_1px)] bg-size-[16px_16px] opacity-50" />
 

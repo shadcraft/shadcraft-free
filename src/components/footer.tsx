@@ -121,8 +121,8 @@ export async function Footer() {
         <Separator role="presentation" aria-hidden="true" />
 
         {/* Logo and Social Links and Copyright */}
-        <div className="flex flex-col gap-9 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-2">
+        <div className="flex w-full flex-col gap-9 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex w-full max-w-sm flex-col gap-2">
             <Link href="/" className="flex items-center gap-2" aria-label="Go to home page">
               <Logo />
               <span className="flex items-center gap-2 text-xl font-semibold lowercase">
@@ -154,8 +154,8 @@ export async function Footer() {
           </div>
 
           {/* Social Links and Copyright */}
-          <div className="flex flex-col gap-4 self-start md:flex-row md:items-center">
-            <div className="flex items-center gap-3 md:gap-4">
+          <div className="flex w-full flex-col gap-4 self-start lg:items-end">
+            <div className="flex items-center gap-3 lg:gap-4">
               <Link
                 href="https://github.com/shadcraft/shadcraft-free"
                 target="_blank"
@@ -183,11 +183,14 @@ export async function Footer() {
                 <Globe className="size-4" />
               </Link>
             </div>
-            <p className="text-muted-foreground text-sm font-normal">
-              &copy; shadcraft {getCurrentYear()}
-            </p>
 
-            <ThemeToggle size="icon-sm" />
+            <div className="flex flex-row items-center justify-between gap-4 lg:flex-col lg:items-end">
+              <p className="text-muted-foreground text-sm font-normal">
+                &copy; shadcraft {getCurrentYear()}
+              </p>
+
+              <ThemeToggle size="icon-sm" />
+            </div>
           </div>
         </div>
       </div>
