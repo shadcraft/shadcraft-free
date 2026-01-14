@@ -9,5 +9,6 @@
   "endOfLine": "lf",
   "plugins": ["prettier-plugin-tailwindcss"],
   "pluginSearchDirs": false,
-  "tailwindFunctions": ["cva", "cn", "clsx"]
+  "tailwindFunctions": ["cva", "cn", "clsx"],
+  "tailwindStylesheet": "./src/styles/globals.css"
 }
