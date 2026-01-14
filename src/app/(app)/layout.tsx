@@ -1,14 +1,14 @@
+import "@/styles/globals.css";
+
 import type { Metadata } from "next";
 
 import { Footer } from "@/components/footer";
-
 import { Header } from "@/components/header";
 import { ScreenSizeIndicator } from "@/components/screen-size-indicator";
 import { ShadcraftBanner } from "@/components/shadcraft-banner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SITE_CONFIG } from "@/config/site";
 import { fontVariables } from "@/lib/fonts";
-import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_BASE_URL!),
   description: SITE_CONFIG.description,
   keywords: SITE_CONFIG.keywords,
-  authors: [{ name: "Shadcraft", url: "https://shadcraft.com" }],
-  creator: "Shadcraft",
+  authors: [{ name: SITE_CONFIG.creator.general, url: "https://shadcraft.com" }],
+  creator: SITE_CONFIG.creator.general,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.description,
     images: [`${process.env.NEXT_PUBLIC_APP_BASE_URL}/opengraph-image.png`],
-    creator: "@shadcraft_",
+    creator: SITE_CONFIG.creator.twitter,
   },
 };
 

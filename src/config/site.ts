@@ -1,7 +1,6 @@
 export const SITE_CONFIG = {
   name: "Shadcraft Free",
-  domain: "shadcraft-free.vercel.app",
-  homepageUrl: "https://shadcraft-free.vercel.app",
+  url: process.env.NEXT_PUBLIC_APP_BASE_URL || "https://shadcraft-free.vercel.app",
   title: "Shadcraft Free",
   description:
     "Free and open-source shadcn/ui registry of polished components and marketing blocks built to production standards. Fast to use, easy to extend, and ready for any modern web project.",
@@ -19,4 +18,8 @@ export const SITE_CONFIG = {
     "shadcn/ui",
     "tweakcn",
   ],
+  creator: {
+    general: "Shadcraft",
+    twitter: "@shadcraft_",
+  },
 };

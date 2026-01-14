@@ -1,6 +1,6 @@
-import { type RegistryItem } from "shadcn/schema";
+import type { RegistryItem } from "shadcn/schema";
 
-import { PRODUCTION_REGISTRY_URL } from "@/config/registry";
+import { REGISTRY_CONFIG } from "@/config/registry";
 import { registryCategories } from "@/lib/registry/blocks-categories";
 
 export function formatComponentName(name: string): string {
@@ -23,7 +23,8 @@ export function groupBlocksByCategories(blocks: RegistryItem[]) {
 }
 
 export function getRegistryItemJsonUrl(name: string): string {
-  return `${PRODUCTION_REGISTRY_URL}/${name}.json`;
+  const { namespaceUrl } = REGISTRY_CONFIG;
+  return namespaceUrl.replace("{name}", name);
 }
 
 export function getRegistryItemsJsonUrls(...names: string[]): string[] {
@@ -38,7 +39,8 @@ export function getRegistryItemsJsonUrls(...names: string[]): string[] {
  * @returns Namespaced registry key (e.g. "@shadcraft/avatar-stack")
  */
 export function getNamespacedRegistryDependency(name: string): string {
-  return `@shadcraft/${name}`;
+  const { namespace } = REGISTRY_CONFIG;
+  return `${namespace}/${name}`;
 }
 
 /**
