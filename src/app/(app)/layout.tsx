@@ -51,7 +51,7 @@ export default function RootLayoutApp({ children }: LayoutProps<"/">) {
       <head>
         <script async crossOrigin="anonymous" src="https://tweakcn.com/live-preview.min.js" />
       </head>
-      <body className={`${fontVariables} overscroll-none font-sans antialiased`}>
+      <body className={`${fontVariables} overscroll-none`}>
         <ThemeProvider>
           <div className="isolate flex size-full min-h-svh flex-col [--header-height:calc(--spacing(16))]">
             <ShadcraftBanner />

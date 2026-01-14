@@ -51,7 +51,7 @@ export default function RootLayoutView({ children }: LayoutProps<"/">) {
       <head>
         <script async crossOrigin="anonymous" src="https://tweakcn.com/live-preview.min.js" />
       </head>
-      <body className={`${fontVariables} overscroll-none font-sans antialiased`}>
+      <body className={`${fontVariables} overscroll-none`}>
         <ThemeProvider storageKey="view-theme">
           {children}
           <ScreenSizeIndicator enabled showTooltip className="fixed bottom-2 left-2" />
