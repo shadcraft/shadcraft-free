@@ -27,7 +27,7 @@ function SectionHeadingContentType({ className, ...props }: React.ComponentProps
   return (
     <div
       data-slot="section-heading-content-type"
-      className={cn("text-foreground font-sans text-base leading-6 font-medium", className)}
+      className={cn("font-sans text-base leading-6 font-medium text-foreground", className)}
       {...props}
     />
   );
@@ -38,7 +38,7 @@ function SectionHeadingTitle({ className, ...props }: React.ComponentProps<"h2">
     <h2
       data-slot="section-heading-title"
       className={cn(
-        "text-foreground scroll-m-20 text-4xl leading-none font-medium tracking-tight lg:text-5xl",
+        "scroll-m-20 text-4xl leading-none font-medium tracking-tight text-foreground lg:text-5xl",
         className
       )}
       {...props}
@@ -51,7 +51,7 @@ function SectionHeadingBody({ className, ...props }: React.ComponentProps<"p">) 
     <p
       data-slot="section-heading-body"
       className={cn(
-        "text-muted-foreground max-w-2xl text-base/6 font-normal text-pretty",
+        "max-w-2xl text-base/6 font-normal text-pretty text-muted-foreground",
         className
       )}
       {...props}

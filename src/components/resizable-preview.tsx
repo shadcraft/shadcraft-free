@@ -316,8 +316,8 @@ function ResizablePreviewHandle({ className, ...props }: React.ComponentProps<"d
       onKeyDown={handleKeyDown}
       className={cn(
         "absolute inset-y-0 right-0 z-30 flex h-full w-2 translate-x-full cursor-col-resize touch-none items-center justify-center bg-transparent outline-none select-none",
-        "after:bg-border active:after:bg-muted-foreground hover:after:bg-muted-foreground cursor-col-resize after:absolute after:h-10 after:w-1 after:rounded-full after:transition-all active:after:h-14 active:after:w-0.75",
-        "focus-visible:after:ring-ring/50 focus-visible:after:outline-ring focus-visible:after:h-14 focus-visible:after:w-0.75 focus-visible:after:ring-[3px]",
+        "cursor-col-resize after:absolute after:h-10 after:w-1 after:rounded-full after:bg-border after:transition-all hover:after:bg-muted-foreground active:after:h-14 active:after:w-0.75 active:after:bg-muted-foreground",
+        "focus-visible:after:h-14 focus-visible:after:w-0.75 focus-visible:after:ring-[3px] focus-visible:after:ring-ring/50 focus-visible:after:outline-ring",
         className
       )}
       {...props}

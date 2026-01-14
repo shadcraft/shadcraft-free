@@ -1,9 +1,9 @@
 import * as React from "react";
-import { RegistryItem } from "shadcn/schema";
+import type { RegistryItem } from "shadcn/schema";
 
 import { DemoViewer } from "@/components/demo-viewer";
 import { createFileTreeForRegistryItemFiles, getRegistryItem } from "@/lib/registry";
-import { RegistryItemFile } from "@/types/shadcn-patch";
+import type { RegistryItemFile } from "@/types/shadcn-patch";
 import { formatComponentName } from "@/utils/registry";
 
 export async function DemoDisplay({
@@ -42,7 +42,7 @@ function DemoDisplayHeader({ item }: { item: RegistryItem }) {
         </h3>
 
         {description && (
-          <p className="text-muted-foreground max-w-2xl text-xs text-pretty md:text-sm">
+          <p className="max-w-2xl text-xs text-pretty text-muted-foreground md:text-sm">
             {description.replace(/\.$/, "")}
           </p>
         )}

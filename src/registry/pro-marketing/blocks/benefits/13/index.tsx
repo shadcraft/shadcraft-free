@@ -26,12 +26,12 @@ export function Benefits13() {
           {benefits.map((benefit) => (
             <Card key={benefit.title} className="group p-6">
               <div className="flex flex-col gap-4">
-                <div className="bg-primary/10 group-hover:bg-primary/20 grid size-10 place-items-center rounded-full transition-colors">
-                  <benefit.icon className="text-primary size-5 shrink-0" />
+                <div className="grid size-10 place-items-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20">
+                  <benefit.icon className="size-5 shrink-0 text-primary" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-foreground text-lg/7 font-medium">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-sm/5 font-normal">
+                  <h3 className="text-lg/7 font-medium text-foreground">{benefit.title}</h3>
+                  <p className="text-sm/5 font-normal text-muted-foreground">
                     {benefit.description}
                   </p>
                 </div>

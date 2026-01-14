@@ -1,4 +1,4 @@
-import { type RegistryItem, type Registry } from "shadcn/schema";
+import type { Registry, RegistryItem } from "shadcn/schema";
 
 import { proMarketingRegistryItems } from "@/registry/pro-marketing/registry";
 

@@ -18,8 +18,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
-import { type RegistryItem } from "shadcn/schema";
-import { BundledLanguage } from "shiki";
+import type { RegistryItem } from "shadcn/schema";
+import type { BundledLanguage } from "shiki";
 
 import { CodeBlock } from "@/components/code-block";
 import { React as ReactLogo } from "@/components/logos/react";
@@ -62,9 +62,9 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry";
+import type { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry";
 import { cn } from "@/lib/utils";
-import { RegistryItemFile } from "@/types/shadcn-patch";
+import type { RegistryItemFile } from "@/types/shadcn-patch";
 import { getViewPathForItem } from "@/utils/registry/view";
 
 type RegistryItemFileWithContent = RegistryItemFile & {
@@ -227,7 +227,7 @@ function CopyCLICommand() {
           <DropdownMenuItem onClick={() => handleCopyCommand("url")} className="cursor-pointer">
             <Copy className="size-4" />
             URL
-            <span className="text-muted-foreground ml-auto pl-4 font-mono text-xs">
+            <span className="ml-auto pl-4 font-mono text-xs text-muted-foreground">
               /r/{item.name}.json
             </span>
           </DropdownMenuItem>
@@ -237,7 +237,7 @@ function CopyCLICommand() {
           >
             <Copy className="size-4" />
             Namespace
-            <span className="text-muted-foreground ml-auto pl-4 font-mono text-xs">
+            <span className="ml-auto pl-4 font-mono text-xs text-muted-foreground">
               @shadcraft/{item.name}
             </span>
           </DropdownMenuItem>
@@ -254,7 +254,7 @@ function DemoViewerPreview() {
 
   return (
     <div className="size-full group-data-[view=code]/demo-view-wrapper:hidden">
-      <div className="bg-muted/25 relative size-full overflow-hidden rounded-xl border">
+      <div className="relative size-full overflow-hidden rounded-xl border bg-muted/25">
         <ResizablePreview>
           <div className="absolute inset-1 right-2 bg-[radial-gradient(var(--border)_1px,transparent_1px)] bg-size-[16px_16px] opacity-50" />
 
@@ -262,13 +262,13 @@ function DemoViewerPreview() {
             <ResizablePreviewContent
               className={cn(
                 "relative isolate size-full overflow-hidden rounded-[calc(var(--radius-xl)-4px)] shadow-md",
-                "md:ring-border/50 md:ring-1"
+                "md:ring-1 md:ring-border/50"
               )}
             >
               <PreviewIframe
                 src={url}
                 height={item.meta?.iframeHeight ?? 800}
-                className="bg-background no-scrollbar relative"
+                className="relative no-scrollbar bg-background"
               />
             </ResizablePreviewContent>
 
@@ -308,7 +308,7 @@ function DemoViewerCode() {
           <DemoViewerFileTreeSidebar className="group-data-[state=collapsed]:border-none" />
 
           <SidebarInset className="overflow-hidden">
-            <figure className="bg-background grid size-full min-w-0 grid-rows-[auto_1fr]">
+            <figure className="grid size-full min-w-0 grid-rows-[auto_1fr] bg-background">
               <div className="flex flex-col border-b">
                 <figcaption
                   className="flex h-12 shrink-0 items-center gap-2 px-4 py-2"
@@ -342,8 +342,8 @@ function DemoViewerCode() {
                     </>
                   )}
 
-                  <FileIcon className="text-muted-foreground size-3.5 shrink-0" />
-                  <span className="text-foreground line-clamp-1 text-left font-mono text-sm">
+                  <FileIcon className="size-3.5 shrink-0 text-muted-foreground" />
+                  <span className="line-clamp-1 text-left font-mono text-sm text-foreground">
                     {file.target}
                   </span>
                   <div className="ml-auto flex items-center gap-2">
@@ -414,16 +414,16 @@ function DemoViewerFileTreeSidebar({ className, ...props }: React.ComponentProps
   return (
     <Sidebar
       collapsible="icon"
-      className={cn("bg-sidebar relative isolate m-0 h-full p-0 max-lg:hidden", className)}
+      className={cn("relative isolate m-0 h-full bg-sidebar p-0 max-lg:hidden", className)}
       {...props}
     >
       <div className="relative overflow-hidden border-b text-left group-data-[state=collapsed]:hidden">
         <div className="flex h-12 w-full shrink-0 items-center justify-between gap-2 px-4 py-2">
-          <span className="text-sidebar-foreground line-clamp-1 font-mono text-sm">Files</span>
+          <span className="line-clamp-1 font-mono text-sm text-sidebar-foreground">Files</span>
 
           <Tooltip>
             <TooltipTrigger asChild>
-              <HelpCircle className="text-muted-foreground size-3.5" />
+              <HelpCircle className="size-3.5 text-muted-foreground" />
             </TooltipTrigger>
             <TooltipContent className="max-w-[25ch] text-center text-balance">
               The resulting files structure after running the CLI command.
@@ -488,7 +488,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
         <SidebarMenuButton
           isActive={item.path === activeFile}
           onClick={() => item.path && setActiveFile(item.path)}
-          className="focus-visible:bg-sidebar-accent focus:bg-sidebar-accent data-[active=true]:bg-muted-foreground/15 group text-sidebar-foreground/80 relative gap-2 rounded-none pl-(--index) whitespace-nowrap transition-all"
+          className="group relative gap-2 rounded-none pl-(--index) whitespace-nowrap text-sidebar-foreground/80 transition-all focus:bg-sidebar-accent focus-visible:bg-sidebar-accent data-[active=true]:bg-muted-foreground/15"
           data-index={index}
           style={
             {
@@ -499,7 +499,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
           <Icon className="ml-2 size-3.5! text-inherit" />
           <span className="line-clamp-1">{item.name}</span>
           <div
-            className="bg-primary pointer-events-none absolute inset-y-0 left-0 h-full w-[2px] opacity-0 group-data-[active=true]:opacity-50"
+            className="pointer-events-none absolute inset-y-0 left-0 h-full w-[2px] bg-primary opacity-0 group-data-[active=true]:opacity-50"
             aria-hidden="true"
           />
         </SidebarMenuButton>
@@ -515,7 +515,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton
-            className="focus-visible:bg-sidebar-accent focus:bg-sidebar-accent text-sidebar-foreground/80 gap-2 rounded-none pl-(--index) whitespace-nowrap transition-all"
+            className="gap-2 rounded-none pl-(--index) whitespace-nowrap text-sidebar-foreground/80 transition-all focus:bg-sidebar-accent focus-visible:bg-sidebar-accent"
             style={
               {
                 "--index": `${index * 0.875}rem`,

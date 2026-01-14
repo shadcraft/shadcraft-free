@@ -32,14 +32,14 @@ export function Team6() {
             <ProfileCard
               key={member.name}
               variant="default"
-              className="bg-background rounded-xl p-2"
+              className="rounded-xl bg-background p-2"
             >
               <ProfileCardAvatar
                 src={member.image}
                 name={member.name}
                 className="size-32 rounded-lg"
               />
-              <ProfileCardDetails className="border-primary self-end-safe border-l-2 pl-2">
+              <ProfileCardDetails className="self-end-safe border-l-2 border-primary pl-2">
                 <ProfileCardName>{member.name}</ProfileCardName>
                 <ProfileCardBody>{member.title}</ProfileCardBody>
               </ProfileCardDetails>

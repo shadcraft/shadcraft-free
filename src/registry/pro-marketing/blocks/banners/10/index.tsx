@@ -15,7 +15,7 @@ export function Banner10() {
     <aside
       role="banner"
       aria-label="Promotional banner"
-      className="bg-secondary text-secondary-foreground w-full py-4"
+      className="w-full bg-secondary py-4 text-secondary-foreground"
     >
       {/* Banner Container */}
       <div className="mx-auto max-w-7xl px-5 lg:px-8">

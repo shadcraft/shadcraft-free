@@ -25,26 +25,26 @@ export function PricingCard({
 }: PricingCardProps) {
   return (
     <Card
-      className={cn("w-full max-w-xl gap-4 border-2 py-5", featured && "border-primary border-2")}
+      className={cn("w-full max-w-xl gap-4 border-2 py-5", featured && "border-2 border-primary")}
     >
       <CardHeader className="flex flex-col gap-2 px-5">
-        <h3 className="text-foreground text-lg/7 font-medium">{name}</h3>
-        <p className="text-muted-foreground text-sm/5 font-normal">{description}</p>
+        <h3 className="text-lg/7 font-medium text-foreground">{name}</h3>
+        <p className="text-sm/5 font-normal text-muted-foreground">{description}</p>
       </CardHeader>
 
       <CardContent className="flex flex-col gap-4 px-5">
         <div className="flex items-baseline gap-1">
-          <span className="text-foreground text-4xl leading-none font-semibold">${price}</span>
-          <span className="text-muted-foreground text-base/6 font-normal">/month</span>
+          <span className="text-4xl leading-none font-semibold text-foreground">${price}</span>
+          <span className="text-base/6 font-normal text-muted-foreground">/month</span>
         </div>
 
         <ul className="flex flex-col gap-3">
           {features.map((feature) => (
             <li key={feature.label} className="flex items-start gap-2">
-              <Check className="text-primary mt-0.5 size-4 shrink-0" />
+              <Check className="mt-0.5 size-4 shrink-0 text-primary" />
               <span
                 className={cn(
-                  "text-muted-foreground flex-1 text-sm/5 font-normal",
+                  "flex-1 text-sm/5 font-normal text-muted-foreground",
                   featured && "text-foreground"
                 )}
               >
@@ -54,7 +54,7 @@ export function PricingCard({
               {feature.tooltip && (
                 <Tooltip>
                   <TooltipTrigger aria-label="More information">
-                    <Info className="text-muted-foreground size-4 opacity-70 hover:opacity-100" />
+                    <Info className="size-4 text-muted-foreground opacity-70 hover:opacity-100" />
                   </TooltipTrigger>
                   <TooltipContent>{feature.tooltip}</TooltipContent>
                 </Tooltip>

@@ -3,7 +3,7 @@
 import { ChevronDown, LayoutTemplate } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { RegistryItem } from "shadcn/schema";
+import type { RegistryItem } from "shadcn/schema";
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
@@ -27,14 +27,14 @@ export function RootSidebar({
 }: React.ComponentProps<typeof Sidebar> & { items: RegistryItem[] }) {
   return (
     <Sidebar
-      className={cn("bg-background relative border-none", className)}
+      className={cn("relative border-none bg-background", className)}
       collapsible="icon"
       {...props}
     >
       {/* Sidebar Header */}
       <MySidebarContent
         items={items}
-        className="bg-background no-scrollbar overscroll-contain p-2 pb-12"
+        className="no-scrollbar overscroll-contain bg-background p-2 pb-12"
       />
       {/* Sidebar Footer */}
       <SidebarRail />
@@ -62,8 +62,8 @@ function MySidebarContent({
 
   return (
     <SidebarContent className={cn("isolate", className)} {...props}>
-      <div className="from-background absolute inset-x-0 top-0 z-50 h-8 bg-linear-to-b to-transparent" />
-      <div className="from-background absolute inset-x-0 bottom-0 z-50 h-8 bg-linear-to-t to-transparent" />
+      <div className="absolute inset-x-0 top-0 z-50 h-8 bg-linear-to-b from-background to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 z-50 h-8 bg-linear-to-t from-background to-transparent" />
       {/* Components */}
       <Collapsible defaultOpen={resolvedComponentItems.length > 0} className="group/collapsible">
         <SidebarGroup>
@@ -96,7 +96,7 @@ function MySidebarContent({
                     );
                   })
                 ) : (
-                  <span className="text-muted-foreground py-2 text-center text-xs">
+                  <span className="py-2 text-center text-xs text-muted-foreground">
                     No components found
                   </span>
                 )}
@@ -131,7 +131,7 @@ function MySidebarContent({
                             className="flex items-center justify-between gap-2 font-medium"
                           >
                             {item.title}
-                            <span className="text-muted-foreground font-mono text-xs">
+                            <span className="font-mono text-xs text-muted-foreground">
                               {item.amount}
                             </span>
                           </Link>
@@ -140,7 +140,7 @@ function MySidebarContent({
                     );
                   })
                 ) : (
-                  <span className="text-muted-foreground py-2 text-center text-xs">
+                  <span className="py-2 text-center text-xs text-muted-foreground">
                     No blocks found
                   </span>
                 )}
@@ -178,7 +178,7 @@ function MySidebarContent({
                     );
                   })
                 ) : (
-                  <span className="text-muted-foreground py-2 text-center text-xs">
+                  <span className="py-2 text-center text-xs text-muted-foreground">
                     No templates found
                   </span>
                 )}

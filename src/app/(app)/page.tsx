@@ -19,12 +19,12 @@ export default function Home() {
     <main className="relative isolate w-full overflow-hidden px-4 pt-6 pb-12 lg:px-8 lg:pt-10 lg:pb-20">
       <div className="relative isolate px-4 pt-6 lg:pt-10">
         {/* Background gradient effect */}
-        <div className="from-muted absolute inset-0 z-[-1] rounded-t-3xl bg-linear-to-b to-transparent" />
+        <div className="absolute inset-0 z-[-1] rounded-t-3xl bg-linear-to-b from-muted to-transparent" />
 
         <motion.div variants={headerContainerVariants} initial="hidden" animate="visible">
           <PageHeader className="relative items-center justify-center text-center">
             <motion.div variants={headerItemVariants}>
-              <div className="bg-background flex size-14 items-center justify-center rounded-xl border p-2">
+              <div className="flex size-14 items-center justify-center rounded-xl border bg-background p-2">
                 <ReactLogo className="size-8" />
               </div>
             </motion.div>
@@ -35,7 +35,7 @@ export default function Home() {
 
             <motion.div variants={headerItemVariants}>
               <PageHeaderHeading>
-                <span className="from-primary to-muted-foreground bg-linear-to-r bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-primary to-muted-foreground bg-clip-text text-transparent">
                   Premium quality shadcn/ui components and blocks
                 </span>
               </PageHeaderHeading>

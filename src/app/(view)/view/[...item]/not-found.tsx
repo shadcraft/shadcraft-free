@@ -1,3 +1,5 @@
+import { ServerOff } from "lucide-react";
+
 import {
   Empty,
   EmptyDescription,
@@ -5,7 +7,6 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty";
-import { ServerOff } from "lucide-react";
 
 export default function NotFound() {
   const isDevMode = process.env.NODE_ENV === "development";

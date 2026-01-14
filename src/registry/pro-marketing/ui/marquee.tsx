@@ -1,6 +1,7 @@
 "use client";
 
-import { cva, VariantProps } from "class-variance-authority";
+import type { VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import type { MarqueeProps as FastMarqueeProps } from "react-fast-marquee";
 import FastMarquee from "react-fast-marquee";
 
@@ -71,4 +72,4 @@ function MarqueeItem({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-export { Marquee, MarqueeContent, MarqueeItem, type MarqueeContentProps };
+export { Marquee, MarqueeContent, type MarqueeContentProps, MarqueeItem };

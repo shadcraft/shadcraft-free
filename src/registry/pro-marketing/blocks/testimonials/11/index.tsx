@@ -32,11 +32,11 @@ export function Testimonial11() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="group gap-4 p-6">
-              <Quote className="text-muted-foreground group-hover:text-foreground size-4 rotate-180 transition-colors" />
-              <blockquote className="text-foreground text-base/6 font-normal text-pretty lg:text-lg/7">
+              <Quote className="size-4 rotate-180 text-muted-foreground transition-colors group-hover:text-foreground" />
+              <blockquote className="text-base/6 font-normal text-pretty text-foreground lg:text-lg/7">
                 {testimonial.quote}
               </blockquote>
-              <Quote className="text-muted-foreground group-hover:text-foreground size-4 self-end transition-colors" />
+              <Quote className="size-4 self-end text-muted-foreground transition-colors group-hover:text-foreground" />
 
               <ProfileCard className="mt-auto">
                 <ProfileCardAvatar src={testimonial.imageSrc} name={testimonial.name} />

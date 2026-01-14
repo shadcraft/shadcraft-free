@@ -9,7 +9,7 @@ import {
 
 export function CTA9() {
   return (
-    <section className="bg-primary text-primary-foreground py-12 lg:py-20">
+    <section className="bg-primary py-12 text-primary-foreground lg:py-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 lg:px-8">
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-8 text-center">
           {/* Section Heading */}

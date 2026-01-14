@@ -1,14 +1,13 @@
 import fs from "fs/promises";
 import { tmpdir } from "os";
 import path from "path";
-import { registryItemSchema, type RegistryItem } from "shadcn/schema";
+import { type RegistryItem, registryItemSchema } from "shadcn/schema";
 import { Project, ScriptKind } from "ts-morph";
 
 import { fixFilePaths, fixImports } from "@/lib/registry/generate";
-import { RegistryItemFile } from "@/types/shadcn-patch";
-import { isBlockFromCategories } from "@/utils/registry/filters";
-
 import { Index } from "@/registry/__index__";
+import type { RegistryItemFile } from "@/types/shadcn-patch";
+import { isBlockFromCategories } from "@/utils/registry/filters";
 
 export function getRegistryRenderComponent(name: string) {
   return Index[name]?.component;

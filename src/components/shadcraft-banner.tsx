@@ -16,14 +16,14 @@ export function ShadcraftBanner() {
     <aside
       role="banner"
       aria-label="Announcement banner"
-      className="bg-background text-foreground w-full border-b border-dashed py-2"
+      className="w-full border-b border-dashed bg-background py-2 text-foreground"
     >
       {/* Banner Container*/}
       <div className="container mx-auto px-4 lg:px-8">
         <div className="relative flex items-center justify-between gap-4">
           {/* Banner Content */}
           <div className="flex w-full flex-1 items-center gap-2">
-            <ReactLogo className="text-foreground size-4 shrink-0" />
+            <ReactLogo className="size-4 shrink-0 text-foreground" />
             <span className="text-sm">
               Explore the{" "}
               <Link

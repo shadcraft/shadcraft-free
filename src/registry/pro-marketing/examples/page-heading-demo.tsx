@@ -41,7 +41,7 @@ export function PageHeadingDemo() {
               </Avatar>
             ))}
           </AvatarStack>
-          <span className="text-muted-foreground text-xs/4">Loved by 4200+ professionals</span>
+          <span className="text-xs/4 text-muted-foreground">Loved by 4200+ professionals</span>
         </div>
       </PageHeading>
 
@@ -68,7 +68,7 @@ export function PageHeadingDemo() {
               </Avatar>
             ))}
           </AvatarStack>
-          <span className="text-muted-foreground text-xs/4">Loved by 4200+ professionals</span>
+          <span className="text-xs/4 text-muted-foreground">Loved by 4200+ professionals</span>
         </div>
       </PageHeading>
     </div>

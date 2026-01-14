@@ -29,7 +29,7 @@ export function TopNavigation5() {
   return (
     // To make this a sticky navigation, you can add `sticky top-0 z-50` classes to the parent div
     <nav
-      className="bg-background w-full py-5 transition-all ease-in-out md:py-3.5"
+      className="w-full bg-background py-5 transition-all ease-in-out md:py-3.5"
       role="navigation"
       aria-label="Website top navigation"
       ref={navigationContainerRef}
@@ -71,7 +71,7 @@ export function TopNavigation5() {
                   key={item.label}
                   href={item.href}
                   className={cn(
-                    "hover:bg-accent/50 hover:text-accent-foreground rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                    "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent/50 hover:text-accent-foreground",
                     isActive && "bg-accent text-accent-foreground"
                   )}
                 >
@@ -110,7 +110,7 @@ export function TopNavigation5() {
                       key={item.label}
                       href={item.href}
                       className={cn(
-                        "hover:bg-accent/50 hover:text-accent-foreground rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                        "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent/50 hover:text-accent-foreground",
                         isActive && "bg-accent text-accent-foreground"
                       )}
                       onClick={() => setIsMenuOpen(false)}

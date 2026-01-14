@@ -7,7 +7,7 @@ export function AvatarStackDemo() {
   return (
     <div className="flex flex-col items-center gap-12 p-5 lg:p-8">
       <div className="flex flex-col items-center gap-2">
-        <span className="text-muted-foreground text-sm font-medium text-balance">Default</span>
+        <span className="text-sm font-medium text-balance text-muted-foreground">Default</span>
         <AvatarStack>
           {avatarsSrc.map((src) => (
             <Avatar key={src}>
@@ -21,7 +21,7 @@ export function AvatarStackDemo() {
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <span className="text-muted-foreground text-sm font-medium text-balance">
+        <span className="text-sm font-medium text-balance text-muted-foreground">
           Max number of avatars
         </span>
         <AvatarStack max={3}>
@@ -37,7 +37,7 @@ export function AvatarStackDemo() {
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <span className="text-muted-foreground text-sm font-medium text-balance">Unmasked</span>
+        <span className="text-sm font-medium text-balance text-muted-foreground">Unmasked</span>
         <AvatarStack max={4} mask={false}>
           {avatarsSrc.map((src) => (
             <Avatar key={src}>
@@ -51,7 +51,7 @@ export function AvatarStackDemo() {
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <span className="text-muted-foreground text-sm font-medium text-balance">
+        <span className="text-sm font-medium text-balance text-muted-foreground">
           Overlap Ratio 0.3 (30% of avatar size)
         </span>
         <AvatarStack overlapRatio={0.3}>
@@ -67,7 +67,7 @@ export function AvatarStackDemo() {
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <span className="text-muted-foreground text-sm font-medium text-balance">
+        <span className="text-sm font-medium text-balance text-muted-foreground">
           Vertical orientation
         </span>
         <AvatarStack orientation="vertical" max={3}>

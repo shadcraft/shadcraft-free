@@ -52,7 +52,7 @@ export default async function Page({ params }: PageProps<"/blocks/[category]">) 
 
       <div className="space-y-16">
         {blocks.length <= 0 ? (
-          <Empty className="from-muted rounded-t-3xl bg-linear-to-b to-transparent">
+          <Empty className="rounded-t-3xl bg-linear-to-b from-muted to-transparent">
             <EmptyHeader>
               <EmptyMedia variant="icon">
                 <Construction />

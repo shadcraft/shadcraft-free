@@ -1,4 +1,5 @@
-import { Bolt, LucideProps } from "lucide-react";
+import type { LucideProps } from "lucide-react";
+import { Bolt } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -8,13 +9,13 @@ export function PlaceholderLogo({
   ...props
 }: LucideProps & { onlyIcon?: boolean }) {
   if (onlyIcon) {
-    return <Bolt className={cn("text-primary size-6 shrink-0", className)} {...props} />;
+    return <Bolt className={cn("size-6 shrink-0 text-primary", className)} {...props} />;
   }
 
   return (
     <div className="flex shrink-0 items-center gap-1">
-      <Bolt className={cn("text-primary size-6 shrink-0", className)} {...props} />
-      <span className="text-primary text-sm/5 font-semibold text-nowrap">Acme Inc.</span>
+      <Bolt className={cn("size-6 shrink-0 text-primary", className)} {...props} />
+      <span className="text-sm/5 font-semibold text-nowrap text-primary">Acme Inc.</span>
     </div>
   );
 }

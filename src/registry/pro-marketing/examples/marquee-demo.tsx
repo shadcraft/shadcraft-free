@@ -7,7 +7,7 @@ export function MarqueeDemo() {
         <MarqueeContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <MarqueeItem key={index}>
-              <div className="bg-primary size-20 rounded-full" />
+              <div className="size-20 rounded-full bg-primary" />
             </MarqueeItem>
           ))}
         </MarqueeContent>
@@ -17,7 +17,7 @@ export function MarqueeDemo() {
         <MarqueeContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <MarqueeItem key={index}>
-              <div className="bg-primary size-16 rounded-full" />
+              <div className="size-16 rounded-full bg-primary" />
             </MarqueeItem>
           ))}
         </MarqueeContent>
@@ -27,7 +27,7 @@ export function MarqueeDemo() {
         <MarqueeContent pauseOnHover speed={100}>
           {Array.from({ length: 5 }).map((_, index) => (
             <MarqueeItem key={index}>
-              <div className="bg-primary text-primary-foreground grid size-24 place-items-center rounded-full font-mono text-xs font-medium">
+              <div className="grid size-24 place-items-center rounded-full bg-primary font-mono text-xs font-medium text-primary-foreground">
                 hover me
               </div>
             </MarqueeItem>

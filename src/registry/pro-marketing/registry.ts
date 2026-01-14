@@ -1,4 +1,4 @@
-import { type Registry } from "shadcn/schema";
+import type { Registry } from "shadcn/schema";
 
 import { blocks } from "@/registry/pro-marketing/blocks/_registry";
 import { components } from "@/registry/pro-marketing/components/_registry";

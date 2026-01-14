@@ -71,14 +71,14 @@ function ProfileCardDetails({ className, ...props }: React.ComponentProps<"div">
 
 function ProfileCardName({ className, ...props }: React.ComponentProps<"p">) {
   return (
-    <p className={cn("text-foreground text-sm leading-5 font-semibold", className)} {...props} />
+    <p className={cn("text-sm leading-5 font-semibold text-foreground", className)} {...props} />
   );
 }
 
 function ProfileCardBody({ className, ...props }: React.ComponentProps<"span">) {
   return (
     <span
-      className={cn("text-muted-foreground text-xs leading-4 font-normal", className)}
+      className={cn("text-xs leading-4 font-normal text-muted-foreground", className)}
       {...props}
     />
   );

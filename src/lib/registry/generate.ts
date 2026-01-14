@@ -1,7 +1,7 @@
 import path from "path";
-import { type RegistryItem } from "shadcn/schema";
+import type { RegistryItem } from "shadcn/schema";
 
-import { RegistryItemFile } from "@/types/shadcn-patch";
+import type { RegistryItemFile } from "@/types/shadcn-patch";
 import { getBundleFromItem, removeBundlePrefix } from "@/utils/registry/bundle";
 
 /**

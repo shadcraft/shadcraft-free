@@ -11,15 +11,15 @@ const taglineVariants = cva(
       variant: {
         default: "text-foreground",
         primary:
-          "bg-primary text-primary-foreground [a&]:hover:bg-primary/90 rounded-md px-2 py-0.5",
+          "rounded-md bg-primary px-2 py-0.5 text-primary-foreground [a&]:hover:bg-primary/90",
         secondary:
-          "bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90 rounded-md px-2 py-0.5",
+          "rounded-md bg-secondary px-2 py-0.5 text-secondary-foreground [a&]:hover:bg-secondary/90",
         badge:
-          "bg-background text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground rounded-full border px-2 py-0.5",
+          "rounded-full border bg-background px-2 py-0.5 text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         outline:
-          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground rounded-md border bg-transparent px-2 py-0.5",
+          "rounded-md border bg-transparent px-2 py-0.5 text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         ghost:
-          "text-muted-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground bg-transparent",
+          "bg-transparent text-muted-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
       },
     },
     defaultVariants: {

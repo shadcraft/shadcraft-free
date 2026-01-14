@@ -82,7 +82,7 @@ function StarRatingLabel({ className, ...props }: React.ComponentProps<"span">) 
   return (
     <span
       data-slot="star-rating-label"
-      className="text-muted-foreground font-sans text-xs leading-4 font-normal"
+      className="font-sans text-xs leading-4 font-normal text-muted-foreground"
       {...props}
     />
   );

@@ -1,4 +1,4 @@
-import { type RegistryItem } from "shadcn/schema";
+import type { RegistryItem } from "shadcn/schema";
 
 /**
  * Extract bundle name from registry item metadata.

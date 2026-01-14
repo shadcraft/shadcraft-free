@@ -1,4 +1,4 @@
-import { type Registry } from "shadcn/schema";
+import type { Registry } from "shadcn/schema";
 
 import { getRegistryItemJsonUrl } from "@/utils/registry";
 

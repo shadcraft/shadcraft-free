@@ -29,7 +29,7 @@ export function Faqs4() {
             {faqs.map((faq) => (
               <AccordionItem key={faq.question} value={faq.question} className="border-none!">
                 <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground max-w-lg text-pretty">
+                <AccordionContent className="max-w-lg text-pretty text-muted-foreground">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -41,7 +41,7 @@ export function Faqs4() {
 
         {/* Contact CTA */}
         <div className="mx-auto text-center">
-          <p className="text-muted-foreground text-base/6 font-normal">
+          <p className="text-base/6 font-normal text-muted-foreground">
             Still have questions? We&apos;re here to help.{" "}
             <a href="#" className="text-primary underline">
               Contact support

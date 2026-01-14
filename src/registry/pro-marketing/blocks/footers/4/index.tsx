@@ -5,7 +5,7 @@ import { PlaceholderLogo } from "@/registry/pro-marketing/components/placeholder
 
 export function Footer4() {
   return (
-    <footer className="bg-background w-full border-t py-12 lg:py-20" role="contentinfo">
+    <footer className="w-full border-t bg-background py-12 lg:py-20" role="contentinfo">
       <div className="flex flex-col gap-12 lg:gap-9">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-x-5 gap-y-12 px-5 lg:flex-row lg:items-start lg:justify-between lg:gap-x-9 lg:px-8">
           {/* Logo and Description */}
@@ -16,7 +16,7 @@ export function Footer4() {
             </a>
 
             <div className="flex flex-col gap-4">
-              <p className="text-muted-foreground text-sm/5 font-normal text-pretty">
+              <p className="text-sm/5 font-normal text-pretty text-muted-foreground">
                 Building tools that help teams work smarter and faster.
               </p>
               <div className="flex items-center gap-2">
@@ -33,7 +33,7 @@ export function Footer4() {
           >
             {navigationData.map((section) => (
               <div key={section.title} className="flex flex-col gap-2.5">
-                <h3 className="text-muted-foreground text-sm/5 font-medium">{section.title}</h3>
+                <h3 className="text-sm/5 font-medium text-muted-foreground">{section.title}</h3>
                 <ul className="flex flex-col gap-3">
                   {section.links.map((link) => (
                     <li key={link.label} className="text-base/6 font-normal">
@@ -50,7 +50,7 @@ export function Footer4() {
 
         {/* Social Links and Copyright */}
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-5 text-center lg:flex-row lg:justify-between lg:px-8">
-          <p className="text-muted-foreground text-sm/5 font-normal">
+          <p className="text-sm/5 font-normal text-muted-foreground">
             &copy; Copyright Acme Inc. 2025. All right reserved.
           </p>
         </div>

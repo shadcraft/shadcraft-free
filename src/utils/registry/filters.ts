@@ -1,4 +1,4 @@
-import { RegistryItem } from "shadcn/schema";
+import type { RegistryItem } from "shadcn/schema";
 
 export function isUiItem(item: RegistryItem): boolean {
   return item.type === "registry:ui";

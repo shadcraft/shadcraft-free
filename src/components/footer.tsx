@@ -44,7 +44,7 @@ export async function Footer() {
 
   return (
     <footer
-      className="bg-background relative w-full py-12 lg:py-20"
+      className="relative w-full bg-background py-12 lg:py-20"
       role="contentinfo"
       aria-label="Website footer"
     >
@@ -62,14 +62,14 @@ export async function Footer() {
         >
           {/* Shadcraft Website*/}
           <div className="flex flex-col gap-6">
-            <h3 className="text-foreground text-sm font-medium">Shadcraft</h3>
+            <h3 className="text-sm font-medium text-foreground">Shadcraft</h3>
             <ul className="grid gap-3">
               {shadcraftLinks.map((item) => {
                 return (
-                  <li key={item.label} className="text-muted-foreground text-sm">
+                  <li key={item.label} className="text-sm text-muted-foreground">
                     <Link
                       href={item.href}
-                      className="hover:text-primary flex items-center gap-1 transition-all"
+                      className="flex items-center gap-1 transition-all hover:text-primary"
                     >
                       {item.label} <ArrowUpRight className="size-3" />
                     </Link>
@@ -81,16 +81,16 @@ export async function Footer() {
 
           {/* Marketing Components */}
           <div className="flex flex-col gap-6">
-            <h3 className="text-foreground text-sm font-medium">Marketing Components</h3>
+            <h3 className="text-sm font-medium text-foreground">Marketing Components</h3>
             <ul className="grid gap-3">
               {resolvedComponentItems.map((item) => {
                 const href =
                   item.type === "registry:ui" ? `/ui/${item.name}` : `/components/${item.name}`;
                 return (
-                  <li key={item.name} className="text-muted-foreground text-sm">
+                  <li key={item.name} className="text-sm text-muted-foreground">
                     <Link
                       href={href}
-                      className="hover:text-primary flex items-center gap-1 transition-all"
+                      className="flex items-center gap-1 transition-all hover:text-primary"
                     >
                       {item.title}
                     </Link>
@@ -102,13 +102,13 @@ export async function Footer() {
 
           {/* Marketing Blocks */}
           <div className="flex flex-col gap-6 md:col-span-2">
-            <h3 className="text-foreground text-sm font-medium">Marketing Blocks</h3>
+            <h3 className="text-sm font-medium text-foreground">Marketing Blocks</h3>
             <ul className="grid gap-x-12 gap-y-3 md:grid-cols-2 lg:gap-x-9">
               {blockItemsByCategories.map((item) => (
-                <li key={item.slug} className="text-muted-foreground text-sm">
+                <li key={item.slug} className="text-sm text-muted-foreground">
                   <Link
                     href={`/blocks/${item.slug}`}
-                    className="hover:text-primary flex items-center gap-1 transition-all"
+                    className="flex items-center gap-1 transition-all hover:text-primary"
                   >
                     {item.title}
                   </Link>
@@ -130,13 +130,13 @@ export async function Footer() {
               </span>
             </Link>
 
-            <span className="text-muted-foreground text-sm font-normal">
+            <span className="text-sm font-normal text-muted-foreground">
               This is a free and open-source project by{" "}
               <Link
                 href="https://x.com/shadcraft_"
                 target="_blank"
                 aria-label="Go to Shadcraft Twitter"
-                className="text-muted-foreground hover:text-primary transition-all hover:underline"
+                className="text-muted-foreground transition-all hover:text-primary hover:underline"
               >
                 Shadcraft
               </Link>
@@ -145,7 +145,7 @@ export async function Footer() {
                 href="https://github.com/shadcraft/shadcraft-free"
                 target="_blank"
                 aria-label="Go to GitHub Repository"
-                className="text-muted-foreground hover:text-primary transition-all hover:underline"
+                className="text-muted-foreground transition-all hover:text-primary hover:underline"
               >
                 GitHub
               </Link>
@@ -160,7 +160,7 @@ export async function Footer() {
                 href="https://github.com/shadcraft/shadcraft-free"
                 target="_blank"
                 aria-label="Go to GitHub Repository"
-                className="text-muted-foreground hover:text-primary transition-all"
+                className="text-muted-foreground transition-all hover:text-primary"
               >
                 <GitHub className="size-4" />
               </Link>
@@ -169,7 +169,7 @@ export async function Footer() {
                 href="https://x.com/shadcraft_"
                 target="_blank"
                 aria-label="Go to Shadcraft Twitter"
-                className="text-muted-foreground hover:text-primary transition-all"
+                className="text-muted-foreground transition-all hover:text-primary"
               >
                 <XformerlyTwitter className="size-4" />
               </Link>
@@ -178,14 +178,14 @@ export async function Footer() {
                 href="https://www.shadcraft.com"
                 target="_blank"
                 aria-label="Go to Shadcraft website"
-                className="text-muted-foreground hover:text-primary transition-all"
+                className="text-muted-foreground transition-all hover:text-primary"
               >
                 <Globe className="size-4" />
               </Link>
             </div>
 
             <div className="flex flex-row items-center justify-between gap-4 lg:flex-col lg:items-end">
-              <p className="text-muted-foreground text-sm font-normal">
+              <p className="text-sm font-normal text-muted-foreground">
                 &copy; shadcraft {getCurrentYear()}
               </p>
 

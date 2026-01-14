@@ -1,6 +1,7 @@
+import * as React from "react";
+
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
-import * as React from "react";
 
 interface AvatarStackProps extends React.ComponentProps<"div"> {
   orientation?: "horizontal" | "vertical";
@@ -81,7 +82,7 @@ export function AvatarStack({
           mask={mask}
         >
           <Avatar>
-            <AvatarFallback className="text-muted-foreground text-xs font-medium">
+            <AvatarFallback className="text-xs font-medium text-muted-foreground">
               +{overflowCount}
             </AvatarFallback>
           </Avatar>
