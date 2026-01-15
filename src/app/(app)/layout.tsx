@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: SITE_CONFIG.title,
     template: `%s | ${SITE_CONFIG.title}`,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_BASE_URL!),
+  metadataBase: new URL(SITE_CONFIG.url),
   description: SITE_CONFIG.description,
   keywords: SITE_CONFIG.keywords,
   authors: [{ name: SITE_CONFIG.creator.general, url: "https://shadcraft.com" }],

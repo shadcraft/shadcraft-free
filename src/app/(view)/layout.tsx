@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: `${SITE_CONFIG.title} View`,
     template: `%s | ${SITE_CONFIG.title} View`,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_BASE_URL!),
+  metadataBase: new URL(SITE_CONFIG.url),
   description: SITE_CONFIG.description,
   keywords: SITE_CONFIG.keywords,
 
