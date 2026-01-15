@@ -2,15 +2,30 @@ import { exec } from "child_process";
 import { promises as fs } from "fs";
 import path from "path";
 import { rimraf } from "rimraf";
-import { registrySchema } from "shadcn/schema";
+import { RegistryItem, registrySchema } from "shadcn/schema";
 
 import { cleanFilePath, rewriteItemImports } from "@/lib/registry/generate";
 import { RegistryItemFile } from "@/types/shadcn-patch";
-import { buildFilePath, getBundleFromItem, getBundleImportPath } from "@/utils/registry/bundle";
+import { getBundleFromItem, getBundleImportPath } from "@/utils/registry/bundle";
 
-// This is the main registry index file.
-// Contains all the items from all bundles.
-// import { registry } from "@/registry/index";
+try {
+  // Clean up public/r directory before building to prevent stale files
+  console.log("🗑️  Cleaning up public/r (registry) directory...");
+  rimraf.sync(path.join(process.cwd(), "public/r"));
+
+  console.log("📦  Building registry/__index__.tsx...");
+  await buildRegistryIndex();
+
+  console.log("📄  Building registry...");
+  await buildRegistryJsonFile();
+  await buildRegistry();
+  console.log("   ✅  Registry built successfully");
+
+  console.log("✅ Build completed successfully");
+} catch (error) {
+  console.error(error);
+  process.exit(1);
+}
 
 async function buildRegistryIndex() {
   let index = `/* eslint-disable @typescript-eslint/ban-ts-comment */
@@ -187,6 +202,35 @@ async function buildRegistry() {
   });
 }
 
+/**
+ * Build full file path, respecting absolute paths and relative paths with bundle prefix for registry structure.
+ *
+ * If the bundle is missing and not required for the given item type,
+ * this will still root the path under src/registry but skip the bundle segment.
+ */
+function buildFilePath(item: RegistryItem, filePath: string): string {
+  // If user already passed an absolute-ish src path, respect it
+  if (filePath.startsWith("src/")) {
+    return filePath;
+  }
+
+  const bundle = getBundleFromItem(item);
+
+  // No bundle: still root under src/registry, just skip the bundle segment
+  if (!bundle) {
+    return `src/registry/${filePath}`;
+  }
+
+  // Bundled items keep existing behavior
+  return `src/registry/${bundle}/${filePath}`;
+}
+
+/**
+ * Clean up generated paths in the target directory.
+ * Post-process the generated JSON files to remove registry/${bundle} prefix
+ *
+ * This is not (might not be*) needed anymore, since shadcn dropped the bundle prefix in the last registry refactor.
+ */
 async function cleanupGeneratedPaths(targetDir: string) {
   const dir = path.join(process.cwd(), targetDir);
 
@@ -248,23 +292,4 @@ async function cleanupGeneratedPaths(targetDir: string) {
   }
 
   console.log(`✨  Cleaned paths in ${jsonFiles.length} files`);
-}
-
-try {
-  // Clean up public/r directory before building to prevent stale files
-  console.log("🗑️  Cleaning up public/r (registry) directory...");
-  rimraf.sync(path.join(process.cwd(), "public/r"));
-
-  console.log("📦  Building registry/__index__.tsx...");
-  await buildRegistryIndex();
-
-  console.log("📄  Building registry...");
-  await buildRegistryJsonFile();
-  await buildRegistry();
-  console.log("   ✅  Registry built successfully");
-
-  console.log("✅ Build completed successfully");
-} catch (error) {
-  console.error(error);
-  process.exit(1);
 }
