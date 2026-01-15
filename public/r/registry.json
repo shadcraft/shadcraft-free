@@ -40,27 +40,6 @@
       "type": "registry:ui"
     },
     {
-      "name": "marquee",
-      "title": "Marquee",
-      "description": "A component that displays a list of items in a horizontal or vertical scrolling motion.",
-      "dependencies": [
-        "react-fast-marquee"
-      ],
-      "registryDependencies": [
-        "https://free.shadcraft.com/r/index.json"
-      ],
-      "files": [
-        {
-          "path": "src/registry/pro-marketing/ui/marquee.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "meta": {
-        "bundle": "pro-marketing"
-      },
-      "type": "registry:ui"
-    },
-    {
       "name": "page-heading",
       "title": "Page Heading",
       "description": "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",

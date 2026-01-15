@@ -27,24 +27,6 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: undefined,
     meta: { bundle: "pro-marketing" },
   },
-  marquee: {
-    name: "marquee",
-    type: "registry:ui",
-    title: "Marquee",
-    description:
-      "A component that displays a list of items in a horizontal or vertical scrolling motion.",
-    registryDependencies: ["https://free.shadcraft.com/r/index.json"],
-    files: [
-      {
-        path: "src/registry/pro-marketing/ui/marquee.tsx",
-        type: "registry:ui",
-        target: "",
-      },
-    ],
-    component: null,
-    categories: undefined,
-    meta: { bundle: "pro-marketing" },
-  },
   "page-heading": {
     name: "page-heading",
     type: "registry:ui",
@@ -482,30 +464,6 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/pro-marketing/examples/avatar-stack-demo.tsx");
-      const exportName =
-        Object.keys(mod).find(
-          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
-        ) || item.name;
-      return { default: mod.default || mod[exportName] };
-    }),
-    categories: undefined,
-    meta: { bundle: "pro-marketing" },
-  },
-  "marquee-demo": {
-    name: "marquee-demo",
-    type: "registry:example",
-    title: "Marquee Demo",
-    description: "",
-    registryDependencies: ["@shadcraft/marquee"],
-    files: [
-      {
-        path: "src/registry/pro-marketing/examples/marquee-demo.tsx",
-        type: "registry:example",
-        target: "",
-      },
-    ],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/marquee-demo.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"

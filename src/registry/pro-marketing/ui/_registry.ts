@@ -16,20 +16,6 @@ export const ui: Registry["items"] = [
     ],
   },
   {
-    name: "marquee",
-    title: "Marquee",
-    type: "registry:ui",
-    description:
-      "A component that displays a list of items in a horizontal or vertical scrolling motion.",
-    dependencies: ["react-fast-marquee"],
-    files: [
-      {
-        path: "ui/marquee.tsx",
-        type: "registry:ui",
-      },
-    ],
-  },
-  {
     name: "page-heading",
     title: "Page Heading",
     type: "registry:ui",
