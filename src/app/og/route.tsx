@@ -24,10 +24,18 @@ async function loadAssets(): Promise<
   ];
 }
 
+function clampByWords(text: string | null, maxWords: number): string {
+  if (!text) return "";
+  const words = text.split(/\s+/);
+  if (words.length <= maxWords) return text;
+  return words.slice(0, maxWords).join(" ") + "...";
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const title = searchParams.get("title");
   const description = searchParams.get("description");
+  const processedDescription = clampByWords(description, 15);
 
   const fonts = await loadAssets();
 
@@ -73,7 +81,7 @@ export async function GET(request: Request) {
             textWrap: "balance",
           }}
         >
-          {description}
+          {processedDescription}
         </div>
       </div>
     </div>
