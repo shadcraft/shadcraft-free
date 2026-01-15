@@ -1,9 +1,22 @@
 import { ChevronRight } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item";
+import { SITE_CONFIG } from "@/config/site";
 import { getRegistryItems } from "@/lib/registry";
 import { groupBlocksByCategories } from "@/utils/registry";
+
+export const metadata: Metadata = {
+  title: "Blocks",
+  description: "Browse our collection of free shadcn/ui marketing blocks.",
+  alternates: { canonical: `${SITE_CONFIG.url}/blocks` },
+  openGraph: {
+    title: "Blocks",
+    description: "Browse our collection of free shadcn/ui marketing blocks.",
+    url: `${SITE_CONFIG.url}/blocks`,
+  },
+};
 
 export default async function RegistryBlocksPage() {
   const items = await getRegistryItems((item) => item.type === "registry:block");

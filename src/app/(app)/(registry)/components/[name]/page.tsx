@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
 
 import { DemoDisplay } from "@/components/demo-display";
 import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
+import { SITE_CONFIG } from "@/config/site";
 import { getRegistryItem, getRegistryItems } from "@/lib/registry";
 
 export const revalidate = false;
@@ -14,11 +16,26 @@ export const generateStaticParams = async () => {
   return components.map((item) => ({ name: item.name }));
 };
 
-export const generateMetadata = async ({ params }: PageProps<"/components/[name]">) => {
+export const generateMetadata = async ({
+  params,
+}: PageProps<"/components/[name]">): Promise<Metadata> => {
   const { name } = await params;
   const itemData = await getCachedRegistryItem(name);
   const title = itemData?.title ?? name;
-  return { title };
+  const description = itemData?.description ?? `${title} component for shadcn/ui`;
+  const url = `${SITE_CONFIG.url}/components/${name}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "website",
+    },
+  };
 };
 
 export default async function Page({ params }: PageProps<"/components/[name]">) {

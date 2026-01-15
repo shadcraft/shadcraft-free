@@ -3,18 +3,16 @@ import type { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/config/site";
 import { getRegistryItems } from "@/lib/registry";
 import { registryCategories } from "@/lib/registry/blocks-categories";
-import { isUiItem } from "@/utils/registry/filters";
+import { isComponentItem, isUiItem } from "@/utils/registry/filters";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_CONFIG.url;
 
-  // Static routes
-  const staticRoutes: MetadataRoute.Sitemap = ["", "/ui", "/components", "/blocks"].map(
-    (route) => ({
-      url: `${baseUrl}${route}`,
-      lastModified: new Date().toISOString(),
-    })
-  );
+  // Base routes
+  const baseRoutes: MetadataRoute.Sitemap = ["", "/ui", "/components", "/blocks"].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString(),
+  }));
 
   // Block category routes
   const blockCategoryRoutes: MetadataRoute.Sitemap = registryCategories.map((category) => ({
@@ -29,5 +27,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date().toISOString(),
   }));
 
-  return [...staticRoutes, ...blockCategoryRoutes, ...uiComponentRoutes];
+  // Component routes
+  const componentItems = await getRegistryItems(isComponentItem);
+  const componentRoutes: MetadataRoute.Sitemap = componentItems.map((item) => ({
+    url: `${baseUrl}/components/${item.name}`,
+    lastModified: new Date().toISOString(),
+  }));
+
+  return [...baseRoutes, ...uiComponentRoutes, ...componentRoutes, ...blockCategoryRoutes];
 }

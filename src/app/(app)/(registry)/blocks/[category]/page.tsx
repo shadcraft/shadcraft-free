@@ -1,4 +1,5 @@
 import { ArrowUpRight, Construction } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -13,6 +14,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty";
+import { SITE_CONFIG } from "@/config/site";
 import { getBlocksByCategories } from "@/lib/registry";
 import { registryCategories } from "@/lib/registry/blocks-categories";
 
@@ -24,11 +26,26 @@ export const generateStaticParams = async () => {
   return registryCategories.map((category) => ({ category: category.slug }));
 };
 
-export const generateMetadata = async ({ params }: PageProps<"/blocks/[category]">) => {
+export const generateMetadata = async ({
+  params,
+}: PageProps<"/blocks/[category]">): Promise<Metadata> => {
   const { category } = await params;
   const categoryData = registryCategories.find((c) => c.slug === category);
   const title = categoryData?.title ?? category;
-  return { title };
+  const description = categoryData?.description ?? `${title} blocks for shadcn/ui`;
+  const url = `${SITE_CONFIG.url}/blocks/${category}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "website",
+    },
+  };
 };
 
 export default async function Page({ params }: PageProps<"/blocks/[category]">) {

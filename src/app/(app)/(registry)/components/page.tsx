@@ -1,8 +1,21 @@
 import { ChevronRight } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item";
+import { SITE_CONFIG } from "@/config/site";
 import { getRegistryItems } from "@/lib/registry";
+
+export const metadata: Metadata = {
+  title: "Components",
+  description: "Browse our collection of free shadcn/ui components.",
+  alternates: { canonical: `${SITE_CONFIG.url}/components` },
+  openGraph: {
+    title: "Components",
+    description: "Browse our collection of free shadcn/ui components.",
+    url: `${SITE_CONFIG.url}/components`,
+  },
+};
 
 export default async function RegistryComponentsPage() {
   const items = await getRegistryItems((item) => item.type === "registry:component");

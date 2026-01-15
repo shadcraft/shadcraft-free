@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   keywords: SITE_CONFIG.keywords,
   authors: [{ name: SITE_CONFIG.creator.general, url: "https://shadcraft.com" }],
   creator: SITE_CONFIG.creator.general,
+  alternates: {
+    canonical: SITE_CONFIG.url,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -45,11 +48,30 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_CONFIG.name,
+  url: SITE_CONFIG.url,
+  description: SITE_CONFIG.description,
+  publisher: {
+    "@type": "Organization",
+    name: "Shadcraft",
+    url: "https://shadcraft.com",
+  },
+};
+
 export default function RootLayoutApp({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <script async crossOrigin="anonymous" src="https://tweakcn.com/live-preview.min.js" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
       </head>
       <body className={`${fontVariables} overscroll-none`}>
         <ThemeProvider>
