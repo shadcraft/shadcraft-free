@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-click-outside",
-  "type": "registry:hook",
   "dependencies": [],
   "files": [
     {
@@ -12,5 +11,6 @@
   ],
   "meta": {
     "bundle": "pro-marketing"
-  }
+  },
+  "type": "registry:hook"
 }

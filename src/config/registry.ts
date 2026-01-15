@@ -1,4 +1,5 @@
 export const REGISTRY_CONFIG = {
+  homepage: process.env.NEXT_PUBLIC_APP_BASE_URL || "https://shadcraft-free.vercel.app",
   /**
    * The namespace prefix used when installing components via the shadcn CLI.
    * @example `npx shadcn add @shadcraft/[registry-item]`

@@ -1,39 +1,30 @@
 import {
   ProfileCard,
   ProfileCardAvatar,
-  ProfileCardBody,
   ProfileCardDetails,
-  ProfileCardName,
-} from "@/registry/pro-marketing/components/profile-card";
+} from "@/registry/pro-marketing/ui/profile-card";
 
 export function ProfileCardDemo() {
   return (
     <div className="flex flex-col gap-12 p-5 lg:p-8">
       <ProfileCard>
         <ProfileCardAvatar src="https://github.com/shadcn.png" name="shadcn" />
-
-        <ProfileCardDetails>
-          <ProfileCardName>Sophie Tan</ProfileCardName>
-          <ProfileCardBody>sophie.tan@gmail.com</ProfileCardBody>
-        </ProfileCardDetails>
+        <ProfileCardDetails name="Sophie Tan" body="sophie.tan@gmail.com" />
       </ProfileCard>
 
       <ProfileCard variant="horizontal">
-        <ProfileCardAvatar size="sm" src="https://github.com/shadcn.png" name="shadcn" />
+        <ProfileCardAvatar src="https://github.com/shadcn.png" name="shadcn" />
+        <ProfileCardDetails name="Sophie Tan" body="4 Sept, 2025" />
+      </ProfileCard>
 
-        <ProfileCardDetails>
-          <ProfileCardName>Sophie Tan</ProfileCardName>
-          <ProfileCardBody>4 Sept, 2025</ProfileCardBody>
-        </ProfileCardDetails>
+      <ProfileCard className="justify-between">
+        <ProfileCardDetails name="Sophie Tan" body="sophie.tan@gmail.com" />
+        <ProfileCardAvatar src="https://github.com/shadcn.png" name="shadcn" />
       </ProfileCard>
 
       <ProfileCard variant="vertical">
-        <ProfileCardAvatar size="lg" src="https://github.com/shadcn.png" name="shadcn" />
-
-        <ProfileCardDetails>
-          <ProfileCardName>Sophie</ProfileCardName>
-          <ProfileCardBody>CEO</ProfileCardBody>
-        </ProfileCardDetails>
+        <ProfileCardAvatar src="https://github.com/shadcn.png" name="shadcn" />
+        <ProfileCardDetails name="Sophie Tan" body="CEO" />
       </ProfileCard>
     </div>
   );

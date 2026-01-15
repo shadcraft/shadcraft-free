@@ -2,26 +2,26 @@ import { Play, User } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { AvatarStack } from "@/registry/pro-marketing/ui/avatar-stack";
 import {
   PageHeading,
   PageHeadingActions,
-  PageHeadingDescription,
+  PageHeadingBody,
   PageHeadingTagline,
   PageHeadingTitle,
-} from "@/registry/pro-marketing/components/page-heading";
-import { AvatarStack } from "@/registry/pro-marketing/ui/avatar-stack";
+} from "@/registry/pro-marketing/ui/page-heading";
 
 export function PageHeadingDemo() {
   return (
-    <div className="flex flex-col gap-8 px-5 py-12 lg:px-8 lg:py-20">
+    <div className="flex flex-col p-5 lg:p-8">
       {/* Section holding the Page Heading */}
       <PageHeading alignment="center">
         <PageHeadingTagline>New features released</PageHeadingTagline>
         <PageHeadingTitle>Make Better Decisions, With Ease</PageHeadingTitle>
-        <PageHeadingDescription>
+        <PageHeadingBody>
           Acme Inc&apos;s personal AI helps you cut through the noise, speed up delivery, and stay
           focused without switching contexts.
-        </PageHeadingDescription>
+        </PageHeadingBody>
         <PageHeadingActions>
           <Button>Get Started</Button>
           <Button variant="outline">
@@ -41,17 +41,17 @@ export function PageHeadingDemo() {
               </Avatar>
             ))}
           </AvatarStack>
-          <span className="text-xs/4 text-muted-foreground">Loved by 4200+ professionals</span>
+          <span className="text-xs text-muted-foreground">Loved by 4200+ professionals</span>
         </div>
       </PageHeading>
 
       <PageHeading>
         <PageHeadingTagline>New features released</PageHeadingTagline>
         <PageHeadingTitle>Make Better Decisions, With Ease</PageHeadingTitle>
-        <PageHeadingDescription>
+        <PageHeadingBody>
           Acme Inc&apos;s personal AI helps you cut through the noise, speed up delivery, and stay
           focused without switching contexts.
-        </PageHeadingDescription>
+        </PageHeadingBody>
         <PageHeadingActions>
           <Button>Get Started</Button>
           <Button variant="outline">
@@ -68,7 +68,7 @@ export function PageHeadingDemo() {
               </Avatar>
             ))}
           </AvatarStack>
-          <span className="text-xs/4 text-muted-foreground">Loved by 4200+ professionals</span>
+          <span className="text-xs text-muted-foreground">Loved by 4200+ professionals</span>
         </div>
       </PageHeading>
     </div>

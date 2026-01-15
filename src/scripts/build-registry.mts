@@ -26,7 +26,10 @@ type RegistryItemWithComponent = RegistryItem & {
 
 export const Index: Record<string, RegistryItemWithComponent> = {`;
 
+  // 1. Dynamically import the registry.
   const { registry: importedRegistry } = await import("@/registry/index");
+
+  // 2. Validate the registry schema.
   const parseResult = registrySchema.safeParse(importedRegistry);
   if (!parseResult.success) {
     console.error(`❌  Registry validation failed`);
@@ -37,9 +40,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {`;
   const registry = parseResult.data;
 
   for (const item of registry.items) {
-    const files = item.files ?? [];
     // Skip items without files
-    if (files.length === 0) {
+    if (!item.files || item.files.length === 0) {
       continue;
     }
 
@@ -52,10 +54,11 @@ export const Index: Record<string, RegistryItemWithComponent> = {`;
       continue;
     }
 
-    const componentPath = files[0].path
-      ? getBundleImportPath(item, files[0].path.replace(/\.(tsx?|jsx?)$/, ""))
-      : "";
+    const componentPath = item.files[0]?.path ? getBundleImportPath(item, item.files[0].path) : "";
 
+    const isPreviewable = item.type === "registry:example" || item.type === "registry:block";
+
+    // 3. Append the registry item entry to the index.
     index += `
   "${item.name}": {
     name: "${item.name}",
@@ -63,7 +66,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {`;
     title: "${item.title ?? ""}",
     description: "${item.description ?? ""}",
     registryDependencies: ${JSON.stringify(item.registryDependencies)},
-    files: [${files.map((file) => {
+    files: [${item.files.map((file) => {
       const filePath = getBundlePath(item, typeof file === "string" ? file : file.path);
       const resolvedFilePath = path.resolve(filePath);
       return typeof file === "string"
@@ -75,7 +78,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {`;
     }`;
     })}],
     component: ${
-      componentPath
+      // Only include the LazyLoaded component if the item is previewable.
+      componentPath && isPreviewable
         ? `React.lazy(async () => {
       const mod = await import("${componentPath}")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
@@ -93,13 +97,17 @@ export const Index: Record<string, RegistryItemWithComponent> = {`;
 
   console.log(`#️⃣  ${Object.keys(registry.items).length} items found`);
 
-  // Write style index.
-  rimraf.sync(path.join(process.cwd(), "src/registry/__index__.tsx"));
-  await fs.writeFile(path.join(process.cwd(), "src/registry/__index__.tsx"), index);
+  // 4. Write unified index.
+  const registryIndexPath = path.join(process.cwd(), "src/registry/__index__.tsx");
+  rimraf.sync(registryIndexPath);
+  await fs.writeFile(registryIndexPath, index);
 }
 
 async function buildRegistryJsonFile() {
+  // 1. Import the registry index.
   const { registry: importedRegistry } = await import("@/registry/index");
+
+  // 2. Validate the registry schema.
   const parseResult = registrySchema.safeParse(importedRegistry);
   if (!parseResult.success) {
     console.error(`❌  Registry validation failed`);
@@ -109,7 +117,7 @@ async function buildRegistryJsonFile() {
 
   const registry = parseResult.data;
 
-  // Add bundle prefix to file paths for the build to work (only if bundle exists)
+  // 3. Fix the path for registry items.
   const fixedRegistry = {
     ...registry,
     items: registry.items.map((item) => {
@@ -133,11 +141,11 @@ async function buildRegistryJsonFile() {
     }),
   };
 
-  // Create the output directory and write registry.json.
+  // 4. Create the output directory and write registry.json.
   const outputDir = path.join(process.cwd(), "public/r");
   await fs.mkdir(outputDir, { recursive: true });
 
-  // Write registry.json to output directory and format it.
+  // 5. Write registry.json to output directory and format it.
   const registryJsonPath = path.join(outputDir, "registry.json");
   await fs.writeFile(registryJsonPath, JSON.stringify(fixedRegistry, null, 2));
   await new Promise<void>((resolve, reject) => {
@@ -150,14 +158,17 @@ async function buildRegistryJsonFile() {
     });
   });
 
-  // Write root level registry.json file needed by shadcn build.
+  // 6. Write root level registry.json file needed by shadcn build.
   const rootRegistryJsonPath = path.join(process.cwd(), `registry.json`);
   await fs.writeFile(rootRegistryJsonPath, JSON.stringify(fixedRegistry, null, 2));
 }
 
 async function buildRegistry() {
   return new Promise((resolve, reject) => {
-    const process = exec(`pnpm dlx shadcn build registry.json --output public/r`);
+    const jsonFilePath = "registry.json";
+    const outputDir = "public/r";
+
+    const process = exec(`pnpm dlx shadcn build ${jsonFilePath} --output ${outputDir}`);
     process.on("exit", async (code) => {
       if (code === 0) {
         // Post-process the generated JSON files to remove registry/${bundle} prefix
@@ -213,7 +224,7 @@ async function cleanupGeneratedPaths(targetDir: string) {
 
           // Clean up imports in the content field using the path mappings
           if (file.content) {
-            file.content = rewriteImports(file.content, bundle, pathMappings);
+            file.content = rewriteItemImports(file.content, bundle, pathMappings);
           }
         }
         return file;
@@ -236,29 +247,20 @@ async function cleanupGeneratedPaths(targetDir: string) {
   console.log(`✨  Cleaned paths in ${jsonFiles.length} files`);
 }
 
-function rewriteImports(
-  content: string,
-  bundle: string,
-  pathMappings: Map<string, string>
-): string {
-  // Use the shared rewrite function from generate.ts
-  return rewriteItemImports(content, bundle, pathMappings);
-}
-
 try {
   // Clean up public/r directory before building to prevent stale files
-  const outputDir = path.join(process.cwd(), "public/r");
-  console.log("🧹  Cleaning up public/r directory...");
-  rimraf.sync(outputDir);
+  console.log("🗑️  Cleaning up public/r (registry) directory...");
+  rimraf.sync(path.join(process.cwd(), "public/r"));
 
-  console.log("🗂️  Building registry/__index__.tsx...");
+  console.log("📦  Building registry/__index__.tsx...");
   await buildRegistryIndex();
 
-  console.log("💅  Building registry.json...");
+  console.log("📄  Building registry...");
   await buildRegistryJsonFile();
-
-  console.log("🏗️  Building registry...");
   await buildRegistry();
+  console.log("   ✅  Registry built successfully");
+
+  console.log("✅ Build completed successfully");
 } catch (error) {
   console.error(error);
   process.exit(1);

@@ -1,5 +1,6 @@
 import type { Registry, RegistryItem } from "shadcn/schema";
 
+import { REGISTRY_CONFIG } from "@/config/registry";
 import { proMarketingRegistryItems } from "@/registry/pro-marketing/registry";
 
 const DEFAULT: RegistryItem = {
@@ -18,6 +19,6 @@ const DEFAULT: RegistryItem = {
 
 export const registry = {
   name: "Shadcraft Free",
-  homepage: "https://shadcraft-free.vercel.app", // TODO:
+  homepage: REGISTRY_CONFIG.homepage,
   items: [DEFAULT, ...proMarketingRegistryItems],
 } satisfies Registry;

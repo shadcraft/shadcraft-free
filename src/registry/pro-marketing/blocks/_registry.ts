@@ -84,6 +84,7 @@ export const blocks: Registry["items"] = [
     name: "footer-4",
     title: "Footer 4",
     type: "registry:block",
+    dependencies: ["react-icons"],
     registryDependencies: ["separator", getRegistryItemJsonUrl("placeholder-logo")],
     files: [
       {
@@ -154,11 +155,6 @@ export const blocks: Registry["items"] = [
         path: "blocks/pricing/8/index.tsx",
         type: "registry:component",
         target: "components/pricing-8.tsx",
-      },
-      {
-        path: "blocks/pricing/8/components/pricing-card.tsx",
-        type: "registry:component",
-        target: "components/pricing-card.tsx",
       },
     ],
     categories: ["pricing"],

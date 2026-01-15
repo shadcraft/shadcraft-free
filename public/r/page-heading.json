@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "page-heading",
-  "type": "registry:component",
   "title": "Page Heading",
   "description": "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
   "registryDependencies": [
@@ -9,12 +8,13 @@
   ],
   "files": [
     {
-      "path": "components/page-heading.tsx",
-      "content": "import { cn } from \"@/lib/utils\";\n\nfunction PageHeading({\n  className,\n  alignment = \"left\",\n  ...props\n}: React.ComponentProps<\"div\"> & { alignment?: \"left\" | \"center\" | \"right\" }) {\n  return (\n    <div\n      data-slot=\"page-heading\"\n      className={cn(\n        \"flex max-w-3xl flex-col gap-4\",\n        alignment === \"left\" && \"items-start text-left\",\n        alignment === \"center\" && \"items-center text-center\",\n        alignment === \"right\" && \"items-end text-right\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction PageHeadingTagline({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"page-heading-tagline\"\n      className={cn(\n        \"text-foreground bg-background inline-flex w-fit shrink-0 items-center justify-center gap-1 rounded-md border px-2 py-0.5 text-xs/4 font-medium whitespace-nowrap [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5 [&>svg]:pointer-events-none\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction PageHeadingTitle({ className, ...props }: React.ComponentProps<\"h1\">) {\n  return (\n    <h1\n      data-slot=\"page-heading-title\"\n      className={cn(\n        \"text-foreground scroll-m-20 text-5xl leading-none font-medium tracking-tight lg:text-6xl\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction PageHeadingDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"page-heading-description\"\n      className={cn(\"text-muted-foreground max-w-xl text-lg/7 font-normal\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction PageHeadingActions({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"page-heading-actions\"\n      className={cn(\"flex w-full flex-col gap-2 sm:w-fit sm:flex-row\", className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  PageHeading,\n  PageHeadingActions,\n  PageHeadingDescription,\n  PageHeadingTagline,\n  PageHeadingTitle,\n};\n",
-      "type": "registry:component"
+      "path": "components/ui/page-heading.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Tagline } from \"@/components/ui/tagline\";\n\nfunction PageHeading({\n  className,\n  alignment = \"left\",\n  ...props\n}: React.ComponentProps<\"div\"> & { alignment?: \"left\" | \"center\" | \"right\" }) {\n  return (\n    <div\n      data-slot=\"page-heading\"\n      className={cn(\n        \"flex max-w-3xl flex-col gap-4\",\n        alignment === \"left\" && \"items-start text-left\",\n        alignment === \"center\" && \"items-center text-center\",\n        alignment === \"right\" && \"items-end text-right\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction PageHeadingTagline({ className, ...props }: React.ComponentProps<typeof Tagline>) {\n  return <Tagline variant=\"badge\" {...props} />;\n}\n\nfunction PageHeadingTitle({ className, ...props }: React.ComponentProps<\"h1\">) {\n  return (\n    <h1\n      data-slot=\"page-heading-title\"\n      className={cn(\n        \"scroll-m-20 text-5xl font-medium tracking-tight text-foreground lg:text-6xl\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction PageHeadingBody({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"page-heading-body\"\n      className={cn(\"max-w-xl text-lg font-normal text-muted-foreground\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction PageHeadingActions({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"page-heading-actions\"\n      className={cn(\"flex w-full flex-col gap-2 sm:w-fit sm:flex-row\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { PageHeading, PageHeadingActions, PageHeadingBody, PageHeadingTagline, PageHeadingTitle };\n",
+      "type": "registry:ui"
     }
   ],
   "meta": {
     "bundle": "pro-marketing"
-  }
+  },
+  "type": "registry:ui"
 }

@@ -17,7 +17,7 @@ function ProfileCard({
       data-slot="profile-card"
       className={cn(
         "group/profile-card flex flex-row items-center gap-2",
-        variant === "vertical" && "flex-col gap-3 text-center",
+        "data-[variant=vertical]:flex-col data-[variant=vertical]:gap-3 data-[variant=vertical]:text-center",
         className
       )}
       {...props}
@@ -40,10 +40,10 @@ function ProfileCardAvatar({
 }) {
   return (
     <Avatar
+      data-size={size}
+      data-slot="profile-card-avatar"
       className={cn(
-        size === "default" && "size-10",
-        size === "sm" && "size-6",
-        size === "lg" && "size-24",
+        "data-[size=default]:size-10 data-[size=lg]:size-24 data-[size=sm]:size-6",
         className
       )}
       {...props}
@@ -54,7 +54,13 @@ function ProfileCardAvatar({
   );
 }
 
-function ProfileCardDetails({ className, ...props }: React.ComponentProps<"div">) {
+function ProfileCardDetails({
+  className,
+  children,
+  name,
+  body,
+  ...props
+}: React.ComponentProps<"div"> & { name: string; body?: string }) {
   return (
     <div
       data-slot="profile-card-details"
@@ -65,23 +71,21 @@ function ProfileCardDetails({ className, ...props }: React.ComponentProps<"div">
         className
       )}
       {...props}
-    />
+    >
+      {children ?? (
+        <>
+          <p data-slot="details-name" className="text-sm font-semibold text-foreground">
+            {name}
+          </p>
+          {body && (
+            <span data-slot="details-body" className="text-xs text-muted-foreground">
+              {body}
+            </span>
+          )}
+        </>
+      )}
+    </div>
   );
 }
 
-function ProfileCardName({ className, ...props }: React.ComponentProps<"p">) {
-  return (
-    <p className={cn("text-sm leading-5 font-semibold text-foreground", className)} {...props} />
-  );
-}
-
-function ProfileCardBody({ className, ...props }: React.ComponentProps<"span">) {
-  return (
-    <span
-      className={cn("text-xs leading-4 font-normal text-muted-foreground", className)}
-      {...props}
-    />
-  );
-}
-
-export { ProfileCard, ProfileCardAvatar, ProfileCardBody, ProfileCardDetails, ProfileCardName };
+export { ProfileCard, ProfileCardAvatar, ProfileCardDetails };

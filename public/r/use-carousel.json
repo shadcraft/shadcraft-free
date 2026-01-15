@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-carousel",
-  "type": "registry:hook",
   "dependencies": [
     "embla-carousel",
     "embla-carousel-react"
@@ -15,5 +14,6 @@
   ],
   "meta": {
     "bundle": "pro-marketing"
-  }
+  },
+  "type": "registry:hook"
 }

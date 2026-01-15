@@ -15,7 +15,7 @@ export function PlaceholderLogo({
   return (
     <div className="flex shrink-0 items-center gap-1">
       <Bolt className={cn("size-6 shrink-0 text-primary", className)} {...props} />
-      <span className="text-sm/5 font-semibold text-nowrap text-primary">Acme Inc.</span>
+      <span className="text-sm font-semibold text-nowrap text-primary">Acme Inc.</span>
     </div>
   );
 }

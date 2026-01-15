@@ -5,9 +5,9 @@ import { useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { PlaceholderLogo } from "@/registry/pro-marketing/components/placeholder-logo";
 import { useClickOutside } from "@/registry/pro-marketing/hooks/use-click-outside";
 import { useIsMobile } from "@/registry/pro-marketing/hooks/use-mobile";
+import { PlaceholderLogo } from "@/registry/pro-marketing/ui/placeholder-logo";
 
 // Defaults to Tailwind's md: breakpoint.
 // Change to 1024 + use lg: classes for 1024px breakpoint or whatever breakpoint you want to use
@@ -28,8 +28,8 @@ export function TopNavigation5() {
 
   return (
     // To make this a sticky navigation, you can add `sticky top-0 z-50` classes to the parent div
-    <nav
-      className="w-full bg-background py-5 transition-all ease-in-out md:py-3.5"
+    <div
+      className="w-full bg-background py-3.5 transition-all ease-in-out"
       role="navigation"
       aria-label="Website top navigation"
       ref={navigationContainerRef}
@@ -60,7 +60,7 @@ export function TopNavigation5() {
 
         {/* Desktop Navigation - Visible on screen sizes ≥ 768px */}
         <div className="hidden flex-1 justify-between gap-4 md:flex md:items-center">
-          <div className="mx-auto flex items-center gap-2">
+          <nav className="mx-auto flex items-center gap-2">
             {NAV_ITEMS.map((item) => {
               // Replace with actual active link detection
 
@@ -71,7 +71,7 @@ export function TopNavigation5() {
                   key={item.label}
                   href={item.href}
                   className={cn(
-                    "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent/50 hover:text-accent-foreground",
+                    "rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 hover:text-accent-foreground",
                     isActive && "bg-accent text-accent-foreground"
                   )}
                 >
@@ -79,7 +79,7 @@ export function TopNavigation5() {
                 </a>
               );
             })}
-          </div>
+          </nav>
 
           <ActionButtons />
         </div>
@@ -89,17 +89,17 @@ export function TopNavigation5() {
           className={cn(
             "grid transition-all duration-300 ease-in-out md:hidden",
             isMenuOpen
-              ? "grid-rows-[1fr] pt-5 pb-1 opacity-100"
+              ? "grid-rows-[1fr] pt-5 opacity-100"
               : "pointer-events-none grid-rows-[0fr] opacity-0"
           )}
         >
           <div
-            className="overflow-hidden"
+            className={cn(isMenuOpen ? "overflow-visible" : "overflow-hidden")}
             inert={!isMenuOpen || undefined}
             aria-hidden={!isMenuOpen}
           >
             <div className="flex flex-col gap-9">
-              <div className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-2">
                 {NAV_ITEMS.map((item) => {
                   // Replace with actual active link detection
 
@@ -110,7 +110,7 @@ export function TopNavigation5() {
                       key={item.label}
                       href={item.href}
                       className={cn(
-                        "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent/50 hover:text-accent-foreground",
+                        "rounded-md px-2 py-3.5 text-base font-medium transition-colors hover:bg-accent/50 hover:text-accent-foreground",
                         isActive && "bg-accent text-accent-foreground"
                       )}
                       onClick={() => setIsMenuOpen(false)}
@@ -119,14 +119,14 @@ export function TopNavigation5() {
                     </a>
                   );
                 })}
-              </div>
+              </nav>
 
               <ActionButtons />
             </div>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 }
 

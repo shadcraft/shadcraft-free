@@ -1,16 +1,14 @@
 import {
   ProfileCard,
   ProfileCardAvatar,
-  ProfileCardBody,
   ProfileCardDetails,
-  ProfileCardName,
-} from "@/registry/pro-marketing/components/profile-card";
+} from "@/registry/pro-marketing/ui/profile-card";
 import {
   SectionHeading,
   SectionHeadingBody,
-  SectionHeadingContentType,
+  SectionHeadingTagline,
   SectionHeadingTitle,
-} from "@/registry/pro-marketing/components/section-heading";
+} from "@/registry/pro-marketing/ui/section-heading";
 
 export function Team6() {
   return (
@@ -18,7 +16,7 @@ export function Team6() {
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8">
         {/* Section Heading */}
         <SectionHeading alignment="center" className="mx-auto w-full max-w-3xl">
-          <SectionHeadingContentType>Team</SectionHeadingContentType>
+          <SectionHeadingTagline>Team</SectionHeadingTagline>
           <SectionHeadingTitle>Meet The People Behind Acme AI</SectionHeadingTitle>
           <SectionHeadingBody>
             We are a team of builders, designers, and problem-solvers dedicated to helping you work
@@ -39,10 +37,11 @@ export function Team6() {
                 name={member.name}
                 className="size-32 rounded-lg"
               />
-              <ProfileCardDetails className="self-end-safe border-l-2 border-primary pl-2">
-                <ProfileCardName>{member.name}</ProfileCardName>
-                <ProfileCardBody>{member.title}</ProfileCardBody>
-              </ProfileCardDetails>
+              <ProfileCardDetails
+                className="self-end-safe border-l-2 border-primary pl-2"
+                name={member.name}
+                body={member.title}
+              />
             </ProfileCard>
           ))}
         </div>

@@ -33,13 +33,13 @@ export function StarRating({
 
   return (
     <div
+      data-size={size}
+      data-orientation={orientation}
       data-slot="star-rating"
       className={cn(
         "flex flex-col items-center gap-1.5",
-        orientation === "horizontal" && "flex-row",
-        size === "sm" && "[--star-size:calc(--spacing(3))]",
-        size === "md" && "[--star-size:calc(--spacing(4))]",
-        size === "lg" && "[--star-size:calc(--spacing(5))]",
+        "data-[orientation=horizontal]:flex-row",
+        "data-[size=lg]:[--star-size:calc(--spacing(5))] data-[size=md]:[--star-size:calc(--spacing(4))] data-[size=sm]:[--star-size:calc(--spacing(3))]",
         containerClassName
       )}
       aria-label={`${clampedValue} out of ${safeMax} stars`}
@@ -73,17 +73,11 @@ export function StarRating({
         })}
       </div>
 
-      {label && <StarRatingLabel className={className}>{label}</StarRatingLabel>}
+      {label && (
+        <span data-slot="star-rating-label" className="text-xs text-muted-foreground">
+          {label}
+        </span>
+      )}
     </div>
-  );
-}
-
-function StarRatingLabel({ className, ...props }: React.ComponentProps<"span">) {
-  return (
-    <span
-      data-slot="star-rating-label"
-      className="font-sans text-xs leading-4 font-normal text-muted-foreground"
-      {...props}
-    />
   );
 }

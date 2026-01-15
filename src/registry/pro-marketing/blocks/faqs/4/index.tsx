@@ -4,46 +4,41 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Separator } from "@/components/ui/separator";
 import {
   SectionHeading,
-  SectionHeadingBody,
-  SectionHeadingContentType,
+  SectionHeadingTagline,
   SectionHeadingTitle,
-} from "@/registry/pro-marketing/components/section-heading";
+} from "@/registry/pro-marketing/ui/section-heading";
 
 export function Faqs4() {
   return (
     <section className="py-12 lg:py-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8">
         {/* Section Heading */}
-        <SectionHeading alignment="center" className="mx-auto w-full max-w-3xl">
-          <SectionHeadingContentType>Support</SectionHeadingContentType>
-          <SectionHeadingTitle>Questions?</SectionHeadingTitle>
-          <SectionHeadingBody>We&apos;ve got the answers.</SectionHeadingBody>
-        </SectionHeading>
+        <div className="mx-auto w-full max-w-2xl">
+          <SectionHeading alignment="center">
+            <SectionHeadingTagline>FAQ</SectionHeadingTagline>
+            <SectionHeadingTitle>Your questions answered</SectionHeadingTitle>
+          </SectionHeading>
+        </div>
 
         {/* FAQs Accordion */}
         <div className="mx-auto w-full max-w-2xl">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq) => (
-              <AccordionItem key={faq.question} value={faq.question} className="border-none!">
-                <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                <AccordionContent className="max-w-lg text-pretty text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
+          <Accordion type="single" className="w-full">
+            {faqsData.map((faq) => (
+              <AccordionItem key={faq.question} value={faq.question}>
+                <AccordionTrigger className="text-base">{faq.question}</AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </div>
 
-        <Separator />
-
         {/* Contact CTA */}
-        <div className="mx-auto text-center">
-          <p className="text-base/6 font-normal text-muted-foreground">
+        <div className="mx-auto w-full max-w-2xl text-center">
+          <p className="text-muted-foreground">
             Still have questions? We&apos;re here to help.{" "}
-            <a href="#" className="text-primary underline">
+            <a href="#" className="text-foreground underline">
               Contact support
             </a>
           </p>
@@ -53,7 +48,7 @@ export function Faqs4() {
   );
 }
 
-const faqs = [
+const faqsData = [
   {
     question: "What is Acme Inc.?",
     answer:

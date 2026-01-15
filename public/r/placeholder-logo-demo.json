@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "placeholder-logo-demo",
-  "type": "registry:example",
   "title": "Placeholder Logo Demo",
   "registryDependencies": [
     "https://shadcraft-free.vercel.app/r/placeholder-logo.json"
@@ -9,11 +8,12 @@
   "files": [
     {
       "path": "examples/placeholder-logo-demo.tsx",
-      "content": "import { PlaceholderLogo } from \"@/components/placeholder-logo\";\n\nexport function PlaceholderLogoDemo() {\n  return (\n    <div className=\"flex flex-col gap-12 p-5 lg:p-8\">\n      <div className=\"flex flex-col gap-2\">\n        <span className=\"text-muted-foreground text-sm\">Default</span>\n        <PlaceholderLogo />\n      </div>\n\n      <div className=\"flex flex-col gap-2\">\n        <span className=\"text-muted-foreground text-sm\">Only Icon</span>\n        <PlaceholderLogo onlyIcon />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { PlaceholderLogo } from \"@/components/ui/placeholder-logo\";\n\nexport function PlaceholderLogoDemo() {\n  return (\n    <div className=\"flex flex-col gap-12 p-5 lg:p-8\">\n      <div className=\"flex flex-col gap-2\">\n        <span className=\"text-sm text-muted-foreground\">Default</span>\n        <PlaceholderLogo />\n      </div>\n\n      <div className=\"flex flex-col gap-2\">\n        <span className=\"text-sm text-muted-foreground\">Only Icon</span>\n        <PlaceholderLogo onlyIcon />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],
   "meta": {
     "bundle": "pro-marketing"
-  }
+  },
+  "type": "registry:example"
 }

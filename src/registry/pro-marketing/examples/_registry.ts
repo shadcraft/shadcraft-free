@@ -14,7 +14,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    meta: {},
   },
   {
     name: "marquee-demo",
@@ -27,7 +26,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    meta: {},
   },
   {
     name: "page-heading-demo",
@@ -40,7 +38,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    meta: {},
   },
   {
     name: "placeholder-logo-demo",
@@ -53,7 +50,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    meta: {},
   },
   {
     name: "profile-card-demo",
@@ -66,7 +62,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    meta: {},
   },
   {
     name: "section-heading-demo",
@@ -79,7 +74,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    meta: {},
   },
   {
     name: "star-rating-demo",
@@ -92,7 +86,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    meta: {},
   },
   {
     name: "tagline-demo",
@@ -105,6 +98,5 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    meta: {},
   },
 ];

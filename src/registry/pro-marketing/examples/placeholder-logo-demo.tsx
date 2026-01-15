@@ -1,4 +1,4 @@
-import { PlaceholderLogo } from "@/registry/pro-marketing/components/placeholder-logo";
+import { PlaceholderLogo } from "@/registry/pro-marketing/ui/placeholder-logo";
 
 export function PlaceholderLogoDemo() {
   return (

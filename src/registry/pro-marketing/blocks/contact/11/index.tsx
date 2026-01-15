@@ -6,37 +6,39 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   SectionHeading,
   SectionHeadingBody,
-  SectionHeadingContentType,
+  SectionHeadingTagline,
   SectionHeadingTitle,
-} from "@/registry/pro-marketing/components/section-heading";
+} from "@/registry/pro-marketing/ui/section-heading";
 
 export function Contact11() {
   return (
     <section className="py-12 lg:py-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8">
         {/* Section Heading */}
-        <SectionHeading alignment="center" className="mx-auto w-full max-w-xl">
-          <SectionHeadingContentType>Support</SectionHeadingContentType>
-          <SectionHeadingTitle>Need Help? We&apos;re Here to Help</SectionHeadingTitle>
-          <SectionHeadingBody>
-            Our support team is available to assist you with any questions or issues you may have.
-          </SectionHeadingBody>
-        </SectionHeading>
+        <div className="mx-auto w-full max-w-md">
+          <SectionHeading alignment="center">
+            <SectionHeadingTagline>Support</SectionHeadingTagline>
+            <SectionHeadingTitle>Need Help? We&apos;re Here to Help</SectionHeadingTitle>
+            <SectionHeadingBody>
+              Our support team is available to assist you with any questions or issues you may have.
+            </SectionHeadingBody>
+          </SectionHeading>
+        </div>
 
         {/* Contact Form */}
-        <div className="mx-auto w-full max-w-xl">
-          <form className="grid gap-4" aria-label="Contact form">
-            <div className="grid w-full gap-2">
-              <Label htmlFor="input-1">Label</Label>
-              <Input id="input-1" placeholder="Placeholder text" />
+        <div className="mx-auto w-full max-w-md">
+          <form className="flex flex-col gap-4" aria-label="Contact form">
+            <div className="flex w-full flex-col gap-2">
+              <Label htmlFor="input-1">Name</Label>
+              <Input id="input-1" placeholder="Joe Smith" />
             </div>
-            <div className="grid w-full gap-2">
-              <Label htmlFor="input-2">Label</Label>
-              <Input id="input-2" placeholder="Placeholder text" />
+            <div className="flex w-full flex-col gap-2">
+              <Label htmlFor="input-2">Email</Label>
+              <Input id="input-2" placeholder="joe@example.com" />
             </div>
-            <div className="grid w-full gap-2">
-              <Label htmlFor="input-3">Label</Label>
-              <Textarea id="input-3" placeholder="Content" className="h-32" />
+            <div className="flex w-full flex-col gap-2">
+              <Label htmlFor="input-3">Message</Label>
+              <Textarea id="input-3" placeholder="Hi, this is my message" className="h-32" />
             </div>
             <div className="flex items-center gap-2 py-2">
               <Checkbox />

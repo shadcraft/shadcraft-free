@@ -1,19 +1,16 @@
 import { Quote } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
 import {
   ProfileCard,
   ProfileCardAvatar,
-  ProfileCardBody,
   ProfileCardDetails,
-  ProfileCardName,
-} from "@/registry/pro-marketing/components/profile-card";
+} from "@/registry/pro-marketing/ui/profile-card";
 import {
   SectionHeading,
   SectionHeadingBody,
-  SectionHeadingContentType,
+  SectionHeadingTagline,
   SectionHeadingTitle,
-} from "@/registry/pro-marketing/components/section-heading";
+} from "@/registry/pro-marketing/ui/section-heading";
 
 export function Testimonial11() {
   return (
@@ -21,7 +18,7 @@ export function Testimonial11() {
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8">
         {/* Section Heading */}
         <SectionHeading alignment="center" className="mx-auto w-full max-w-3xl">
-          <SectionHeadingContentType>Testimonials</SectionHeadingContentType>
+          <SectionHeadingTagline>Testimonials</SectionHeadingTagline>
           <SectionHeadingTitle>What Our Customers Say</SectionHeadingTitle>
           <SectionHeadingBody>
             Don&apos;t just take our word for it. See what teams are saying about Acme Inc.
@@ -29,23 +26,22 @@ export function Testimonial11() {
         </SectionHeading>
 
         {/* Testimonials Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="group gap-4 p-6">
-              <Quote className="size-4 rotate-180 text-muted-foreground transition-colors group-hover:text-foreground" />
-              <blockquote className="text-base/6 font-normal text-pretty text-foreground lg:text-lg/7">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {testimonialsData.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="group flex flex-col gap-6 rounded-lg border bg-card p-6"
+            >
+              <Quote className="size-6 rotate-180 text-muted-foreground transition-colors group-hover:text-foreground" />
+              <blockquote className="text-lg font-medium text-pretty text-foreground">
                 {testimonial.quote}
               </blockquote>
-              <Quote className="size-4 self-end text-muted-foreground transition-colors group-hover:text-foreground" />
-
+              <Quote className="size-6 self-end text-muted-foreground transition-colors group-hover:text-foreground" />
               <ProfileCard className="mt-auto">
                 <ProfileCardAvatar src={testimonial.imageSrc} name={testimonial.name} />
-                <ProfileCardDetails>
-                  <ProfileCardName>{testimonial.name}</ProfileCardName>
-                  <ProfileCardBody>{testimonial.role}</ProfileCardBody>
-                </ProfileCardDetails>
+                <ProfileCardDetails name={testimonial.name} body={testimonial.role} />
               </ProfileCard>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
@@ -53,7 +49,7 @@ export function Testimonial11() {
   );
 }
 
-const testimonials = [
+const testimonialsData = [
   {
     id: 1,
     quote:

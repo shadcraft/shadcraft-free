@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "placeholder-logo",
-  "type": "registry:component",
   "title": "Placeholder Logo",
   "description": "A component for that can be replaced with your brand's main logo. This component ensures layouts stay consistent before brand assets are applied.",
   "registryDependencies": [
@@ -9,12 +8,13 @@
   ],
   "files": [
     {
-      "path": "components/placeholder-logo.tsx",
-      "content": "import { Bolt, LucideProps } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport function PlaceholderLogo({\n  className,\n  onlyIcon = false,\n  ...props\n}: LucideProps & { onlyIcon?: boolean }) {\n  if (onlyIcon) {\n    return <Bolt className={cn(\"text-primary size-6 shrink-0\", className)} {...props} />;\n  }\n\n  return (\n    <div className=\"flex shrink-0 items-center gap-1\">\n      <Bolt className={cn(\"text-primary size-6 shrink-0\", className)} {...props} />\n      <span className=\"text-primary text-sm/5 font-semibold text-nowrap\">Acme Inc.</span>\n    </div>\n  );\n}\n",
-      "type": "registry:component"
+      "path": "components/ui/placeholder-logo.tsx",
+      "content": "import type { LucideProps } from \"lucide-react\";\nimport { Bolt } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport function PlaceholderLogo({\n  className,\n  onlyIcon = false,\n  ...props\n}: LucideProps & { onlyIcon?: boolean }) {\n  if (onlyIcon) {\n    return <Bolt className={cn(\"size-6 shrink-0 text-primary\", className)} {...props} />;\n  }\n\n  return (\n    <div className=\"flex shrink-0 items-center gap-1\">\n      <Bolt className={cn(\"size-6 shrink-0 text-primary\", className)} {...props} />\n      <span className=\"text-sm font-semibold text-nowrap text-primary\">Acme Inc.</span>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
     }
   ],
   "meta": {
     "bundle": "pro-marketing"
-  }
+  },
+  "type": "registry:ui"
 }

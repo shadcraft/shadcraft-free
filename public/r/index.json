@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "index",
-  "type": "registry:style",
   "dependencies": [
     "class-variance-authority",
     "lucide-react"
@@ -15,5 +14,6 @@
         "cursor": "pointer"
       }
     }
-  }
+  },
+  "type": "registry:style"
 }

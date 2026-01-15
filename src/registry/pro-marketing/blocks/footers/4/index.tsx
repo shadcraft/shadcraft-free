@@ -1,42 +1,45 @@
-import { Globe } from "lucide-react";
+import { FiLinkedin } from "react-icons/fi";
+import { RiTwitterXLine } from "react-icons/ri";
 
 import { Separator } from "@/components/ui/separator";
-import { PlaceholderLogo } from "@/registry/pro-marketing/components/placeholder-logo";
+import { PlaceholderLogo } from "@/registry/pro-marketing/ui/placeholder-logo";
 
 export function Footer4() {
   return (
-    <footer className="w-full border-t bg-background py-12 lg:py-20" role="contentinfo">
-      <div className="flex flex-col gap-12 lg:gap-9">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-x-5 gap-y-12 px-5 lg:flex-row lg:items-start lg:justify-between lg:gap-x-9 lg:px-8">
+    <footer className="w-full bg-background py-12 lg:py-20" role="contentinfo">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-5 lg:gap-9 lg:px-8">
+        <Separator role="presentation" aria-hidden="true" />
+
+        <div className="grid grid-cols-4 gap-x-5 gap-y-12 lg:flex-row lg:items-start lg:justify-between lg:gap-x-9">
           {/* Logo and Description */}
-          <div className="flex max-w-xs flex-1 flex-col justify-between gap-9">
+          <div className="col-span-full flex flex-col justify-between gap-9 lg:col-span-1">
             <a href="/" aria-label="Go to home page">
               {/* Replace with your real logo  */}
               <PlaceholderLogo />
             </a>
 
             <div className="flex flex-col gap-4">
-              <p className="text-sm/5 font-normal text-pretty text-muted-foreground">
+              <p className="text-sm text-pretty text-muted-foreground">
                 Building tools that help teams work smarter and faster.
               </p>
               <div className="flex items-center gap-2">
-                <Globe className="size-4" />
-                <Globe className="size-4" />
+                <FiLinkedin className="size-4" />
+                <RiTwitterXLine className="size-4" />
               </div>
             </div>
           </div>
 
           {/* Navigation Links */}
           <nav
-            className="grid flex-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9"
+            className="col-span-full grid gap-12 md:grid-cols-2 lg:col-span-3 lg:grid-cols-3 lg:gap-9"
             aria-label="Footer navigation"
           >
             {navigationData.map((section) => (
               <div key={section.title} className="flex flex-col gap-2.5">
-                <h3 className="text-sm/5 font-medium text-muted-foreground">{section.title}</h3>
+                <h3 className="text-sm font-medium text-muted-foreground">{section.title}</h3>
                 <ul className="flex flex-col gap-3">
                   {section.links.map((link) => (
-                    <li key={link.label} className="text-base/6 font-normal">
+                    <li key={link.label} className="text-base">
                       <a href={link.href}>{link.label}</a>
                     </li>
                   ))}
@@ -49,8 +52,8 @@ export function Footer4() {
         <Separator role="presentation" aria-hidden="true" />
 
         {/* Social Links and Copyright */}
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-5 text-center lg:flex-row lg:justify-between lg:px-8">
-          <p className="text-sm/5 font-normal text-muted-foreground">
+        <div className="w-full">
+          <p className="text-sm text-muted-foreground">
             &copy; Copyright Acme Inc. 2025. All right reserved.
           </p>
         </div>

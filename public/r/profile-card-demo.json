@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "profile-card-demo",
-  "type": "registry:example",
   "title": "Profile Card Demo",
   "registryDependencies": [
     "https://shadcraft-free.vercel.app/r/profile-card.json"
@@ -9,11 +8,12 @@
   "files": [
     {
       "path": "examples/profile-card-demo.tsx",
-      "content": "import {\n  ProfileCard,\n  ProfileCardAvatar,\n  ProfileCardBody,\n  ProfileCardDetails,\n  ProfileCardName,\n} from \"@/components/profile-card\";\n\nexport function ProfileCardDemo() {\n  return (\n    <div className=\"flex flex-col gap-12 p-5 lg:p-8\">\n      <ProfileCard>\n        <ProfileCardAvatar src=\"https://github.com/shadcn.png\" name=\"shadcn\" />\n\n        <ProfileCardDetails>\n          <ProfileCardName>Sophie Tan</ProfileCardName>\n          <ProfileCardBody>sophie.tan@gmail.com</ProfileCardBody>\n        </ProfileCardDetails>\n      </ProfileCard>\n\n      <ProfileCard variant=\"horizontal\">\n        <ProfileCardAvatar size=\"sm\" src=\"https://github.com/shadcn.png\" name=\"shadcn\" />\n\n        <ProfileCardDetails>\n          <ProfileCardName>Sophie Tan</ProfileCardName>\n          <ProfileCardBody>4 Sept, 2025</ProfileCardBody>\n        </ProfileCardDetails>\n      </ProfileCard>\n\n      <ProfileCard variant=\"vertical\">\n        <ProfileCardAvatar size=\"lg\" src=\"https://github.com/shadcn.png\" name=\"shadcn\" />\n\n        <ProfileCardDetails>\n          <ProfileCardName>Sophie</ProfileCardName>\n          <ProfileCardBody>CEO</ProfileCardBody>\n        </ProfileCardDetails>\n      </ProfileCard>\n    </div>\n  );\n}\n",
+      "content": "import {\n  ProfileCard,\n  ProfileCardAvatar,\n  ProfileCardDetails,\n} from \"@/components/ui/profile-card\";\n\nexport function ProfileCardDemo() {\n  return (\n    <div className=\"flex flex-col gap-12 p-5 lg:p-8\">\n      <ProfileCard>\n        <ProfileCardAvatar src=\"https://github.com/shadcn.png\" name=\"shadcn\" />\n        <ProfileCardDetails name=\"Sophie Tan\" body=\"sophie.tan@gmail.com\" />\n      </ProfileCard>\n\n      <ProfileCard variant=\"horizontal\">\n        <ProfileCardAvatar src=\"https://github.com/shadcn.png\" name=\"shadcn\" />\n        <ProfileCardDetails name=\"Sophie Tan\" body=\"4 Sept, 2025\" />\n      </ProfileCard>\n\n      <ProfileCard className=\"justify-between\">\n        <ProfileCardDetails name=\"Sophie Tan\" body=\"sophie.tan@gmail.com\" />\n        <ProfileCardAvatar src=\"https://github.com/shadcn.png\" name=\"shadcn\" />\n      </ProfileCard>\n\n      <ProfileCard variant=\"vertical\">\n        <ProfileCardAvatar src=\"https://github.com/shadcn.png\" name=\"shadcn\" />\n        <ProfileCardDetails name=\"Sophie Tan\" body=\"CEO\" />\n      </ProfileCard>\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],
   "meta": {
     "bundle": "pro-marketing"
-  }
+  },
+  "type": "registry:example"
 }

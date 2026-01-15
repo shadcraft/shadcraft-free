@@ -11,7 +11,6 @@ export const hooks: Registry["items"] = [
         type: "registry:hook",
       },
     ],
-    meta: {},
   },
   {
     name: "use-click-outside",
@@ -23,7 +22,6 @@ export const hooks: Registry["items"] = [
         type: "registry:hook",
       },
     ],
-    meta: {},
   },
   {
     name: "use-mobile",
@@ -35,6 +33,5 @@ export const hooks: Registry["items"] = [
         type: "registry:hook",
       },
     ],
-    meta: {},
   },
 ];

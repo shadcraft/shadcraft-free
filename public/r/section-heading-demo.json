@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "section-heading-demo",
-  "type": "registry:example",
   "title": "Section Heading Demo",
   "registryDependencies": [
     "https://shadcraft-free.vercel.app/r/section-heading.json"
@@ -9,11 +8,12 @@
   "files": [
     {
       "path": "examples/section-heading-demo.tsx",
-      "content": "import {\n  SectionHeading,\n  SectionHeadingBody,\n  SectionHeadingContentType,\n  SectionHeadingTitle,\n} from \"@/components/section-heading\";\n\nexport function SectionHeadingDemo() {\n  return (\n    <div className=\"flex w-full flex-col gap-12 p-5 lg:p-8\">\n      <SectionHeading>\n        <SectionHeadingContentType>Pricing</SectionHeadingContentType>\n        <SectionHeadingTitle>Simple Pricing, Smarter Work</SectionHeadingTitle>\n        <SectionHeadingBody>\n          Acme Inc. has a plan designed to help you move faster.\n        </SectionHeadingBody>\n      </SectionHeading>\n\n      <SectionHeading alignment=\"center\">\n        <SectionHeadingContentType>Pricing</SectionHeadingContentType>\n        <SectionHeadingTitle>Simple Pricing, Smarter Work</SectionHeadingTitle>\n        <SectionHeadingBody>\n          Acme Inc. has a plan designed to help you move faster.\n        </SectionHeadingBody>\n      </SectionHeading>\n\n      <SectionHeading alignment=\"right\">\n        <SectionHeadingContentType>Pricing</SectionHeadingContentType>\n        <SectionHeadingTitle>Simple Pricing, Smarter Work</SectionHeadingTitle>\n        <SectionHeadingBody>\n          Acme Inc. has a plan designed to help you move faster.\n        </SectionHeadingBody>\n      </SectionHeading>\n    </div>\n  );\n}\n",
+      "content": "import {\n  SectionHeading,\n  SectionHeadingBody,\n  SectionHeadingTagline,\n  SectionHeadingTitle,\n} from \"@/components/ui/section-heading\";\n\nexport function SectionHeadingDemo() {\n  return (\n    <div className=\"flex w-full flex-col gap-12 p-5 lg:p-8\">\n      <SectionHeading>\n        <SectionHeadingTagline>Pricing</SectionHeadingTagline>\n        <SectionHeadingTitle>Simple Pricing, Smarter Work</SectionHeadingTitle>\n        <SectionHeadingBody>\n          Acme Inc. has a plan designed to help you move faster.\n        </SectionHeadingBody>\n      </SectionHeading>\n\n      <SectionHeading alignment=\"center\">\n        <SectionHeadingTagline>Pricing</SectionHeadingTagline>\n        <SectionHeadingTitle>Simple Pricing, Smarter Work</SectionHeadingTitle>\n        <SectionHeadingBody>\n          Acme Inc. has a plan designed to help you move faster.\n        </SectionHeadingBody>\n      </SectionHeading>\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],
   "meta": {
     "bundle": "pro-marketing"
-  }
+  },
+  "type": "registry:example"
 }

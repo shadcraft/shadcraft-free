@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "banner-10",
-  "type": "registry:block",
   "title": "Banner 10",
   "registryDependencies": [
     "button",
@@ -10,7 +9,7 @@
   "files": [
     {
       "path": "blocks/banners/10/index.tsx",
-      "content": "\"use client\";\n\nimport { AlertCircle, X } from \"lucide-react\";\nimport { useState } from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport function Banner10() {\n  const [isVisible, setIsVisible] = useState(true);\n\n  if (!isVisible) return null;\n\n  return (\n    // To make the banner fixed, add classes like `fixed top-0 inset-x-0 z-50` to the container element\n    <aside\n      role=\"banner\"\n      aria-label=\"Promotional banner\"\n      className=\"bg-secondary text-secondary-foreground w-full py-4\"\n    >\n      {/* Banner Container */}\n      <div className=\"mx-auto max-w-7xl px-5 lg:px-8\">\n        <div className=\"flex flex-row items-center justify-between gap-5\">\n          {/* Banner Content */}\n          <div className=\"flex flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:gap-2\">\n            <div className=\"flex items-center gap-2\">\n              <AlertCircle className=\"size-4 shrink-0\" />\n\n              <p className=\"text-base/6 font-normal text-pretty\">\n                <span className=\"font-semibold\">Limited time offer: </span>\n                Get 20% off your first month.{\" \"}\n                <a href=\"#\" className=\"underline\">\n                  Learn more\n                </a>\n              </p>\n            </div>\n          </div>\n\n          {/* Close Button */}\n          <div className=\"shrink-0\">\n            <Button\n              size=\"icon-sm\"\n              variant=\"ghost\"\n              onClick={() => setIsVisible(false)}\n              aria-label=\"Close banner\"\n            >\n              <X />\n            </Button>\n          </div>\n        </div>\n      </div>\n    </aside>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { AlertCircle, X } from \"lucide-react\";\nimport { useState } from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport function Banner10() {\n  const [isVisible, setIsVisible] = useState(true);\n\n  if (!isVisible) return null;\n\n  return (\n    // To make the banner fixed, add classes like `fixed top-0 inset-x-0 z-50` to the container element\n    <aside\n      role=\"banner\"\n      aria-label=\"Promotional banner\"\n      className=\"w-full bg-muted py-4 text-muted-foreground\"\n    >\n      {/* Banner Container */}\n      <div className=\"mx-auto max-w-7xl px-5 lg:px-8\">\n        <div className=\"flex flex-row items-start justify-between gap-5 lg:items-center lg:gap-9\">\n          {/* Banner Content */}\n          <div className=\"flex flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:gap-2\">\n            <div className=\"flex items-start gap-1\">\n              <AlertCircle className=\"mt-1 size-4 shrink-0 text-foreground\" />\n\n              <p className=\"text-pretty\">\n                <span className=\"font-semibold\">New from Acme Inc: </span>\n                AI Productivity Suite.{\" \"}\n                <a href=\"#\" className=\"underline\">\n                  Check it out\n                </a>\n              </p>\n            </div>\n          </div>\n\n          {/* Close Button */}\n          <Button\n            size=\"icon-sm\"\n            className=\"size-6 shrink-0 max-lg:-mt-1 max-lg:-mr-1\"\n            variant=\"ghost\"\n            onClick={() => setIsVisible(false)}\n            aria-label=\"Close banner\"\n          >\n            <X />\n          </Button>\n        </div>\n      </div>\n    </aside>\n  );\n}\n",
       "type": "registry:component",
       "target": "components/banner-10.tsx"
     }
@@ -20,5 +19,6 @@
   },
   "categories": [
     "banners"
-  ]
+  ],
+  "type": "registry:block"
 }

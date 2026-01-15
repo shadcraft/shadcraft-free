@@ -5,7 +5,7 @@ import {
   SectionHeading,
   SectionHeadingBody,
   SectionHeadingTitle,
-} from "@/registry/pro-marketing/components/section-heading";
+} from "@/registry/pro-marketing/ui/section-heading";
 
 export function CTA9() {
   return (

@@ -1,8 +1,8 @@
-import { StarRating } from "@/registry/pro-marketing/components/star-rating";
+import { StarRating } from "@/registry/pro-marketing/ui/star-rating";
 
 export function StarRatingDemo() {
   return (
-    <div className="grid gap-12 p-5 md:grid-cols-2 lg:p-8">
+    <div className="grid gap-12 p-5 lg:grid-cols-2 lg:p-8">
       <div className="flex flex-col gap-8">
         <StarRating value={5} />
         <StarRating value={1} label="Empty stars" />
