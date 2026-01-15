@@ -6,7 +6,7 @@ import { registrySchema } from "shadcn/schema";
 
 import { cleanFilePath, rewriteItemImports } from "@/lib/registry/generate";
 import { RegistryItemFile } from "@/types/shadcn-patch";
-import { getBundleFromItem, getBundleImportPath, getBundlePath } from "@/utils/registry/bundle";
+import { buildFilePath, getBundleFromItem, getBundleImportPath } from "@/utils/registry/bundle";
 
 // This is the main registry index file.
 // Contains all the items from all bundles.
@@ -67,7 +67,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {`;
     description: "${item.description ?? ""}",
     registryDependencies: ${JSON.stringify(item.registryDependencies)},
     files: [${item.files.map((file) => {
-      const filePath = getBundlePath(item, typeof file === "string" ? file : file.path);
+      const filePath = buildFilePath(item, typeof file === "string" ? file : file.path);
       const resolvedFilePath = path.resolve(filePath);
       return typeof file === "string"
         ? `"${resolvedFilePath}"`
@@ -119,26 +119,29 @@ async function buildRegistryJsonFile() {
 
   // 3. Fix the path for registry items.
   const fixedRegistry = {
+    $schema: "https://ui.shadcn.com/schema/registry.json",
     ...registry,
-    items: registry.items.map((item) => {
-      // Skip bundle prefix for default "index" item
-      if (item.name === "index") {
-        return item;
-      }
+    items: registry.items
+      .filter((item) => item.type !== "registry:example") // Skip examples
+      .map((item) => {
+        // Skip bundle prefix for default "index" item
+        if (item.name === "index") {
+          return item;
+        }
 
-      const files = item.files?.map((file) => {
-        const basePath = typeof file === "string" ? file : file.path;
+        const files = item.files?.map((file) => {
+          const basePath = typeof file === "string" ? file : file.path;
+          return {
+            ...file,
+            path: buildFilePath(item, basePath),
+          };
+        });
+
         return {
-          ...file,
-          path: getBundlePath(item, basePath),
+          ...item,
+          files,
         };
-      });
-
-      return {
-        ...item,
-        files,
-      };
-    }),
+      }),
   };
 
   // 4. Create the output directory and write registry.json.

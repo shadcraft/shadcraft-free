@@ -34,20 +34,21 @@ export function getBundleFromItem(item: RegistryItem): string | null {
 }
 
 /**
- * Build full file path with bundle prefix for registry structure.
+ * Build full file path, respecting absolute paths and relative paths with bundle prefix for registry structure.
  *
  * If the bundle is missing and not required for the given item type,
  * this will still root the path under src/registry but skip the bundle segment.
  */
-export function getBundlePath(item: RegistryItem, filePath: string): string {
+export function buildFilePath(item: RegistryItem, filePath: string): string {
+  // If user already passed an absolute-ish src path, respect it
+  if (filePath.startsWith("src/")) {
+    return filePath;
+  }
+
   const bundle = getBundleFromItem(item);
 
   // No bundle: still root under src/registry, just skip the bundle segment
   if (!bundle) {
-    // If user already passed an absolute-ish src path, respect it
-    if (filePath.startsWith("src/")) {
-      return filePath;
-    }
     return `src/registry/${filePath}`;
   }
 
