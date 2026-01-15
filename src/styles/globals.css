@@ -143,7 +143,6 @@
     @apply bg-background font-sans text-foreground antialiased;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
-    content-visibility: auto;
   }
 
   button {

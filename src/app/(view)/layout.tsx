@@ -51,14 +51,14 @@ export default function RootLayoutView({ children }: LayoutProps<"/">) {
       <head>
         <script async crossOrigin="anonymous" src="https://tweakcn.com/live-preview.min.js" />
       </head>
-      <body className={`${fontVariables} overscroll-none`}>
+      <body className={`${fontVariables} antialiased`}>
         <ThemeProvider storageKey="view-theme">
           {children}
-          <ScreenSizeIndicator enabled showTooltip className="fixed bottom-2 left-2" />
+          <ScreenSizeIndicator enabled showTooltip className="fixed bottom-2 left-2 bg-secondary" />
           <ThemeToggle
-            className="fixed right-2 bottom-2 border"
-            variant="secondary"
             size="icon-sm"
+            variant="secondary"
+            className="fixed right-2 bottom-2 border"
           />
           <Toaster position="top-center" />
         </ThemeProvider>
