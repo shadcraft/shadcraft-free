@@ -3,7 +3,7 @@
   "name": "profile-card-demo",
   "title": "Profile Card Demo",
   "registryDependencies": [
-    "https://shadcraft-free.vercel.app/r/profile-card.json"
+    "@shadcraft/profile-card"
   ],
   "files": [
     {

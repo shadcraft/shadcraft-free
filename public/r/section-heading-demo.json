@@ -3,7 +3,7 @@
   "name": "section-heading-demo",
   "title": "Section Heading Demo",
   "registryDependencies": [
-    "https://shadcraft-free.vercel.app/r/section-heading.json"
+    "@shadcraft/section-heading"
   ],
   "files": [
     {

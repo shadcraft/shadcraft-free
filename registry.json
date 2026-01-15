@@ -64,6 +64,7 @@
       "title": "Page Heading",
       "description": "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
       "registryDependencies": [
+        "@shadcraft/tagline",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -119,6 +120,7 @@
       "title": "Section Heading",
       "description": "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
       "registryDependencies": [
+        "@shadcraft/tagline",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -195,7 +197,7 @@
       "title": "Benefits 13",
       "registryDependencies": [
         "card",
-        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "@shadcraft/section-heading",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -222,7 +224,7 @@
         "input",
         "textarea",
         "checkbox",
-        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "@shadcraft/section-heading",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -245,7 +247,7 @@
       "title": "CTA 9",
       "registryDependencies": [
         "button",
-        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "@shadcraft/section-heading",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -269,7 +271,7 @@
       "registryDependencies": [
         "accordion",
         "separator",
-        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "@shadcraft/section-heading",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -295,7 +297,7 @@
       ],
       "registryDependencies": [
         "separator",
-        "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
+        "@shadcraft/placeholder-logo",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -320,7 +322,7 @@
       "registryDependencies": [
         "button",
         "input",
-        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "@shadcraft/section-heading",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -342,8 +344,8 @@
       "name": "team-6",
       "title": "Team 6",
       "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/section-heading.json",
-        "https://shadcraft-free.vercel.app/r/profile-card.json",
+        "@shadcraft/section-heading",
+        "@shadcraft/profile-card",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -366,8 +368,8 @@
       "title": "Testimonials 11",
       "registryDependencies": [
         "card",
-        "https://shadcraft-free.vercel.app/r/section-heading.json",
-        "https://shadcraft-free.vercel.app/r/profile-card.json",
+        "@shadcraft/section-heading",
+        "@shadcraft/profile-card",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -392,7 +394,7 @@
         "card",
         "button",
         "tooltip",
-        "https://shadcraft-free.vercel.app/r/section-heading.json",
+        "@shadcraft/section-heading",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -415,9 +417,9 @@
       "title": "Top Navigation 5",
       "registryDependencies": [
         "button",
-        "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
-        "https://shadcraft-free.vercel.app/r/use-click-outside.json",
-        "https://shadcraft-free.vercel.app/r/use-mobile.json",
+        "@shadcraft/placeholder-logo",
+        "@shadcraft/use-click-outside",
+        "@shadcraft/use-mobile",
         "https://shadcraft-free.vercel.app/r/index.json"
       ],
       "files": [
@@ -440,7 +442,7 @@
       "title": "Avatar Stack Demo",
       "registryDependencies": [
         "avatar",
-        "https://shadcraft-free.vercel.app/r/avatar-stack.json"
+        "@shadcraft/avatar-stack"
       ],
       "files": [
         {
@@ -457,7 +459,7 @@
       "name": "marquee-demo",
       "title": "Marquee Demo",
       "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/marquee.json"
+        "@shadcraft/marquee"
       ],
       "files": [
         {
@@ -474,7 +476,7 @@
       "name": "page-heading-demo",
       "title": "Page Heading Demo",
       "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/page-heading.json"
+        "@shadcraft/page-heading"
       ],
       "files": [
         {
@@ -491,7 +493,7 @@
       "name": "placeholder-logo-demo",
       "title": "Placeholder Logo Demo",
       "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/placeholder-logo.json"
+        "@shadcraft/placeholder-logo"
       ],
       "files": [
         {
@@ -508,7 +510,7 @@
       "name": "profile-card-demo",
       "title": "Profile Card Demo",
       "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/profile-card.json"
+        "@shadcraft/profile-card"
       ],
       "files": [
         {
@@ -525,7 +527,7 @@
       "name": "section-heading-demo",
       "title": "Section Heading Demo",
       "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/section-heading.json"
+        "@shadcraft/section-heading"
       ],
       "files": [
         {
@@ -542,7 +544,7 @@
       "name": "star-rating-demo",
       "title": "Star Rating Demo",
       "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/star-rating.json"
+        "@shadcraft/star-rating"
       ],
       "files": [
         {
@@ -559,7 +561,7 @@
       "name": "tagline-demo",
       "title": "Tagline Demo",
       "registryDependencies": [
-        "https://shadcraft-free.vercel.app/r/tagline.json"
+        "@shadcraft/tagline"
       ],
       "files": [
         {

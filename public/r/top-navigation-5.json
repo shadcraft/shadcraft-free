@@ -4,9 +4,9 @@
   "title": "Top Navigation 5",
   "registryDependencies": [
     "button",
-    "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
-    "https://shadcraft-free.vercel.app/r/use-click-outside.json",
-    "https://shadcraft-free.vercel.app/r/use-mobile.json",
+    "@shadcraft/placeholder-logo",
+    "@shadcraft/use-click-outside",
+    "@shadcraft/use-mobile",
     "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [

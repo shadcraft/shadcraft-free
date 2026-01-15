@@ -4,6 +4,7 @@
   "title": "Section Heading",
   "description": "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
   "registryDependencies": [
+    "@shadcraft/tagline",
     "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [

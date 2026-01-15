@@ -1,5 +1,7 @@
 import type { Registry } from "shadcn/schema";
 
+import { getNamespacedRegistryDependency } from "@/utils/registry";
+
 export const ui: Registry["items"] = [
   {
     name: "avatar-stack",
@@ -33,6 +35,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     description:
       "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
+    registryDependencies: [getNamespacedRegistryDependency("tagline")],
     files: [
       {
         path: "ui/page-heading.tsx",
@@ -73,6 +76,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     description:
       "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
+    registryDependencies: [getNamespacedRegistryDependency("tagline")],
     files: [
       {
         path: "ui/section-heading.tsx",

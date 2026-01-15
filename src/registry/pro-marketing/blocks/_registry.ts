@@ -1,6 +1,9 @@
 import type { Registry } from "shadcn/schema";
 
-import { getRegistryItemJsonUrl, getRegistryItemsJsonUrls } from "@/utils/registry";
+import {
+  getNamespacedRegistryDependencies,
+  getNamespacedRegistryDependency,
+} from "@/utils/registry";
 
 export const blocks: Registry["items"] = [
   {
@@ -21,7 +24,7 @@ export const blocks: Registry["items"] = [
     name: "benefits-13",
     title: "Benefits 13",
     type: "registry:block",
-    registryDependencies: ["card", getRegistryItemJsonUrl("section-heading")],
+    registryDependencies: ["card", getNamespacedRegistryDependency("section-heading")],
     files: [
       {
         path: "blocks/benefits/13/index.tsx",
@@ -41,7 +44,7 @@ export const blocks: Registry["items"] = [
       "input",
       "textarea",
       "checkbox",
-      getRegistryItemJsonUrl("section-heading"),
+      getNamespacedRegistryDependency("section-heading"),
     ],
     files: [
       {
@@ -56,7 +59,7 @@ export const blocks: Registry["items"] = [
     name: "cta-9",
     title: "CTA 9",
     type: "registry:block",
-    registryDependencies: ["button", getRegistryItemJsonUrl("section-heading")],
+    registryDependencies: ["button", getNamespacedRegistryDependency("section-heading")],
     files: [
       {
         path: "blocks/cta/9/index.tsx",
@@ -70,7 +73,11 @@ export const blocks: Registry["items"] = [
     name: "faqs-4",
     title: "FAQs 4",
     type: "registry:block",
-    registryDependencies: ["accordion", "separator", getRegistryItemJsonUrl("section-heading")],
+    registryDependencies: [
+      "accordion",
+      "separator",
+      getNamespacedRegistryDependency("section-heading"),
+    ],
     files: [
       {
         path: "blocks/faqs/4/index.tsx",
@@ -85,7 +92,7 @@ export const blocks: Registry["items"] = [
     title: "Footer 4",
     type: "registry:block",
     dependencies: ["react-icons"],
-    registryDependencies: ["separator", getRegistryItemJsonUrl("placeholder-logo")],
+    registryDependencies: ["separator", getNamespacedRegistryDependency("placeholder-logo")],
     files: [
       {
         path: "blocks/footers/4/index.tsx",
@@ -102,7 +109,7 @@ export const blocks: Registry["items"] = [
     name: "newsletter-signup-5",
     title: "Newsletter Signup 5",
     type: "registry:block",
-    registryDependencies: ["button", "input", getRegistryItemJsonUrl("section-heading")],
+    registryDependencies: ["button", "input", getNamespacedRegistryDependency("section-heading")],
     files: [
       {
         path: "blocks/newsletter-signup/5/index.tsx",
@@ -116,7 +123,7 @@ export const blocks: Registry["items"] = [
     name: "team-6",
     title: "Team 6",
     type: "registry:block",
-    registryDependencies: [...getRegistryItemsJsonUrls("section-heading", "profile-card")],
+    registryDependencies: [...getNamespacedRegistryDependencies("section-heading", "profile-card")],
     files: [
       {
         path: "blocks/team/6/index.tsx",
@@ -130,7 +137,10 @@ export const blocks: Registry["items"] = [
     name: "testimonials-11",
     title: "Testimonials 11",
     type: "registry:block",
-    registryDependencies: ["card", ...getRegistryItemsJsonUrls("section-heading", "profile-card")],
+    registryDependencies: [
+      "card",
+      ...getNamespacedRegistryDependencies("section-heading", "profile-card"),
+    ],
     files: [
       {
         path: "blocks/testimonials/11/index.tsx",
@@ -148,7 +158,7 @@ export const blocks: Registry["items"] = [
       "card",
       "button",
       "tooltip",
-      ...getRegistryItemsJsonUrls("section-heading"),
+      ...getNamespacedRegistryDependencies("section-heading"),
     ],
     files: [
       {
@@ -165,7 +175,7 @@ export const blocks: Registry["items"] = [
     type: "registry:block",
     registryDependencies: [
       "button",
-      ...getRegistryItemsJsonUrls("placeholder-logo", "use-click-outside", "use-mobile"),
+      ...getNamespacedRegistryDependencies("placeholder-logo", "use-click-outside", "use-mobile"),
     ],
     files: [
       {

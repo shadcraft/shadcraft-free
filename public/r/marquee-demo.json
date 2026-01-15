@@ -3,7 +3,7 @@
   "name": "marquee-demo",
   "title": "Marquee Demo",
   "registryDependencies": [
-    "https://shadcraft-free.vercel.app/r/marquee.json"
+    "@shadcraft/marquee"
   ],
   "files": [
     {

@@ -1,13 +1,13 @@
 import type { Registry } from "shadcn/schema";
 
-import { getRegistryItemJsonUrl } from "@/utils/registry";
+import { getNamespacedRegistryDependency } from "@/utils/registry";
 
 export const examples: Registry["items"] = [
   {
     name: "avatar-stack-demo",
     title: "Avatar Stack Demo",
     type: "registry:example",
-    registryDependencies: ["avatar", getRegistryItemJsonUrl("avatar-stack")],
+    registryDependencies: ["avatar", getNamespacedRegistryDependency("avatar-stack")],
     files: [
       {
         path: "examples/avatar-stack-demo.tsx",
@@ -19,7 +19,7 @@ export const examples: Registry["items"] = [
     name: "marquee-demo",
     title: "Marquee Demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemJsonUrl("marquee")],
+    registryDependencies: [getNamespacedRegistryDependency("marquee")],
     files: [
       {
         path: "examples/marquee-demo.tsx",
@@ -31,7 +31,7 @@ export const examples: Registry["items"] = [
     name: "page-heading-demo",
     title: "Page Heading Demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemJsonUrl("page-heading")],
+    registryDependencies: [getNamespacedRegistryDependency("page-heading")],
     files: [
       {
         path: "examples/page-heading-demo.tsx",
@@ -43,7 +43,7 @@ export const examples: Registry["items"] = [
     name: "placeholder-logo-demo",
     title: "Placeholder Logo Demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemJsonUrl("placeholder-logo")],
+    registryDependencies: [getNamespacedRegistryDependency("placeholder-logo")],
     files: [
       {
         path: "examples/placeholder-logo-demo.tsx",
@@ -55,7 +55,7 @@ export const examples: Registry["items"] = [
     name: "profile-card-demo",
     title: "Profile Card Demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemJsonUrl("profile-card")],
+    registryDependencies: [getNamespacedRegistryDependency("profile-card")],
     files: [
       {
         path: "examples/profile-card-demo.tsx",
@@ -67,7 +67,7 @@ export const examples: Registry["items"] = [
     name: "section-heading-demo",
     title: "Section Heading Demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemJsonUrl("section-heading")],
+    registryDependencies: [getNamespacedRegistryDependency("section-heading")],
     files: [
       {
         path: "examples/section-heading-demo.tsx",
@@ -79,7 +79,7 @@ export const examples: Registry["items"] = [
     name: "star-rating-demo",
     title: "Star Rating Demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemJsonUrl("star-rating")],
+    registryDependencies: [getNamespacedRegistryDependency("star-rating")],
     files: [
       {
         path: "examples/star-rating-demo.tsx",
@@ -91,7 +91,7 @@ export const examples: Registry["items"] = [
     name: "tagline-demo",
     title: "Tagline Demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemJsonUrl("tagline")],
+    registryDependencies: [getNamespacedRegistryDependency("tagline")],
     files: [
       {
         path: "examples/tagline-demo.tsx",

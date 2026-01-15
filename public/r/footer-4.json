@@ -7,7 +7,7 @@
   ],
   "registryDependencies": [
     "separator",
-    "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
+    "@shadcraft/placeholder-logo",
     "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [

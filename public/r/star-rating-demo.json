@@ -3,7 +3,7 @@
   "name": "star-rating-demo",
   "title": "Star Rating Demo",
   "registryDependencies": [
-    "https://shadcraft-free.vercel.app/r/star-rating.json"
+    "@shadcraft/star-rating"
   ],
   "files": [
     {

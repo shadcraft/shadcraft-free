@@ -3,7 +3,7 @@
   "name": "page-heading-demo",
   "title": "Page Heading Demo",
   "registryDependencies": [
-    "https://shadcraft-free.vercel.app/r/page-heading.json"
+    "@shadcraft/page-heading"
   ],
   "files": [
     {

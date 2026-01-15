@@ -8,7 +8,7 @@
     "input",
     "textarea",
     "checkbox",
-    "https://shadcraft-free.vercel.app/r/section-heading.json",
+    "@shadcraft/section-heading",
     "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [

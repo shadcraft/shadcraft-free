@@ -3,7 +3,7 @@
   "name": "tagline-demo",
   "title": "Tagline Demo",
   "registryDependencies": [
-    "https://shadcraft-free.vercel.app/r/tagline.json"
+    "@shadcraft/tagline"
   ],
   "files": [
     {

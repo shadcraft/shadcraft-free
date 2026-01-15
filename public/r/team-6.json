@@ -3,8 +3,8 @@
   "name": "team-6",
   "title": "Team 6",
   "registryDependencies": [
-    "https://shadcraft-free.vercel.app/r/section-heading.json",
-    "https://shadcraft-free.vercel.app/r/profile-card.json",
+    "@shadcraft/section-heading",
+    "@shadcraft/profile-card",
     "https://shadcraft-free.vercel.app/r/index.json"
   ],
   "files": [

@@ -51,7 +51,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Page Heading",
     description:
       "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
+    registryDependencies: ["@shadcraft/tagline", "https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/ui/page-heading.tsx",
@@ -105,7 +105,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Section Heading",
     description:
       "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/index.json"],
+    registryDependencies: ["@shadcraft/tagline", "https://shadcraft-free.vercel.app/r/index.json"],
     files: [
       {
         path: "src/registry/pro-marketing/ui/section-heading.tsx",
@@ -183,7 +183,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     description: "",
     registryDependencies: [
       "card",
-      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "@shadcraft/section-heading",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -215,7 +215,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
       "input",
       "textarea",
       "checkbox",
-      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "@shadcraft/section-heading",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -243,7 +243,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     description: "",
     registryDependencies: [
       "button",
-      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "@shadcraft/section-heading",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -272,7 +272,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     registryDependencies: [
       "accordion",
       "separator",
-      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "@shadcraft/section-heading",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -300,7 +300,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     description: "",
     registryDependencies: [
       "separator",
-      "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
+      "@shadcraft/placeholder-logo",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -329,7 +329,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     registryDependencies: [
       "button",
       "input",
-      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "@shadcraft/section-heading",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -356,8 +356,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Team 6",
     description: "",
     registryDependencies: [
-      "https://shadcraft-free.vercel.app/r/section-heading.json",
-      "https://shadcraft-free.vercel.app/r/profile-card.json",
+      "@shadcraft/section-heading",
+      "@shadcraft/profile-card",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -385,8 +385,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     description: "",
     registryDependencies: [
       "card",
-      "https://shadcraft-free.vercel.app/r/section-heading.json",
-      "https://shadcraft-free.vercel.app/r/profile-card.json",
+      "@shadcraft/section-heading",
+      "@shadcraft/profile-card",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -416,7 +416,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
       "card",
       "button",
       "tooltip",
-      "https://shadcraft-free.vercel.app/r/section-heading.json",
+      "@shadcraft/section-heading",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -444,9 +444,9 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     description: "",
     registryDependencies: [
       "button",
-      "https://shadcraft-free.vercel.app/r/placeholder-logo.json",
-      "https://shadcraft-free.vercel.app/r/use-click-outside.json",
-      "https://shadcraft-free.vercel.app/r/use-mobile.json",
+      "@shadcraft/placeholder-logo",
+      "@shadcraft/use-click-outside",
+      "@shadcraft/use-mobile",
       "https://shadcraft-free.vercel.app/r/index.json",
     ],
     files: [
@@ -472,7 +472,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:example",
     title: "Avatar Stack Demo",
     description: "",
-    registryDependencies: ["avatar", "https://shadcraft-free.vercel.app/r/avatar-stack.json"],
+    registryDependencies: ["avatar", "@shadcraft/avatar-stack"],
     files: [
       {
         path: "src/registry/pro-marketing/examples/avatar-stack-demo.tsx",
@@ -496,7 +496,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:example",
     title: "Marquee Demo",
     description: "",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/marquee.json"],
+    registryDependencies: ["@shadcraft/marquee"],
     files: [
       {
         path: "src/registry/pro-marketing/examples/marquee-demo.tsx",
@@ -520,7 +520,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:example",
     title: "Page Heading Demo",
     description: "",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/page-heading.json"],
+    registryDependencies: ["@shadcraft/page-heading"],
     files: [
       {
         path: "src/registry/pro-marketing/examples/page-heading-demo.tsx",
@@ -544,7 +544,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:example",
     title: "Placeholder Logo Demo",
     description: "",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/placeholder-logo.json"],
+    registryDependencies: ["@shadcraft/placeholder-logo"],
     files: [
       {
         path: "src/registry/pro-marketing/examples/placeholder-logo-demo.tsx",
@@ -568,7 +568,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:example",
     title: "Profile Card Demo",
     description: "",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/profile-card.json"],
+    registryDependencies: ["@shadcraft/profile-card"],
     files: [
       {
         path: "src/registry/pro-marketing/examples/profile-card-demo.tsx",
@@ -592,7 +592,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:example",
     title: "Section Heading Demo",
     description: "",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/section-heading.json"],
+    registryDependencies: ["@shadcraft/section-heading"],
     files: [
       {
         path: "src/registry/pro-marketing/examples/section-heading-demo.tsx",
@@ -616,7 +616,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:example",
     title: "Star Rating Demo",
     description: "",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/star-rating.json"],
+    registryDependencies: ["@shadcraft/star-rating"],
     files: [
       {
         path: "src/registry/pro-marketing/examples/star-rating-demo.tsx",
@@ -640,7 +640,7 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     type: "registry:example",
     title: "Tagline Demo",
     description: "",
-    registryDependencies: ["https://shadcraft-free.vercel.app/r/tagline.json"],
+    registryDependencies: ["@shadcraft/tagline"],
     files: [
       {
         path: "src/registry/pro-marketing/examples/tagline-demo.tsx",
