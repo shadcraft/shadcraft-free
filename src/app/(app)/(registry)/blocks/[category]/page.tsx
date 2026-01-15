@@ -34,6 +34,7 @@ export const generateMetadata = async ({
   const title = categoryData?.title ?? category;
   const description = categoryData?.description ?? `${title} blocks for shadcn/ui`;
   const url = `${SITE_CONFIG.url}/blocks/${category}`;
+  const ogImageUrl = `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`;
 
   return {
     title,
@@ -44,6 +45,11 @@ export const generateMetadata = async ({
       description,
       url,
       type: "website",
+      images: [{ url: ogImageUrl }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [{ url: ogImageUrl }],
     },
   };
 };

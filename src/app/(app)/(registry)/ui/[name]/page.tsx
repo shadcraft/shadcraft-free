@@ -22,6 +22,7 @@ export const generateMetadata = async ({ params }: PageProps<"/ui/[name]">): Pro
   const title = itemData?.title ?? name;
   const description = itemData?.description ?? `${title} component for shadcn/ui`;
   const url = `${SITE_CONFIG.url}/ui/${name}`;
+  const ogImageUrl = `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`;
 
   return {
     title,
@@ -32,6 +33,11 @@ export const generateMetadata = async ({ params }: PageProps<"/ui/[name]">): Pro
       description,
       url,
       type: "website",
+      images: [{ url: ogImageUrl }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [{ url: ogImageUrl }],
     },
   };
 };

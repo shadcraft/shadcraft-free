@@ -24,6 +24,7 @@ export const generateMetadata = async ({
   const title = itemData?.title ?? name;
   const description = itemData?.description ?? `${title} component for shadcn/ui`;
   const url = `${SITE_CONFIG.url}/components/${name}`;
+  const ogImageUrl = `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`;
 
   return {
     title,
@@ -34,6 +35,11 @@ export const generateMetadata = async ({
       description,
       url,
       type: "website",
+      images: [{ url: ogImageUrl }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [{ url: ogImageUrl }],
     },
   };
 };
