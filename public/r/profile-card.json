@@ -5,7 +5,7 @@
   "description": "An extension of the avatar component with more details on the individual. Good for blog posts etc.",
   "registryDependencies": [
     "avatar",
-    "https://shadcraft-free.vercel.app/r/index.json"
+    "https://free.shadcraft.com/r/index.json"
   ],
   "files": [
     {

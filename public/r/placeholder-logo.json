@@ -4,7 +4,7 @@
   "title": "Placeholder Logo",
   "description": "A component for that can be replaced with your brand's main logo. This component ensures layouts stay consistent before brand assets are applied.",
   "registryDependencies": [
-    "https://shadcraft-free.vercel.app/r/index.json"
+    "https://free.shadcraft.com/r/index.json"
   ],
   "files": [
     {

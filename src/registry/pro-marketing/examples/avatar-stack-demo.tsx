@@ -86,9 +86,9 @@ export function AvatarStackDemo() {
 }
 
 const avatarsSrc = [
-  "https://shadcraft-free.vercel.app/assets/avatars/person-1.webp",
-  "https://shadcraft-free.vercel.app/assets/avatars/person-2.webp",
-  "https://shadcraft-free.vercel.app/assets/avatars/person-3.webp",
-  "https://shadcraft-free.vercel.app/assets/avatars/person-4.webp",
-  "https://shadcraft-free.vercel.app/assets/avatars/person-5.webp",
+  "https://free.shadcraft.com/assets/avatars/person-1.webp",
+  "https://free.shadcraft.com/assets/avatars/person-2.webp",
+  "https://free.shadcraft.com/assets/avatars/person-3.webp",
+  "https://free.shadcraft.com/assets/avatars/person-4.webp",
+  "https://free.shadcraft.com/assets/avatars/person-5.webp",
 ];

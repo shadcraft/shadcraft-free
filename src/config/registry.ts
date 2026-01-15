@@ -1,5 +1,5 @@
 export const REGISTRY_CONFIG = {
-  homepage: process.env.NEXT_PUBLIC_APP_BASE_URL || "https://shadcraft-free.vercel.app",
+  homepage: process.env.NEXT_PUBLIC_APP_BASE_URL || "https://free.shadcraft.com",
   /**
    * The namespace prefix used when installing components via the shadcn CLI.
    * @example `npx shadcn add @shadcraft/[registry-item]`
@@ -18,7 +18,7 @@ export const REGISTRY_CONFIG = {
    * // components.json
    * {
    *    "registries": {
-   *      "@shadcraft": "https://shadcraft-free.vercel.app/r/{name}.json",
+   *      "@shadcraft": "https://free.shadcraft.com/r/{name}.json",
    *    }
    * }
    * ```
@@ -26,6 +26,5 @@ export const REGISTRY_CONFIG = {
    * @see https://ui.shadcn.com/docs/registry/namespace#url-pattern-system
    */
   namespaceUrl:
-    process.env.NEXT_PUBLIC_REGISTRY_NAMESPACE_URL ||
-    "https://shadcraft-free.vercel.app/r/{name}.json",
+    process.env.NEXT_PUBLIC_REGISTRY_NAMESPACE_URL || "https://free.shadcraft.com/r/{name}.json",
 };
