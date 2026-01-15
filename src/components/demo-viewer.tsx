@@ -60,6 +60,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { REGISTRY_CONFIG } from "@/config/registry";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry";
@@ -195,12 +196,16 @@ function CopyCLICommand() {
   const { item } = useDemoViewer();
   const { copyToClipboard, isCopied } = useCopyToClipboard();
 
+  const namespaceUrl = REGISTRY_CONFIG.namespaceUrl.replace("{name}", item.name);
+  const namespaceKey = `${REGISTRY_CONFIG.namespace}/${item.name}`;
+
   const handleCopyCommand = (type: "url" | "namespace") => {
     const commandPrefix = `npx shadcn@latest add`;
+
     if (type === "url") {
-      copyToClipboard(`${commandPrefix} https://shadcraft-free.vercel.app/r/${item.name}.json`);
+      copyToClipboard(`${commandPrefix} ${namespaceUrl}`);
     } else if (type === "namespace") {
-      copyToClipboard(`${commandPrefix} @shadcraft/${item.name}`);
+      copyToClipboard(`${commandPrefix} ${namespaceKey}`);
     }
   };
 
@@ -238,7 +243,7 @@ function CopyCLICommand() {
             <Copy className="size-4" />
             Namespace
             <span className="ml-auto pl-4 font-mono text-xs text-muted-foreground">
-              @shadcraft/{item.name}
+              {namespaceKey}
             </span>
           </DropdownMenuItem>
         </DropdownMenuContent>
