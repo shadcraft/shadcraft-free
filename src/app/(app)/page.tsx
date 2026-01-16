@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus } from "lucide-react";
+import { ArrowRightIcon, Plus } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 
@@ -16,32 +16,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Tagline } from "@/components/ui/tagline";
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-      staggerChildren: 0.08,
-      delayChildren: 0.05,
-    },
-  },
-} as const;
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-} as const;
-
 export default function Home() {
   return (
     <main className="relative isolate flex w-full flex-col gap-12 overflow-hidden px-4 pt-6 pb-12 lg:gap-16 lg:px-8 lg:pt-10 lg:pb-20">
@@ -53,25 +27,21 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative isolate pt-6 lg:pt-10">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 z-[-1] rounded-t-3xl bg-linear-to-b from-muted to-transparent inset-shadow-2xs inset-shadow-border" />
-
-      <motion.div variants={containerVariants} initial="hidden" animate="visible" className="px-4">
+    <section className="relative isolate">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="mx-auto max-w-3xl"
+      >
         <PageHeader className="relative items-center justify-center text-center">
-          <motion.div variants={itemVariants}>
-            <div className="flex size-14 items-center justify-center rounded-xl bg-background p-2 inset-shadow-2xs inset-shadow-border">
-              <ReactLogo className="size-8" />
-            </div>
-          </motion.div>
-
           <motion.div variants={itemVariants}>
             <Tagline variant="default">New release</Tagline>
           </motion.div>
 
           <motion.div variants={itemVariants}>
             <PageHeaderHeading>
-              <span className="bg-linear-to-r from-primary to-muted-foreground bg-clip-text text-transparent">
+              <span className="bg-clip-text text-primary">
                 Premium quality shadcn/ui components and blocks
               </span>
             </PageHeaderHeading>
@@ -111,12 +81,16 @@ function FreeKitCTA() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="mx-auto flex max-w-3xl flex-col gap-4 rounded-3xl bg-linear-to-b from-secondary to-secondary/50 p-6 inset-shadow-2xs inset-shadow-border"
+        className="mx-auto flex max-w-3xl flex-col gap-4 rounded-3xl bg-secondary p-6 inset-shadow-2xs inset-shadow-border"
       >
         <motion.div variants={itemVariants} className="flex items-center gap-2">
-          <FigmaLogo className="size-8" />
+          <div className="flex size-14 items-center justify-center rounded-xl bg-background p-2 inset-shadow-2xs inset-shadow-border">
+            <ReactLogo className="size-8" />
+          </div>
           <Plus className="size-4 text-muted-foreground" />
-          <ReactLogo className="size-8" />
+          <div className="flex size-14 items-center justify-center rounded-xl bg-background p-2 inset-shadow-2xs inset-shadow-border">
+            <FigmaLogo className="size-8" />
+          </div>
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col gap-2">
@@ -130,8 +104,11 @@ function FreeKitCTA() {
 
         <motion.div variants={itemVariants} className="w-fit pt-4">
           <Button asChild>
-            <Link href="https://polar.sh/checkout/polar_c_yhJ8HZh0Hi7rTuJUM3YbSSSGJ1U4gPWHnmaym1fOkpf">
-              Get started
+            <Link
+              href="https://polar.sh/checkout/polar_c_yhJ8HZh0Hi7rTuJUM3YbSSSGJ1U4gPWHnmaym1fOkpf"
+              target="_blank"
+            >
+              Get started <ArrowRightIcon />
             </Link>
           </Button>
         </motion.div>
@@ -139,3 +116,29 @@ function FreeKitCTA() {
     </section>
   );
 }
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
+    },
+  },
+} as const;
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+} as const;

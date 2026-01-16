@@ -2,9 +2,7 @@ import { ArrowUpRight, Globe } from "lucide-react";
 import Link from "next/link";
 
 import { Logo } from "@/components/logo";
-import { GitHub } from "@/components/logos/github";
 import { XformerlyTwitter } from "@/components/logos/twitter";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Separator } from "@/components/ui/separator";
 import { getRegistryItems } from "@/lib/registry";
 import { groupBlocksByCategories } from "@/utils/registry";
@@ -122,7 +120,7 @@ export async function Footer() {
 
         {/* Logo and Social Links and Copyright */}
         <div className="flex w-full flex-col gap-9 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex w-full max-w-sm flex-col gap-2">
+          <div className="flex w-full flex-col gap-2">
             <Link href="/" className="flex items-center gap-2" aria-label="Go to home page">
               <Logo />
               <span className="flex items-center gap-2 text-xl font-semibold lowercase">
@@ -130,13 +128,13 @@ export async function Footer() {
               </span>
             </Link>
 
-            <span className="text-sm font-normal text-muted-foreground">
+            <span className="text-sm font-normal text-balance text-muted-foreground">
               This is a free and open-source project by{" "}
               <Link
                 href="https://x.com/shadcraft_"
                 target="_blank"
                 aria-label="Go to Shadcraft Twitter"
-                className="text-muted-foreground transition-all hover:text-primary hover:underline"
+                className="link"
               >
                 Shadcraft
               </Link>
@@ -145,26 +143,17 @@ export async function Footer() {
                 href="https://github.com/shadcraft/shadcraft-free"
                 target="_blank"
                 aria-label="Go to GitHub Repository"
-                className="text-muted-foreground transition-all hover:text-primary hover:underline"
+                className="link"
               >
                 GitHub
               </Link>
-              . <br /> This registry is part of the shadcn/ui registry directory.
+              .
             </span>
           </div>
 
           {/* Social Links and Copyright */}
           <div className="flex w-full flex-col gap-4 self-start lg:items-end">
             <div className="flex items-center gap-3 lg:gap-4">
-              <Link
-                href="https://github.com/shadcraft/shadcraft-free"
-                target="_blank"
-                aria-label="Go to GitHub Repository"
-                className="text-muted-foreground transition-all hover:text-primary"
-              >
-                <GitHub className="size-4" />
-              </Link>
-
               <Link
                 href="https://x.com/shadcraft_"
                 target="_blank"
@@ -188,8 +177,6 @@ export async function Footer() {
               <p className="text-sm font-normal text-muted-foreground">
                 &copy; shadcraft {getCurrentYear()}
               </p>
-
-              <ThemeToggle size="icon-sm" />
             </div>
           </div>
         </div>

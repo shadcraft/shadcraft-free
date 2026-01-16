@@ -182,6 +182,10 @@
   }
 }
 
+@utility link {
+  @apply underline transition-colors hover:text-primary;
+}
+
 @utility code-inline {
   @apply inline-flex w-fit rounded-sm bg-muted px-1.5 py-0.5 font-mono text-xs font-medium text-muted-foreground;
 }
