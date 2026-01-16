@@ -1,8 +1,6 @@
 import Link from "next/link";
 
 import { Logo } from "@/components/logo";
-import { GitHub } from "@/components/logos/github";
-import { XformerlyTwitter } from "@/components/logos/twitter";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 
@@ -18,30 +16,10 @@ export function Header() {
             </span>
           </Link>
 
-          <div className="flex items-center gap-1">
-            <Button asChild variant="ghost" size="icon-sm">
-              <Link
-                href="https://github.com/shadcraft/shadcraft-free"
-                target="_blank"
-                aria-label="Go to GitHub Repository"
-              >
-                <GitHub />
-              </Link>
-            </Button>
+          <div className="flex items-center gap-3">
+            <ThemeToggle size="icon" />
 
-            <Button asChild variant="ghost" size="icon-sm" className="hidden sm:flex">
-              <Link
-                href="https://x.com/shadcraft_"
-                target="_blank"
-                aria-label="Go to Shadcraft Twitter"
-              >
-                <XformerlyTwitter className="size-3.5" />
-              </Link>
-            </Button>
-
-            <ThemeToggle size="icon-sm" />
-
-            <Button asChild size="sm" className="ml-2 gap-1.5">
+            <Button asChild className="gap-1.5">
               <Link
                 href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
                 target="_blank"
