@@ -56,11 +56,12 @@ function HeroSection() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <PageHeaderActions className="mx-auto w-fit pt-4">
+            <PageHeaderActions className="mx-auto grid w-fit grid-cols-1 pt-4 sm:grid-cols-2">
               <Button asChild>
                 <Link href="/ui/avatar-stack">Explore the registry</Link>
               </Button>
-              <Button variant="secondary" asChild>
+
+              <Button variant="outline" asChild>
                 <Link href="https://github.com/shadcraft/shadcraft-free" target="_blank">
                   <GitHub />
                   GitHub

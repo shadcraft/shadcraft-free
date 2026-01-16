@@ -183,7 +183,7 @@
 }
 
 @utility link {
-  @apply underline transition-colors hover:text-primary;
+  @apply underline underline-offset-4 transition-colors hover:text-primary;
 }
 
 @utility code-inline {
