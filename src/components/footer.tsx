@@ -28,7 +28,7 @@ const shadcraftLinks = [
   },
   {
     label: "Documentation",
-    href: "https://shadcraft.com/docs/installation-via-shadcn-cli",
+    href: "https://shadcraft.com/docs/free-registry",
   },
 ];
 
