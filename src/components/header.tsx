@@ -14,7 +14,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2" aria-label="Go to home page">
             <Logo />
             <span className="flex items-center gap-2 text-lg font-semibold lowercase sm:text-xl">
-              shadcraft <span className="code-inline">free</span>
+              shadcraft <span className="code-inline translate-y-px">free</span>
             </span>
           </Link>
 
@@ -35,13 +35,13 @@ export function Header() {
                 target="_blank"
                 aria-label="Go to Shadcraft Twitter"
               >
-                <XformerlyTwitter />
+                <XformerlyTwitter className="size-3.5" />
               </Link>
             </Button>
 
             <ThemeToggle size="icon-sm" />
 
-            <Button asChild size="sm" className="gap-1.5">
+            <Button asChild size="sm" className="ml-2 gap-1.5">
               <Link
                 href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
                 target="_blank"

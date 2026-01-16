@@ -120,11 +120,11 @@ export async function Footer() {
 
         {/* Logo and Social Links and Copyright */}
         <div className="flex w-full flex-col gap-9 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex w-full flex-col gap-2">
+          <div className="flex w-full flex-col gap-4">
             <Link href="/" className="flex items-center gap-2" aria-label="Go to home page">
               <Logo />
               <span className="flex items-center gap-2 text-xl font-semibold lowercase">
-                shadcraft <span className="code-inline">free</span>
+                shadcraft <span className="code-inline translate-y-px">free</span>
               </span>
             </Link>
 
@@ -152,7 +152,7 @@ export async function Footer() {
           </div>
 
           {/* Social Links and Copyright */}
-          <div className="flex w-full flex-col gap-4 self-start lg:items-end">
+          <div className="flex w-full flex-col gap-4 self-end lg:items-end">
             <div className="flex items-center gap-3 lg:gap-4">
               <Link
                 href="https://x.com/shadcraft_"
@@ -160,7 +160,7 @@ export async function Footer() {
                 aria-label="Go to Shadcraft Twitter"
                 className="text-muted-foreground transition-all hover:text-primary"
               >
-                <XformerlyTwitter className="size-4" />
+                <XformerlyTwitter className="size-3.5" />
               </Link>
 
               <Link
@@ -175,7 +175,7 @@ export async function Footer() {
 
             <div className="flex flex-row items-center justify-between gap-4 lg:flex-col lg:items-end">
               <p className="text-sm font-normal text-muted-foreground">
-                &copy; shadcraft {getCurrentYear()}
+                &copy; Shadcraft {getCurrentYear()}
               </p>
             </div>
           </div>
