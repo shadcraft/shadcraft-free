@@ -12,7 +12,7 @@ import {
 
 export function Team6() {
   return (
-    <section className="bg-muted py-12 lg:py-20">
+    <section className="py-12 lg:py-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:gap-16 lg:px-8">
         {/* Section Heading */}
         <SectionHeading alignment="center" className="mx-auto w-full max-w-3xl">
@@ -30,7 +30,7 @@ export function Team6() {
             <ProfileCard
               key={member.name}
               variant="default"
-              className="rounded-xl bg-background p-2"
+              className="rounded-xl border bg-card p-2 shadow-sm"
             >
               <ProfileCardAvatar
                 src={member.image}

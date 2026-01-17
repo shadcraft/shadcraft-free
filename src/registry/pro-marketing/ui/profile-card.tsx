@@ -43,13 +43,18 @@ function ProfileCardAvatar({
       data-size={size}
       data-slot="profile-card-avatar"
       className={cn(
-        "data-[size=default]:size-10 data-[size=lg]:size-24 data-[size=sm]:size-6",
+        "overflow-hidden",
+        size === "sm" && "size-6",
+        size === "default" && "size-10",
+        size === "lg" && "size-24",
         className
       )}
       {...props}
     >
-      <AvatarImage alt="Avatar" src={src} className="size-full object-cover" />
-      <AvatarFallback className="uppercase">{name?.slice(0, 2) || "ME"}</AvatarFallback>
+      <AvatarImage alt="Avatar" src={src} className="size-full rounded-none object-cover" />
+      <AvatarFallback className="size-full rounded-none uppercase">
+        {name?.slice(0, 2) || "ME"}
+      </AvatarFallback>
     </Avatar>
   );
 }
