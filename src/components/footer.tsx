@@ -83,7 +83,9 @@ export async function Footer() {
             <ul className="grid gap-3">
               {resolvedComponentItems.map((item) => {
                 const href =
-                  item.type === "registry:ui" ? `/ui/${item.name}` : `/components/${item.name}`;
+                  item.type === "registry:ui"
+                    ? `/ui/${item.name}`
+                    : `/components/${item.name}`;
                 return (
                   <li key={item.name} className="text-sm text-muted-foreground">
                     <Link
@@ -121,7 +123,11 @@ export async function Footer() {
         {/* Logo and Social Links and Copyright */}
         <div className="flex w-full flex-col gap-9 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex w-full flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2" aria-label="Go to home page">
+            <Link
+              href="/"
+              className="flex items-center gap-2"
+              aria-label="Go to home page"
+            >
               <Logo />
               <span className="flex items-center gap-2 text-xl font-semibold lowercase">
                 shadcraft <span className="code-inline translate-y-px">free</span>

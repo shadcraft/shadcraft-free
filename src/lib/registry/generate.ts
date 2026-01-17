@@ -38,7 +38,11 @@ export function cleanupItemPaths(item: RegistryItem, bundle: string): RegistryIt
 
       // Clean up imports in the content field using the path mappings
       if (cleanedFile.content) {
-        cleanedFile.content = rewriteItemImports(cleanedFile.content, bundle, pathMappings);
+        cleanedFile.content = rewriteItemImports(
+          cleanedFile.content,
+          bundle,
+          pathMappings
+        );
       }
 
       return cleanedFile;
@@ -65,7 +69,9 @@ export function rewriteItemImports(
   pathMappings: Map<string, string>
 ): string {
   // Sort mappings by path length (longest first) to handle more specific paths first
-  const sortedMappings = Array.from(pathMappings.entries()).sort(([a], [b]) => b.length - a.length);
+  const sortedMappings = Array.from(pathMappings.entries()).sort(
+    ([a], [b]) => b.length - a.length
+  );
 
   // Handle block-specific imports using the exact path mappings
   sortedMappings.forEach(([sourcePath, targetPath]) => {
@@ -79,7 +85,10 @@ export function rewriteItemImports(
       // Create regex to match this specific import path
       const escapedPath = sourcePathNoExt.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       const escapedBundle = bundle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      const importRegex = new RegExp(`@\\/registry\\/${escapedBundle}\\/${escapedPath}`, "g");
+      const importRegex = new RegExp(
+        `@\\/registry\\/${escapedBundle}\\/${escapedPath}`,
+        "g"
+      );
 
       content = content.replace(importRegex, `@/${targetPathNoExt}`);
     }

@@ -57,7 +57,9 @@ export function getNamespacedRegistryDependencies(...names: string[]): string[] 
  * @param registryDeps - Registry dependencies
  * @returns Array of namespaced registry keys (e.g. ["@shadcraft/avatar-stack", "@shadcraft/section-heading"])
  */
-export function filterNamespacedRegistryDependencies(registryDeps: string[] | undefined): string[] {
+export function filterNamespacedRegistryDependencies(
+  registryDeps: string[] | undefined
+): string[] {
   if (!registryDeps || registryDeps.length === 0) return [];
   return registryDeps.filter((dep) => dep.startsWith("@shadcraft/"));
 }

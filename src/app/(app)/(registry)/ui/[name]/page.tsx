@@ -3,7 +3,11 @@ import { notFound } from "next/navigation";
 import React from "react";
 
 import { DemoDisplay } from "@/components/demo-display";
-import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
+import {
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "@/components/page-header";
 import { SITE_CONFIG } from "@/config/site";
 import { getRegistryItem, getRegistryItems } from "@/lib/registry";
 
@@ -16,7 +20,9 @@ export const generateStaticParams = async () => {
   return ui.map((item) => ({ name: item.name }));
 };
 
-export const generateMetadata = async ({ params }: PageProps<"/ui/[name]">): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: PageProps<"/ui/[name]">): Promise<Metadata> => {
   const { name } = await params;
   const itemData = await getCachedRegistryItem(name);
   const title = itemData?.title ?? name;
@@ -57,7 +63,9 @@ export default async function Page({ params }: PageProps<"/ui/[name]">) {
           <span className="code-inline w-fit font-mono font-medium">{item.type}</span>
         </div>
         <PageHeaderHeading>{item.title}</PageHeaderHeading>
-        {item.description && <PageHeaderDescription>{item.description}</PageHeaderDescription>}
+        {item.description && (
+          <PageHeaderDescription>{item.description}</PageHeaderDescription>
+        )}
       </PageHeader>
 
       <DemoDisplay key={item.name} name={item.name} />

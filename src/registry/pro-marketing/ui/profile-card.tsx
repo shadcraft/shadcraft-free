@@ -51,7 +51,11 @@ function ProfileCardAvatar({
       )}
       {...props}
     >
-      <AvatarImage alt="Avatar" src={src} className="size-full rounded-none object-cover" />
+      <AvatarImage
+        alt="Avatar"
+        src={src}
+        className="size-full rounded-none object-cover"
+      />
       <AvatarFallback className="size-full rounded-none uppercase">
         {name?.slice(0, 2) || "ME"}
       </AvatarFallback>

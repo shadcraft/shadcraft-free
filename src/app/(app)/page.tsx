@@ -49,9 +49,9 @@ function HeroSection() {
 
           <motion.div variants={itemVariants}>
             <PageHeaderDescription>
-              A free registry of polished shadcn/ui components and marketing blocks built to
-              production standards. Fast to use, easy to extend, and ready for any modern web
-              project.
+              A free registry of polished shadcn/ui components and marketing blocks built
+              to production standards. Fast to use, easy to extend, and ready for any
+              modern web project.
             </PageHeaderDescription>
           </motion.div>
 
@@ -95,11 +95,13 @@ function FreeKitCTA() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col gap-2">
-          <h2 className="text-xl font-medium text-balance">Try the Free Figma and React kit</h2>
+          <h2 className="text-xl font-medium text-balance">
+            Try the Free Figma and React kit
+          </h2>
           <p className="text-balance text-muted-foreground">
-            Access a curated set of shadcn components in the Figma community library, try tweakcn
-            theming, and use the free Shadcraft registry. A simple way to trial the kit before
-            upgrading.
+            Access a curated set of shadcn components in the Figma community library, try
+            tweakcn theming, and use the free Shadcraft registry. A simple way to trial
+            the kit before upgrading.
           </p>
         </motion.div>
 

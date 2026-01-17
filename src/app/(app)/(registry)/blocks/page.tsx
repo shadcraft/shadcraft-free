@@ -2,7 +2,13 @@ import { ChevronRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item";
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemTitle,
+} from "@/components/ui/item";
 import { SITE_CONFIG } from "@/config/site";
 import { getRegistryItems } from "@/lib/registry";
 import { groupBlocksByCategories } from "@/utils/registry";
@@ -35,7 +41,9 @@ export default async function RegistryBlocksPage() {
           <Link href={`/blocks/${item.slug}`}>
             <ItemContent>
               <ItemTitle>{item.title}</ItemTitle>
-              <span className="border-l-2 pl-2">{blockAmountDisplayText(item.amount)}</span>
+              <span className="border-l-2 pl-2">
+                {blockAmountDisplayText(item.amount)}
+              </span>
               <ItemDescription>{item.description}</ItemDescription>
             </ItemContent>
 

@@ -33,7 +33,10 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Page Heading",
     description:
       "A component that acts as the text-focused version of a hero banner. This component combines a pre-heading label, an H1 heading, supporting description text, and call-to-action buttons.",
-    registryDependencies: ["@shadcraft/tagline", "https://free.shadcraft.com/r/index.json"],
+    registryDependencies: [
+      "@shadcraft/tagline",
+      "https://free.shadcraft.com/r/index.json",
+    ],
     files: [
       {
         path: "src/registry/pro-marketing/ui/page-heading.tsx",
@@ -87,7 +90,10 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     title: "Section Heading",
     description:
       "A component that standardizes heading typography and spacing. This component includes a pre-heading label, main heading, and body text in different layout variants.",
-    registryDependencies: ["@shadcraft/tagline", "https://free.shadcraft.com/r/index.json"],
+    registryDependencies: [
+      "@shadcraft/tagline",
+      "https://free.shadcraft.com/r/index.json",
+    ],
     files: [
       {
         path: "src/registry/pro-marketing/ui/section-heading.tsx",
@@ -322,7 +328,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/blocks/newsletter-signup/5/index.tsx");
+      const mod =
+        await import("@/registry/pro-marketing/blocks/newsletter-signup/5/index.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -379,7 +386,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/blocks/testimonials/11/index.tsx");
+      const mod =
+        await import("@/registry/pro-marketing/blocks/testimonials/11/index.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -439,7 +447,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/blocks/top-navigation/5/index.tsx");
+      const mod =
+        await import("@/registry/pro-marketing/blocks/top-navigation/5/index.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -511,7 +520,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/placeholder-logo-demo.tsx");
+      const mod =
+        await import("@/registry/pro-marketing/examples/placeholder-logo-demo.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
@@ -559,7 +569,8 @@ export const Index: Record<string, RegistryItemWithComponent> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/pro-marketing/examples/section-heading-demo.tsx");
+      const mod =
+        await import("@/registry/pro-marketing/examples/section-heading-demo.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"

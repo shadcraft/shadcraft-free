@@ -18,8 +18,8 @@ export function CTA9() {
               Ready to Work Smarter with AI?
             </SectionHeadingTitle>
             <SectionHeadingBody className="text-primary-foreground/90">
-              Start today and see how Acme Inc. helps you finish projects faster, with clarity and
-              focus at every step.
+              Start today and see how Acme Inc. helps you finish projects faster, with
+              clarity and focus at every step.
             </SectionHeadingBody>
           </SectionHeading>
 

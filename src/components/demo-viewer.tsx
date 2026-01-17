@@ -37,7 +37,11 @@ import {
 } from "@/components/resizable-preview";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup, ButtonGroupSeparator } from "@/components/ui/button-group";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -123,7 +127,10 @@ function DemoViewerProvider({
       <div
         id={item.name}
         data-view={view}
-        className={cn("group/demo-view-wrapper min-w-0 scroll-mt-24 overflow-hidden", className)}
+        className={cn(
+          "group/demo-view-wrapper min-w-0 scroll-mt-24 overflow-hidden",
+          className
+        )}
         style={
           {
             "--height": item.meta?.iframeHeight ?? "800px",
@@ -229,7 +236,10 @@ function CopyCLICommand() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem onClick={() => handleCopyCommand("url")} className="cursor-pointer">
+          <DropdownMenuItem
+            onClick={() => handleCopyCommand("url")}
+            className="cursor-pointer"
+          >
             <Copy className="size-4" />
             URL
             <span className="ml-auto pl-4 font-mono text-xs text-muted-foreground">
@@ -328,8 +338,12 @@ function DemoViewerCode() {
                         size="icon-sm"
                         className="size-7 lg:hidden"
                         onClick={toggleMenu}
-                        title={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-                        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                        title={
+                          isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+                        }
+                        aria-label={
+                          isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+                        }
                       >
                         {isMenuOpen ? (
                           <X className="animate-in zoom-in-50" />
@@ -409,7 +423,10 @@ function DemoCopyCodeButton({
   );
 }
 
-function DemoViewerFileTreeSidebar({ className, ...props }: React.ComponentProps<typeof Sidebar>) {
+function DemoViewerFileTreeSidebar({
+  className,
+  ...props
+}: React.ComponentProps<typeof Sidebar>) {
   const { tree } = useDemoViewer();
 
   if (!tree || tree.length === 0) {
@@ -419,12 +436,17 @@ function DemoViewerFileTreeSidebar({ className, ...props }: React.ComponentProps
   return (
     <Sidebar
       collapsible="icon"
-      className={cn("relative isolate m-0 h-full bg-sidebar p-0 max-lg:hidden", className)}
+      className={cn(
+        "relative isolate m-0 h-full bg-sidebar p-0 max-lg:hidden",
+        className
+      )}
       {...props}
     >
       <div className="relative overflow-hidden border-b text-left group-data-[state=collapsed]:hidden">
         <div className="flex h-12 w-full shrink-0 items-center justify-between gap-2 px-4 py-2">
-          <span className="line-clamp-1 font-mono text-sm text-sidebar-foreground">Files</span>
+          <span className="line-clamp-1 font-mono text-sm text-sidebar-foreground">
+            Files
+          </span>
 
           <Tooltip>
             <TooltipTrigger asChild>
@@ -461,10 +483,16 @@ function DemoViewerFileTreeMobileMenu({ isMenuOpen }: { isMenuOpen: boolean }) {
     <div
       className={cn(
         "grid transition-all ease-in-out lg:hidden",
-        isMenuOpen ? "grid-rows-[1fr] opacity-100" : "pointer-events-none grid-rows-[0fr] opacity-0"
+        isMenuOpen
+          ? "grid-rows-[1fr] opacity-100"
+          : "pointer-events-none grid-rows-[0fr] opacity-0"
       )}
     >
-      <div className="overflow-hidden" inert={!isMenuOpen || undefined} aria-hidden={!isMenuOpen}>
+      <div
+        className="overflow-hidden"
+        inert={!isMenuOpen || undefined}
+        aria-hidden={!isMenuOpen}
+      >
         <div className="pb-2">
           <DemoViewerFileTree tree={tree} />
         </div>

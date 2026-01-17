@@ -3,7 +3,11 @@ import { Breadcrumbs } from "@/app/(app)/breadcrumbs";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { getRegistryItems } from "@/lib/registry";
 
-export default async function RegistryLayout({ children }: { children: React.ReactNode }) {
+export default async function RegistryLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const registryItems = await getRegistryItems();
 
   return (

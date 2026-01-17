@@ -47,7 +47,9 @@ export function Pricing8() {
                   <span className="text-4xl leading-none font-semibold text-foreground">
                     ${plan.price}
                   </span>
-                  <span className="text-sm font-medium text-muted-foreground">/month</span>
+                  <span className="text-sm font-medium text-muted-foreground">
+                    /month
+                  </span>
                 </div>
 
                 <ul className="flex flex-col gap-3">
@@ -129,7 +131,10 @@ const pricingPlans = [
       { label: "24/7 support", tooltip: "You can get 24/7 support" },
       { label: "Unlimited storage", tooltip: "You can store unlimited data" },
       { label: "Advanced security", tooltip: "You can use advanced security" },
-      { label: "Custom integrations", tooltip: "You can integrate with your custom integrations" },
+      {
+        label: "Custom integrations",
+        tooltip: "You can integrate with your custom integrations",
+      },
     ],
     featured: false,
   },

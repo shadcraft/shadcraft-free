@@ -11,8 +11,8 @@
     "preview": "next build && next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "registry:build": "tsx ./src/scripts/build-registry.mts && prettier --log-level silent --write \"src/registry/**/*.{ts,tsx,json,mdx}\" --cache",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf .source",
     "prepare": "husky"

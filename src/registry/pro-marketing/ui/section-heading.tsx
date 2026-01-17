@@ -44,7 +44,10 @@ function SectionHeadingBody({ className, ...props }: React.ComponentProps<"p">) 
   return (
     <p
       data-slot="section-heading-body"
-      className={cn("max-w-2xl text-base font-normal text-pretty text-muted-foreground", className)}
+      className={cn(
+        "max-w-2xl text-base font-normal text-pretty text-muted-foreground",
+        className
+      )}
       {...props}
     />
   );

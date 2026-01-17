@@ -26,14 +26,22 @@ function PageHeaderHeading({ className, ...props }: React.ComponentProps<"h1">) 
 function PageHeaderDescription({ className, ...props }: React.ComponentProps<"p">) {
   return (
     <p
-      className={cn("max-w-3xl text-base text-balance text-muted-foreground md:text-lg", className)}
+      className={cn(
+        "max-w-3xl text-base text-balance text-muted-foreground md:text-lg",
+        className
+      )}
       {...props}
     />
   );
 }
 
 function PageHeaderActions({ className, ...props }: React.ComponentProps<"div">) {
-  return <div className={cn("flex w-full flex-row items-center gap-2", className)} {...props} />;
+  return (
+    <div
+      className={cn("flex w-full flex-row items-center gap-2", className)}
+      {...props}
+    />
+  );
 }
 
 export { PageHeader, PageHeaderActions, PageHeaderDescription, PageHeaderHeading };

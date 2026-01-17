@@ -11,7 +11,10 @@ function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
 }
 
-export function useResizableWidth({ minWidthPx, onWidthChange }: UseResizableWidthOptions) {
+export function useResizableWidth({
+  minWidthPx,
+  onWidthChange,
+}: UseResizableWidthOptions) {
   const [isDragging, setIsDragging] = React.useState(false);
 
   // Optional: Attach to define a specific boundary container

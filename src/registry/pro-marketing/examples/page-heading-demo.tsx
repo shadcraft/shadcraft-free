@@ -19,8 +19,8 @@ export function PageHeadingDemo() {
         <PageHeadingTagline>New features released</PageHeadingTagline>
         <PageHeadingTitle>Make Better Decisions, With Ease</PageHeadingTitle>
         <PageHeadingBody>
-          Acme Inc&apos;s personal AI helps you cut through the noise, speed up delivery, and stay
-          focused without switching contexts.
+          Acme Inc&apos;s personal AI helps you cut through the noise, speed up delivery,
+          and stay focused without switching contexts.
         </PageHeadingBody>
         <PageHeadingActions>
           <Button>Get Started</Button>
@@ -41,7 +41,9 @@ export function PageHeadingDemo() {
               </Avatar>
             ))}
           </AvatarStack>
-          <span className="text-xs text-muted-foreground">Loved by 4200+ professionals</span>
+          <span className="text-xs text-muted-foreground">
+            Loved by 4200+ professionals
+          </span>
         </div>
       </PageHeading>
 
@@ -49,8 +51,8 @@ export function PageHeadingDemo() {
         <PageHeadingTagline>New features released</PageHeadingTagline>
         <PageHeadingTitle>Make Better Decisions, With Ease</PageHeadingTitle>
         <PageHeadingBody>
-          Acme Inc&apos;s personal AI helps you cut through the noise, speed up delivery, and stay
-          focused without switching contexts.
+          Acme Inc&apos;s personal AI helps you cut through the noise, speed up delivery,
+          and stay focused without switching contexts.
         </PageHeadingBody>
         <PageHeadingActions>
           <Button>Get Started</Button>
@@ -68,7 +70,9 @@ export function PageHeadingDemo() {
               </Avatar>
             ))}
           </AvatarStack>
-          <span className="text-xs text-muted-foreground">Loved by 4200+ professionals</span>
+          <span className="text-xs text-muted-foreground">
+            Loved by 4200+ professionals
+          </span>
         </div>
       </PageHeading>
     </div>

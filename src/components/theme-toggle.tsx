@@ -14,13 +14,19 @@ import {
 import { META_THEME_COLORS, useMetaColor } from "@/hooks/use-meta-colors";
 import { cn } from "@/lib/utils";
 
-export function ThemeToggle({ className, onClick, ...props }: React.ComponentProps<typeof Button>) {
+export function ThemeToggle({
+  className,
+  onClick,
+  ...props
+}: React.ComponentProps<typeof Button>) {
   const { setTheme, resolvedTheme, theme } = useTheme();
   const { setMetaColor } = useMetaColor();
 
   const toggleTheme = React.useCallback(() => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
-    setMetaColor(resolvedTheme === "dark" ? META_THEME_COLORS.light : META_THEME_COLORS.dark);
+    setMetaColor(
+      resolvedTheme === "dark" ? META_THEME_COLORS.light : META_THEME_COLORS.dark
+    );
   }, [resolvedTheme, setTheme, setMetaColor]);
 
   return (

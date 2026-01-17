@@ -38,7 +38,9 @@ export async function getRegistryItem(name: string): Promise<RegistryItem | null
   const candidate = {
     ...item,
     files: Array.isArray(item.files)
-      ? item.files.map((file: unknown) => (typeof file === "string" ? { path: file } : file))
+      ? item.files.map((file: unknown) =>
+          typeof file === "string" ? { path: file } : file
+        )
       : item.files,
   };
 
@@ -138,7 +140,9 @@ export function createFileTreeForRegistryItemFiles(
           currentLevel = existingNode.children!;
         }
       } else {
-        const newNode: FileTree = isFile ? { name: part, path } : { name: part, children: [] };
+        const newNode: FileTree = isFile
+          ? { name: part, path }
+          : { name: part, children: [] };
 
         currentLevel.push(newNode);
 

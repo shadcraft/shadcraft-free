@@ -41,10 +41,12 @@ export function ScreenSizeIndicator({
         </TooltipTrigger>
         <TooltipContent side="right" className="flex items-center gap-1 font-mono">
           <span className="flex items-center gap-0.5">
-            <MoveHorizontal className="size-3 text-muted-foreground" /> {screenSize.width}px
+            <MoveHorizontal className="size-3 text-muted-foreground" /> {screenSize.width}
+            px
           </span>
           <span className="flex items-center gap-0.5">
-            <MoveVertical className="size-3 text-muted-foreground" /> {screenSize.height}px
+            <MoveVertical className="size-3 text-muted-foreground" /> {screenSize.height}
+            px
           </span>
         </TooltipContent>
       </Tooltip>

@@ -3,7 +3,11 @@ import { notFound } from "next/navigation";
 import React from "react";
 
 import { DemoDisplay } from "@/components/demo-display";
-import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
+import {
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "@/components/page-header";
 import { SITE_CONFIG } from "@/config/site";
 import { getRegistryItem, getRegistryItems } from "@/lib/registry";
 
@@ -59,7 +63,9 @@ export default async function Page({ params }: PageProps<"/components/[name]">) 
           <span className="code-inline">{item.type}</span>
         </div>
         <PageHeaderHeading>{item.title}</PageHeaderHeading>
-        {item.description && <PageHeaderDescription>{item.description}</PageHeaderDescription>}
+        {item.description && (
+          <PageHeaderDescription>{item.description}</PageHeaderDescription>
+        )}
       </PageHeader>
 
       <DemoDisplay key={item.name} name={item.name} />

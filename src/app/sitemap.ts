@@ -9,16 +9,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_CONFIG.url;
 
   // Base routes
-  const baseRoutes: MetadataRoute.Sitemap = ["", "/ui", "/components", "/blocks"].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-  }));
+  const baseRoutes: MetadataRoute.Sitemap = ["", "/ui", "/components", "/blocks"].map(
+    (route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: new Date().toISOString(),
+    })
+  );
 
   // Block category routes
-  const blockCategoryRoutes: MetadataRoute.Sitemap = registryCategories.map((category) => ({
-    url: `${baseUrl}/blocks/${category.slug}`,
-    lastModified: new Date().toISOString(),
-  }));
+  const blockCategoryRoutes: MetadataRoute.Sitemap = registryCategories.map(
+    (category) => ({
+      url: `${baseUrl}/blocks/${category.slug}`,
+      lastModified: new Date().toISOString(),
+    })
+  );
 
   // UI component routes
   const uiItems = await getRegistryItems(isUiItem);
@@ -34,5 +38,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date().toISOString(),
   }));
 
-  return [...baseRoutes, ...uiComponentRoutes, ...componentRoutes, ...blockCategoryRoutes];
+  return [
+    ...baseRoutes,
+    ...uiComponentRoutes,
+    ...componentRoutes,
+    ...blockCategoryRoutes,
+  ];
 }

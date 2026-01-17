@@ -19,8 +19,8 @@ export function Team6() {
           <SectionHeadingTagline>Team</SectionHeadingTagline>
           <SectionHeadingTitle>Meet The People Behind Acme AI</SectionHeadingTitle>
           <SectionHeadingBody>
-            We are a team of builders, designers, and problem-solvers dedicated to helping you work
-            smarter every day.
+            We are a team of builders, designers, and problem-solvers dedicated to helping
+            you work smarter every day.
           </SectionHeadingBody>
         </SectionHeading>
 

@@ -1,4 +1,11 @@
-import { ArrowBigUpDash, ChartSpline, Database, IterationCcw, Users, Workflow } from "lucide-react";
+import {
+  ArrowBigUpDash,
+  ChartSpline,
+  Database,
+  IterationCcw,
+  Users,
+  Workflow,
+} from "lucide-react";
 
 import {
   SectionHeading,
@@ -16,7 +23,8 @@ export function Benefits13() {
           <SectionHeadingTagline>Benefits</SectionHeadingTagline>
           <SectionHeadingTitle>Why Choose Acme Inc.</SectionHeadingTitle>
           <SectionHeadingBody>
-            Discover the key advantages that make Acme Inc. the right choice for your team.
+            Discover the key advantages that make Acme Inc. the right choice for your
+            team.
           </SectionHeadingBody>
         </SectionHeading>
 
@@ -35,7 +43,9 @@ export function Benefits13() {
                 <h3 className="text-xl font-semibold tracking-tight text-foreground">
                   {benefit.title}
                 </h3>
-                <p className="text-lg font-normal text-muted-foreground">{benefit.description}</p>
+                <p className="text-lg font-normal text-muted-foreground">
+                  {benefit.description}
+                </p>
               </div>
             </div>
           ))}
@@ -73,7 +83,8 @@ const benefitsData = [
   {
     icon: Workflow,
     title: "Seamless Workflow",
-    description: "Stay in the zone without constant context switching across apps and tools.",
+    description:
+      "Stay in the zone without constant context switching across apps and tools.",
   },
   {
     icon: Users,

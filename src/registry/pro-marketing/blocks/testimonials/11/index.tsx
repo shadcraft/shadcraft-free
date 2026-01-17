@@ -21,7 +21,8 @@ export function Testimonial11() {
           <SectionHeadingTagline>Testimonials</SectionHeadingTagline>
           <SectionHeadingTitle>What Our Customers Say</SectionHeadingTitle>
           <SectionHeadingBody>
-            Don&apos;t just take our word for it. See what teams are saying about Acme Inc.
+            Don&apos;t just take our word for it. See what teams are saying about Acme
+            Inc.
           </SectionHeadingBody>
         </SectionHeading>
 

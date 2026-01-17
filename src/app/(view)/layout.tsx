@@ -49,12 +49,20 @@ export default function RootLayoutView({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script async crossOrigin="anonymous" src="https://tweakcn.com/live-preview.min.js" />
+        <script
+          async
+          crossOrigin="anonymous"
+          src="https://tweakcn.com/live-preview.min.js"
+        />
       </head>
       <body className={`${fontVariables} antialiased`}>
         <ThemeProvider storageKey="view-theme">
           {children}
-          <ScreenSizeIndicator enabled showTooltip className="fixed bottom-2 left-2 bg-secondary" />
+          <ScreenSizeIndicator
+            enabled
+            showTooltip
+            className="fixed bottom-2 left-2 bg-secondary"
+          />
           <ThemeToggle
             size="icon-sm"
             variant="secondary"

@@ -34,7 +34,8 @@ function Tagline({
   asChild = false,
   children,
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof taglineVariants> & { asChild?: boolean }) {
+}: React.ComponentProps<"div"> &
+  VariantProps<typeof taglineVariants> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : "div";
 
   return (

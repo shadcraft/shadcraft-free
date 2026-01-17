@@ -118,7 +118,9 @@ export const CodeBlock = ({
             dangerouslySetInnerHTML={{ __html: darkHtml }}
           />
           {children && (
-            <div className="absolute top-2 right-2 flex items-center gap-2">{children}</div>
+            <div className="absolute top-2 right-2 flex items-center gap-2">
+              {children}
+            </div>
           )}
         </div>
       </div>

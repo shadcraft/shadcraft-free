@@ -36,7 +36,9 @@ export function Footer4() {
           >
             {navigationData.map((section) => (
               <div key={section.title} className="flex flex-col gap-2.5">
-                <h3 className="text-sm font-medium text-muted-foreground">{section.title}</h3>
+                <h3 className="text-sm font-medium text-muted-foreground">
+                  {section.title}
+                </h3>
                 <ul className="flex flex-col gap-3">
                   {section.links.map((link) => (
                     <li key={link.label} className="text-base">

@@ -55,11 +55,13 @@ const getCachedRegistryItem = React.cache(async (name: string) => {
   return await getRegistryItem(name);
 });
 
-const getCachedFileTree = React.cache((files: Array<{ path: string; target?: string }>) => {
-  if (!files) return null;
-  const fileTree = createFileTreeForRegistryItemFiles(files);
-  return fileTree;
-});
+const getCachedFileTree = React.cache(
+  (files: Array<{ path: string; target?: string }>) => {
+    if (!files) return null;
+    const fileTree = createFileTreeForRegistryItemFiles(files);
+    return fileTree;
+  }
+);
 
 const getCachedFiles = React.cache((files: RegistryItemFile[]) => {
   if (!files) return null;

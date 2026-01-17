@@ -4,7 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { DemoDisplay } from "@/components/demo-display";
-import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
+import {
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import {
   Empty,
@@ -85,8 +89,8 @@ export default async function Page({ params }: PageProps<"/blocks/[category]">) 
                 These blocks are still under construction. Check back soon!
                 <br />
                 In the meantime, you can view the{" "}
-                <span className="font-medium">Shadcraft Pro React </span>Kit to see the available
-                Pro Blocks.
+                <span className="font-medium">Shadcraft Pro React </span>Kit to see the
+                available Pro Blocks.
               </EmptyDescription>
             </EmptyHeader>
             <EmptyContent>
@@ -103,7 +107,9 @@ export default async function Page({ params }: PageProps<"/blocks/[category]">) 
             </EmptyContent>
           </Empty>
         ) : (
-          blocks.map((block) => <DemoDisplay key={block.name} name={block.name} showHeader />)
+          blocks.map((block) => (
+            <DemoDisplay key={block.name} name={block.name} showHeader />
+          ))
         )}
       </div>
     </>

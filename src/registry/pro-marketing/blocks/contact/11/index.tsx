@@ -20,7 +20,8 @@ export function Contact11() {
             <SectionHeadingTagline>Support</SectionHeadingTagline>
             <SectionHeadingTitle>Need Help? We&apos;re Here to Help</SectionHeadingTitle>
             <SectionHeadingBody>
-              Our support team is available to assist you with any questions or issues you may have.
+              Our support team is available to assist you with any questions or issues you
+              may have.
             </SectionHeadingBody>
           </SectionHeading>
         </div>
@@ -38,7 +39,11 @@ export function Contact11() {
             </div>
             <div className="flex w-full flex-col gap-2">
               <Label htmlFor="input-3">Message</Label>
-              <Textarea id="input-3" placeholder="Hi, this is my message" className="h-32" />
+              <Textarea
+                id="input-3"
+                placeholder="Hi, this is my message"
+                className="h-32"
+              />
             </div>
             <div className="flex items-center gap-2 py-2">
               <Checkbox />

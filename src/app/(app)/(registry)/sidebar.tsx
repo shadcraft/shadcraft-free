@@ -5,7 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { RegistryItem } from "shadcn/schema";
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   Sidebar,
   SidebarContent,
@@ -65,7 +69,10 @@ function MySidebarContent({
       <div className="absolute inset-x-0 top-0 z-50 h-8 bg-linear-to-b from-background to-transparent" />
       <div className="absolute inset-x-0 bottom-0 z-50 h-8 bg-linear-to-t from-background to-transparent" />
       {/* Components */}
-      <Collapsible defaultOpen={resolvedComponentItems.length > 0} className="group/collapsible">
+      <Collapsible
+        defaultOpen={resolvedComponentItems.length > 0}
+        className="group/collapsible"
+      >
         <SidebarGroup>
           <CollapsibleTrigger className="w-full">
             <SidebarGroupLabel className="flex items-center justify-between pr-0">
@@ -80,13 +87,18 @@ function MySidebarContent({
                 {resolvedComponentItems.length > 0 ? (
                   resolvedComponentItems.map((item) => {
                     const href =
-                      item.type === "registry:ui" ? `/ui/${item.name}` : `/components/${item.name}`;
+                      item.type === "registry:ui"
+                        ? `/ui/${item.name}`
+                        : `/components/${item.name}`;
                     const isActive = pathname === href;
 
                     return (
                       <SidebarMenuItem key={item.name} className="font-medium">
                         <SidebarMenuButton asChild isActive={isActive}>
-                          <Link href={href} className="flex items-center justify-between gap-2">
+                          <Link
+                            href={href}
+                            className="flex items-center justify-between gap-2"
+                          >
                             <span className="1 min-w-0 truncate">
                               {item.title || formatComponentName(item.name)}
                             </span>
@@ -172,7 +184,9 @@ function MySidebarContent({
                     return (
                       <SidebarMenuItem key={item.name} className="font-medium">
                         <SidebarMenuButton asChild isActive={isActive}>
-                          <Link href={href}>{item.title || formatComponentName(item.name)}</Link>
+                          <Link href={href}>
+                            {item.title || formatComponentName(item.name)}
+                          </Link>
                         </SidebarMenuButton>
                       </SidebarMenuItem>
                     );

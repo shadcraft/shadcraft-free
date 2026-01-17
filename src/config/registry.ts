@@ -26,5 +26,6 @@ export const REGISTRY_CONFIG = {
    * @see https://ui.shadcn.com/docs/registry/namespace#url-pattern-system
    */
   namespaceUrl:
-    process.env.NEXT_PUBLIC_REGISTRY_NAMESPACE_URL || "https://free.shadcraft.com/r/{name}.json",
+    process.env.NEXT_PUBLIC_REGISTRY_NAMESPACE_URL ||
+    "https://free.shadcraft.com/r/{name}.json",
 };

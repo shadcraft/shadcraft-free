@@ -21,7 +21,10 @@ function PageHeading({
   );
 }
 
-function PageHeadingTagline({ className, ...props }: React.ComponentProps<typeof Tagline>) {
+function PageHeadingTagline({
+  className,
+  ...props
+}: React.ComponentProps<typeof Tagline>) {
   return <Tagline variant="badge" {...props} />;
 }
 
@@ -58,4 +61,10 @@ function PageHeadingActions({ className, ...props }: React.ComponentProps<"div">
   );
 }
 
-export { PageHeading, PageHeadingActions, PageHeadingBody, PageHeadingTagline, PageHeadingTitle };
+export {
+  PageHeading,
+  PageHeadingActions,
+  PageHeadingBody,
+  PageHeadingTagline,
+  PageHeadingTitle,
+};

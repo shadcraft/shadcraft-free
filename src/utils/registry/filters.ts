@@ -17,6 +17,8 @@ export function isExampleItem(item: RegistryItem): boolean {
 }
 
 export function isBlockFromCategories(item: RegistryItem, categories: string[]): boolean {
-  const matchesCategories = item.categories?.some((category) => categories.includes(category));
+  const matchesCategories = item.categories?.some((category) =>
+    categories.includes(category)
+  );
   return item.type === "registry:block" && !!matchesCategories;
 }

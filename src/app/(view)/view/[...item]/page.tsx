@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 import React from "react";
 
-import { getRegistryItem, getRegistryItems, getRegistryRenderComponent } from "@/lib/registry";
+import {
+  getRegistryItem,
+  getRegistryItems,
+  getRegistryRenderComponent,
+} from "@/lib/registry";
 import { cn } from "@/lib/utils";
 import { getViewItemName, getViewSegmentsForItem } from "@/utils/registry/view";
 
@@ -11,7 +15,9 @@ export const dynamicParams = false;
 
 export const generateStaticParams = async () => {
   const allowedItemTypes = ["registry:example", "registry:block"];
-  const registryItems = await getRegistryItems((item) => allowedItemTypes.includes(item.type));
+  const registryItems = await getRegistryItems((item) =>
+    allowedItemTypes.includes(item.type)
+  );
   const params = registryItems.map((item) => ({ item: getViewSegmentsForItem(item) }));
   return params;
 };

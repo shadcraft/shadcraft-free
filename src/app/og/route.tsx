@@ -51,7 +51,12 @@ export async function GET(request: Request) {
       <div tw="flex border absolute border-neutral-700 inset-x-0 h-[1px] bottom-16" />
       <div tw="flex absolute flex-row bottom-24 right-24">
         {/* Shadcraft Logo */}
-        <svg xmlns="http://www.w3.org/2000/svg" width={56} height={56} viewBox="0 0 400 400">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={56}
+          height={56}
+          viewBox="0 0 400 400"
+        >
           <path
             d="M 0 200 C 0 89.542969 89.542969 0 200 0 C 310.457031 0 400 89.542969 400 200 C 400 310.457031 310.457031 400 200 400 C 89.542969 400 0 310.457031 0 200 Z M 0 200"
             fill="#ffffff"

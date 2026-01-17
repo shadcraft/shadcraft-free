@@ -26,7 +26,9 @@ export default function NotFound() {
               <code className="code-inline">Registry</code> object.
             </EmptyDescription>
           ) : (
-            <EmptyDescription>The preview you are looking for does not exist.</EmptyDescription>
+            <EmptyDescription>
+              The preview you are looking for does not exist.
+            </EmptyDescription>
           )}
         </EmptyHeader>
       </Empty>

@@ -33,7 +33,9 @@ interface ResizablePreviewContextValue {
   reloadIframe: () => void;
 }
 
-const ResizablePreviewContext = React.createContext<ResizablePreviewContextValue | null>(null);
+const ResizablePreviewContext = React.createContext<ResizablePreviewContextValue | null>(
+  null
+);
 
 function useResizablePreview() {
   const context = React.useContext(ResizablePreviewContext);
@@ -276,7 +278,8 @@ function ResizablePreviewHandle({ className, ...props }: React.ComponentProps<"d
           // Calculate max width for ArrowRight clamping
           let maxWidthPx = Number.MAX_SAFE_INTEGER;
           if (e.key === "ArrowRight") {
-            const boundary = boundaryRef.current ?? resizableContainerRef.current?.parentElement;
+            const boundary =
+              boundaryRef.current ?? resizableContainerRef.current?.parentElement;
             if (boundary) {
               const styles = window.getComputedStyle(boundary);
               const paddingLeft = parseFloat(styles.paddingLeft) || 0;
@@ -284,7 +287,11 @@ function ResizablePreviewHandle({ className, ...props }: React.ComponentProps<"d
               const borderLeft = parseFloat(styles.borderLeftWidth) || 0;
               const borderRight = parseFloat(styles.borderRightWidth) || 0;
               maxWidthPx =
-                boundary.offsetWidth - paddingLeft - paddingRight - borderLeft - borderRight;
+                boundary.offsetWidth -
+                paddingLeft -
+                paddingRight -
+                borderLeft -
+                borderRight;
             }
           }
 
@@ -361,7 +368,10 @@ function ReloadIframeButton({ onClick, ...props }: React.ComponentProps<typeof B
   );
 }
 
-function DesktopBreakpointButton({ onClick, ...props }: React.ComponentProps<typeof Button>) {
+function DesktopBreakpointButton({
+  onClick,
+  ...props
+}: React.ComponentProps<typeof Button>) {
   const { breakpoint, setBreakpoint } = useResizablePreview();
   const isActive = breakpoint === "desktop";
 
@@ -384,7 +394,10 @@ function DesktopBreakpointButton({ onClick, ...props }: React.ComponentProps<typ
   );
 }
 
-function TabletBreakpointButton({ onClick, ...props }: React.ComponentProps<typeof Button>) {
+function TabletBreakpointButton({
+  onClick,
+  ...props
+}: React.ComponentProps<typeof Button>) {
   const { breakpoint, setBreakpoint } = useResizablePreview();
   const isActive = breakpoint === "tablet";
 
@@ -407,7 +420,10 @@ function TabletBreakpointButton({ onClick, ...props }: React.ComponentProps<type
   );
 }
 
-function MobileBreakpointButton({ onClick, ...props }: React.ComponentProps<typeof Button>) {
+function MobileBreakpointButton({
+  onClick,
+  ...props
+}: React.ComponentProps<typeof Button>) {
   const { breakpoint, setBreakpoint } = useResizablePreview();
   const isActive = breakpoint === "mobile";
 

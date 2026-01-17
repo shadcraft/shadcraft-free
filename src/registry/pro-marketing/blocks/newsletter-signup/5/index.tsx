@@ -20,7 +20,8 @@ export function NewsletterSignup5() {
             <SectionHeading>
               <SectionHeadingTitle>Stay in the loop</SectionHeadingTitle>
               <SectionHeadingBody className="text-balance">
-                Get insights, product updates, and productivity tips straight to your inbox.
+                Get insights, product updates, and productivity tips straight to your
+                inbox.
               </SectionHeadingBody>
             </SectionHeading>
           </div>
@@ -35,7 +36,10 @@ export function NewsletterSignup5() {
             </form>
 
             {/* Privacy Policy */}
-            <span className="text-center text-xs text-muted-foreground lg:text-right" role="note">
+            <span
+              className="text-center text-xs text-muted-foreground lg:text-right"
+              role="note"
+            >
               We respect your privacy.
             </span>
           </div>

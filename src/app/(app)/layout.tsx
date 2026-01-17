@@ -65,7 +65,11 @@ export default function RootLayoutApp({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script async crossOrigin="anonymous" src="https://tweakcn.com/live-preview.min.js" />
+        <script
+          async
+          crossOrigin="anonymous"
+          src="https://tweakcn.com/live-preview.min.js"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

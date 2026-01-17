@@ -92,7 +92,10 @@ export const blocks: Registry["items"] = [
     title: "Footer 4",
     type: "registry:block",
     dependencies: ["react-icons"],
-    registryDependencies: ["separator", getNamespacedRegistryDependency("placeholder-logo")],
+    registryDependencies: [
+      "separator",
+      getNamespacedRegistryDependency("placeholder-logo"),
+    ],
     files: [
       {
         path: "blocks/footers/4/index.tsx",
@@ -109,7 +112,11 @@ export const blocks: Registry["items"] = [
     name: "newsletter-signup-5",
     title: "Newsletter Signup 5",
     type: "registry:block",
-    registryDependencies: ["button", "input", getNamespacedRegistryDependency("section-heading")],
+    registryDependencies: [
+      "button",
+      "input",
+      getNamespacedRegistryDependency("section-heading"),
+    ],
     files: [
       {
         path: "blocks/newsletter-signup/5/index.tsx",
@@ -123,7 +130,9 @@ export const blocks: Registry["items"] = [
     name: "team-6",
     title: "Team 6",
     type: "registry:block",
-    registryDependencies: [...getNamespacedRegistryDependencies("section-heading", "profile-card")],
+    registryDependencies: [
+      ...getNamespacedRegistryDependencies("section-heading", "profile-card"),
+    ],
     files: [
       {
         path: "blocks/team/6/index.tsx",
@@ -175,7 +184,11 @@ export const blocks: Registry["items"] = [
     type: "registry:block",
     registryDependencies: [
       "button",
-      ...getNamespacedRegistryDependencies("placeholder-logo", "use-click-outside", "use-mobile"),
+      ...getNamespacedRegistryDependencies(
+        "placeholder-logo",
+        "use-click-outside",
+        "use-mobile"
+      ),
     ],
     files: [
       {
