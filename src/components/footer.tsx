@@ -139,6 +139,7 @@ export async function Footer() {
               <Link
                 href="https://x.com/shadcraft_"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Go to Shadcraft Twitter"
                 className="link"
               >
@@ -148,6 +149,7 @@ export async function Footer() {
               <Link
                 href="https://github.com/shadcraft/shadcraft-free"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Go to GitHub Repository"
                 className="link"
               >
@@ -163,6 +165,7 @@ export async function Footer() {
               <Link
                 href="https://x.com/shadcraft_"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Go to Shadcraft Twitter"
                 className="text-muted-foreground transition-all hover:text-primary"
               >
@@ -172,6 +175,7 @@ export async function Footer() {
               <Link
                 href="https://www.shadcraft.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Go to Shadcraft website"
                 className="text-muted-foreground transition-all hover:text-primary"
               >

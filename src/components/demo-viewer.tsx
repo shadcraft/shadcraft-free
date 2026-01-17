@@ -178,7 +178,7 @@ function DemoViewerToolbar() {
         <ButtonGroup>
           <ReloadIframeButton onClick={forceTabSwitchToPreview} />
           <Button variant="outline" size="icon-sm" asChild title="Open in New Tab">
-            <Link href={url} target="_blank">
+            <Link href={url} target="_blank" rel="noopener noreferrer">
               <span className="sr-only">Open in New Tab</span>
               <Fullscreen />
             </Link>

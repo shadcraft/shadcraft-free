@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 function PageHeader({ className, children, ...props }: React.ComponentProps<"section">) {
   return (
     <section
-      className={cn("container flex flex-col gap-2 pb-12 md:pb-16 xl:gap-4", className)}
+      className={cn("container flex flex-col gap-4 pb-12 md:pb-16 xl:gap-4", className)}
       {...props}
     >
       {children}
@@ -36,12 +36,7 @@ function PageHeaderDescription({ className, ...props }: React.ComponentProps<"p"
 }
 
 function PageHeaderActions({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      className={cn("flex w-full flex-row items-center gap-2", className)}
-      {...props}
-    />
-  );
+  return <div className={cn("flex w-full flex-row gap-2", className)} {...props} />;
 }
 
 export { PageHeader, PageHeaderActions, PageHeaderDescription, PageHeaderHeading };

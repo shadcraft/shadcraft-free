@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { ScreenSizeIndicator } from "@/components/screen-size-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -49,10 +50,10 @@ export default function RootLayoutView({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          async
-          crossOrigin="anonymous"
+        <Script
           src="https://tweakcn.com/live-preview.min.js"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
         />
       </head>
       <body className={`${fontVariables} antialiased`}>

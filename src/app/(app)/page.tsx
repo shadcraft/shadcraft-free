@@ -62,7 +62,11 @@ function HeroSection() {
               </Button>
 
               <Button variant="outline" asChild>
-                <Link href="https://github.com/shadcraft/shadcraft-free" target="_blank">
+                <Link
+                  href="https://github.com/shadcraft/shadcraft-free"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <GitHub />
                   GitHub
                 </Link>
@@ -110,6 +114,7 @@ function FreeKitCTA() {
             <Link
               href="https://polar.sh/checkout/polar_c_yhJ8HZh0Hi7rTuJUM3YbSSSGJ1U4gPWHnmaym1fOkpf"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Get started <ArrowRightIcon />
             </Link>

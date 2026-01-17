@@ -23,6 +23,7 @@ export function Header() {
               <Link
                 href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Go to Shadcraft Pro React"
               >
                 <span>

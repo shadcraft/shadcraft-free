@@ -98,6 +98,7 @@ export default async function Page({ params }: PageProps<"/blocks/[category]">) 
                 <Link
                   href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Go to Shadcraft Pro React"
                 >
                   View Pro Blocks Kit

@@ -30,6 +30,7 @@ export function ShadcraftBanner() {
                 className="group inline-flex items-center gap-0.5 font-semibold underline-offset-2 hover:underline"
                 href="https://shadcraft.com/products/pro-react-shadcn-ui-kit"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Go to Shadcraft Pro React"
               >
                 Pro React

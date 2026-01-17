@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -65,10 +66,10 @@ export default function RootLayoutApp({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          async
-          crossOrigin="anonymous"
+        <Script
           src="https://tweakcn.com/live-preview.min.js"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
         />
         <script
           type="application/ld+json"
