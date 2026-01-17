@@ -67,6 +67,8 @@ export async function Footer() {
                   <li key={item.label} className="text-sm text-muted-foreground">
                     <Link
                       href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1 transition-all hover:text-primary"
                     >
                       {item.label} <ArrowUpRight className="size-3" />
