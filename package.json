@@ -9,6 +9,7 @@
     "build": "pnpm registry:build && next build",
     "start": "next start",
     "preview": "next build && next start",
+    "typecheck": "tsc --noEmit --pretty",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "format": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
