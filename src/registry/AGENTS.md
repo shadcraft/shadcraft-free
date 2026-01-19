@@ -26,7 +26,7 @@ Bundles: `pro-marketing`
 3. Add entry to `[bundle]/[type]/_registry.ts` (alphabetical order)
 4. Run `pnpm registry:build`
 
-For full details: [REGISTRY.md](../../REGISTRY.md)
+For full details: [docs/REGISTRY.md](../../docs/REGISTRY.md)
 
 ## Key Files
 

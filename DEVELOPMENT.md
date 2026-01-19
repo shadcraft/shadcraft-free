@@ -54,7 +54,7 @@ The registry is the source of truth for all components, blocks, hooks, and style
 | Blocks | `src/registry/[bundle]/blocks/[category]/` | `team-5/index.tsx` |
 | Hooks | `src/registry/[bundle]/hooks/` | `use-carousel.ts` |
 
-For detailed documentation on adding new registry items, see **[REGISTRY.md](REGISTRY.md)**.
+For detailed documentation on adding new registry items, see **[docs/REGISTRY.md](docs/REGISTRY.md)**.
 
 ## Registry build
 
