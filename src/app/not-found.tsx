@@ -29,7 +29,7 @@ import { fontVariables } from "@/lib/fonts";
 export default function NotFound() {
   const title = "Sorry, we couldn't find that page :-(";
   const description =
-    "Message us if you're trying to find something you can't. You can also use the search feature above.";
+    "Message us if you're trying to find something you can't. You can also use the search features above.";
 
   return (
     <html lang="en" suppressHydrationWarning>

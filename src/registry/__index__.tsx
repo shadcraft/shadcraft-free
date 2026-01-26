@@ -164,6 +164,30 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: ["banners"],
     meta: { bundle: "pro-marketing" },
   },
+  "banner-11": {
+    name: "banner-11",
+    type: "registry:block",
+    title: "Banner 11",
+    description: "",
+    registryDependencies: ["button", "https://free.shadcraft.com/r/index.json"],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/banners/11/index.tsx",
+        type: "registry:component",
+        target: "components/banner-11.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/banners/11/index.tsx");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["banners"],
+    meta: { bundle: "pro-marketing" },
+  },
   "benefits-13": {
     name: "benefits-13",
     type: "registry:block",
@@ -281,6 +305,34 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     categories: ["faqs"],
     meta: { bundle: "pro-marketing" },
   },
+  "features-1": {
+    name: "features-1",
+    type: "registry:block",
+    title: "Features 1",
+    description: "",
+    registryDependencies: [
+      "badge",
+      "@shadcraft/section-heading",
+      "https://free.shadcraft.com/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/features/1/index.tsx",
+        type: "registry:component",
+        target: "components/features-1.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/features/1/index.tsx");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["features"],
+    meta: { bundle: "pro-marketing" },
+  },
   "footer-4": {
     name: "footer-4",
     type: "registry:block",
@@ -307,6 +359,36 @@ export const Index: Record<string, RegistryItemWithComponent> = {
       return { default: mod.default || mod[exportName] };
     }),
     categories: ["footers"],
+    meta: { containerClassName: "min-h-svh content-end", bundle: "pro-marketing" },
+  },
+  "help-1": {
+    name: "help-1",
+    type: "registry:block",
+    title: "Help 4",
+    description: "",
+    registryDependencies: [
+      "accordion",
+      "button",
+      "input",
+      "@shadcraft/section-heading",
+      "https://free.shadcraft.com/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/help/1/index.tsx",
+        type: "registry:component",
+        target: "components/help-1.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/help/1/index.tsx");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["help"],
     meta: { containerClassName: "min-h-svh content-end", bundle: "pro-marketing" },
   },
   "newsletter-signup-5": {
@@ -418,6 +500,35 @@ export const Index: Record<string, RegistryItemWithComponent> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/pro-marketing/blocks/pricing/8/index.tsx");
+      const exportName =
+        Object.keys(mod).find(
+          (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    categories: ["pricing"],
+    meta: { bundle: "pro-marketing" },
+  },
+  "pricing-9": {
+    name: "pricing-9",
+    type: "registry:block",
+    title: "Pricing 9",
+    description: "",
+    registryDependencies: [
+      "card",
+      "button",
+      "@shadcraft/section-heading",
+      "https://free.shadcraft.com/r/index.json",
+    ],
+    files: [
+      {
+        path: "src/registry/pro-marketing/blocks/pricing/9/index.tsx",
+        type: "registry:component",
+        target: "components/pricing-9.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pro-marketing/blocks/pricing/9/index.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
