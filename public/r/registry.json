@@ -173,6 +173,28 @@
       "type": "registry:block"
     },
     {
+      "name": "banner-11",
+      "title": "Banner 11",
+      "registryDependencies": [
+        "button",
+        "https://free.shadcraft.com/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/banners/11/index.tsx",
+          "type": "registry:component",
+          "target": "components/banner-11.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "banners"
+      ],
+      "type": "registry:block"
+    },
+    {
       "name": "benefits-13",
       "title": "Benefits 13",
       "registryDependencies": [
@@ -270,6 +292,29 @@
       "type": "registry:block"
     },
     {
+      "name": "features-1",
+      "title": "Features 1",
+      "registryDependencies": [
+        "badge",
+        "@shadcraft/section-heading",
+        "https://free.shadcraft.com/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/features/1/index.tsx",
+          "type": "registry:component",
+          "target": "components/features-1.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "features"
+      ],
+      "type": "registry:block"
+    },
+    {
       "name": "footer-4",
       "title": "Footer 4",
       "dependencies": [
@@ -293,6 +338,32 @@
       },
       "categories": [
         "footers"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "help-1",
+      "title": "Help 4",
+      "registryDependencies": [
+        "accordion",
+        "button",
+        "input",
+        "@shadcraft/section-heading",
+        "https://free.shadcraft.com/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/help/1/index.tsx",
+          "type": "registry:component",
+          "target": "components/help-1.tsx"
+        }
+      ],
+      "meta": {
+        "containerClassName": "min-h-svh content-end",
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "help"
       ],
       "type": "registry:block"
     },
@@ -382,6 +453,30 @@
           "path": "src/registry/pro-marketing/blocks/pricing/8/index.tsx",
           "type": "registry:component",
           "target": "components/pricing-8.tsx"
+        }
+      ],
+      "meta": {
+        "bundle": "pro-marketing"
+      },
+      "categories": [
+        "pricing"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "pricing-9",
+      "title": "Pricing 9",
+      "registryDependencies": [
+        "card",
+        "button",
+        "@shadcraft/section-heading",
+        "https://free.shadcraft.com/r/index.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/pro-marketing/blocks/pricing/9/index.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-9.tsx"
         }
       ],
       "meta": {

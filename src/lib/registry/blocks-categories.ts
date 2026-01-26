@@ -12,7 +12,9 @@ type ProMarketingCategorySlug =
   | "contact"
   | "cta"
   | "faqs"
+  | "features"
   | "footers"
+  | "help"
   | "heroes"
   | "metrics"
   | "newsletter-signup"
@@ -66,10 +68,22 @@ const proMarketingCategories: RegistryCategory[] = [
     slug: "faqs",
   },
   {
+    title: "Features",
+    description:
+      "shadcn/ui-inspired features blocks showcase your product's core capabilities at a glance, helping visitors instantly understand the value and driving faster conversions. Each block includes a title, a description and an image.",
+    slug: "features",
+  },
+  {
     title: "Footers",
     description:
       "shadcn/ui Footers blocks that handle common layouts, from simple links to more advanced versions with newsletter signup. An effective place to capture subscribers while closing out your site.",
     slug: "footers",
+  },
+  {
+    title: "Help",
+    description:
+      "shadcn/ui Help blocks deliver clear, accessible support options with concise answers, icons, links, or accordions, designed to resolve user questions instantly and reduce support tickets. Options include searchable layouts, categorized cards, or inline contact triggers, with built-in contrast checks and keyboard navigation guidance for better accessibility.",
+    slug: "help",
   },
   {
     title: "Heroes",
