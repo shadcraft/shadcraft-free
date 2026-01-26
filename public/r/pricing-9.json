@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pricing-9",
+  "title": "Pricing 9",
+  "registryDependencies": [
+    "card",
+    "button",
+    "@shadcraft/section-heading",
+    "https://free.shadcraft.com/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/pricing/9/index.tsx",
+      "content": "\"use client\";\n\nimport { ChevronRightIcon, TriangleIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\nimport {\n  SectionHeading,\n  SectionHeadingBody,\n  SectionHeadingTitle,\n} from \"@/components/ui/section-heading\";\n\nconst pricing = [\n  {\n    type: \"Starter\",\n    cost: \"$49/mo\",\n    description: \"Perfect for individuals or small teams testing AI model comparisons.\",\n    includes: {\n      title: \"Everything in Free, plus:\",\n      items: [\n        \"Compare up to 3 models at once\",\n        \"Run unlimited custom prompts\",\n        \"Access to basic benchmarks (MMLU, GSM8K)\",\n        \"Export results as CSV\",\n        \"Email support\",\n      ],\n    },\n    contactDescription: \"Start 14-day free trial\",\n    link: \"#\",\n  },\n  {\n    type: \"Pro\",\n    cost: \"$149/mo\",\n    description:\n      \"Ideal for power users, researchers, and developers who need deeper insights.\",\n    includes: {\n      title: \"Everything in Starter, plus:\",\n      items: [\n        \"Compare up to 6 models simultaneously\",\n        \"Side-by-side latency & speed testing\",\n        \"Save and organize unlimited comparisons\",\n        \"API access (limited rate)\",\n        \"Priority email & chat support\",\n      ],\n    },\n    contactDescription: \"Start 14-day free trial\",\n    link: \"#\",\n  },\n  {\n    type: \"Enterprise\",\n    cost: \"Custom\",\n    description:\n      \"For teams and organizations needing scale, security, and dedicated support.\",\n    includes: {\n      title: \"Everything in Pro, plus:\",\n      items: [\n        \"Unlimited model comparisons\",\n        \"Custom benchmark creation\",\n        \"On-premise or private deployment options\",\n        \"SSO & advanced user management\",\n        \"Dedicated account manager\",\n        \"SLA and premium support\",\n      ],\n    },\n    contactDescription: \"Contact sales\",\n    link: \"#\",\n  },\n];\n\nexport default function Pricing9() {\n  return (\n    <section className={\"flex py-14\"}>\n      <div className={\"container mx-auto\"}>\n        <SectionHeading alignment=\"center\" className=\"mx-auto w-full max-w-3xl\">\n          <SectionHeadingTitle>Flexible Pricing Plans</SectionHeadingTitle>\n          <SectionHeadingBody>\n            Acme Inc. has a plan designed to help you move faster.\n          </SectionHeadingBody>\n        </SectionHeading>\n        <div\n          className={\n            \"mx-auto mt-10 grid max-w-7xl gap-2 rounded-xl border bg-muted p-2 lg:grid-cols-3\"\n          }\n        >\n          {pricing.map((pricingItem, index) => (\n            <div\n              key={index}\n              className={cn(\n                \"flex flex-col gap-8 rounded border bg-background p-6\",\n                index === 0 && \"rounded-t-xl lg:rounded-s-xl lg:rounded-tr\",\n                index === pricing.length - 1 &&\n                  \"rounded-b-xl lg:rounded-e-xl lg:rounded-bl\"\n              )}\n            >\n              <div className={\"space-y-6\"}>\n                <p>{pricingItem.type}</p>\n                <h2 className={\"text-4xl font-bold text-primary\"}>{pricingItem.cost}</h2>\n                <p className={\"text-muted-foreground\"}>{pricingItem.description}</p>\n              </div>\n              {/*<div ></div>*/}\n              <div className={\"flex-1 border-t pt-8\"}>\n                <h5 className={\"font-semibold\"}>{pricingItem.includes.title}</h5>\n                <ul className={\"mt-4 space-y-4\"}>\n                  {pricingItem.includes.items.map((item, itemIndex) => (\n                    <li key={itemIndex} className={\"flex items-start gap-2\"}>\n                      <TriangleIcon className={\"size-4 rotate-90\"} /> {item}\n                    </li>\n                  ))}\n                </ul>\n              </div>\n              <a\n                href={pricingItem.link}\n                className={\n                  \"mt-10 flex justify-between border-b pb-3 text-muted-foreground transition-colors hover:border-b-foreground hover:text-foreground\"\n                }\n              >\n                <p>{pricingItem.contactDescription}</p>\n                <ChevronRightIcon />\n              </a>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/pricing-9.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "pricing"
+  ],
+  "type": "registry:block"
+}
