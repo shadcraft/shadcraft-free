@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marquee",
+  "title": "Marquee",
+  "description": "A smooth, endlessly looping scroller ideal for showcasing logos, testimonials, images, or sponsor lists. Features auto-play with customizable speed, pause-on-hover, reverse direction, and seamless loop behavior.",
+  "registryDependencies": [
+    "https://free.shadcraft.com/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/marquee.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\n\ninterface MarqueeProps extends React.ComponentProps<\"div\"> {\n  /**\n   * Direction of the animation\n   * @default \"horizontal\"\n   */\n  direction?: \"horizontal\" | \"vertical\";\n  /**\n   * Whether to reverse the animation direction\n   * @default false\n   */\n  reverse?: boolean;\n  /**\n   * Whether to pause the animation on hover\n   * @default false\n   */\n  pauseOnHover?: boolean;\n  /**\n   * Number of times to repeat the content\n   * @default 4\n   */\n  repeat?: number;\n}\n\nfunction Marquee({\n  className,\n  reverse = false,\n  pauseOnHover = false,\n  children,\n  direction = \"horizontal\",\n  repeat = 4,\n  ...props\n}: MarqueeProps) {\n  return (\n    <div\n      role=\"marquee\"\n      data-slot=\"marquee\"\n      data-direction={direction}\n      data-reverse={reverse}\n      data-pause-on-hover={pauseOnHover}\n      data-repeat={repeat}\n      className={cn(\n        \"group flex w-full min-w-0 gap-(--gap) overflow-hidden [--duration:20s] [--gap:1.25rem]\",\n        direction === \"horizontal\" ? \"flex-row\" : \"flex-col\",\n        \"has-data-[fade='left']:mask-l-from-80%\",\n        \"has-data-[fade='right']:mask-r-from-80%\",\n        \"has-data-[fade='top']:mask-t-from-80%\",\n        \"has-data-[fade='bottom']:mask-b-from-80%\",\n        \"has-data-[fade='vertical']:mask-y-from-80%\",\n        \"has-data-[fade='horizontal']:mask-x-from-80%\",\n        className\n      )}\n      {...props}\n    >\n      {Array(repeat)\n        .fill(0)\n        .map((_, i) => (\n          <div\n            key={i}\n            data-slot={`marquee-repeat-${i + 1}`}\n            className={cn(\"flex min-w-0 shrink-0 justify-around gap-(--gap)\", {\n              \"animate-marquee flex-row\": direction === \"horizontal\",\n              \"animate-marquee-vertical flex-col\": direction === \"vertical\",\n              \"group-hover:paused\": pauseOnHover,\n              \"direction-[reverse]\": reverse,\n            })}\n          >\n            {children}\n          </div>\n        ))}\n    </div>\n  );\n}\n\nfunction MarqueeFade({\n  fade,\n}: {\n  fade: \"left\" | \"right\" | \"top\" | \"bottom\" | \"horizontal\" | \"vertical\";\n}) {\n  return (\n    <div\n      data-slot=\"marquee-fade\"\n      data-fade={fade}\n      className=\"hidden\"\n      aria-hidden=\"true\"\n    />\n  );\n}\n\nexport { Marquee, MarqueeFade };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-marquee": "marquee var(--duration) infinite linear",
+      "animate-marquee-vertical": "marquee-vertical var(--duration) linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes marquee": {
+      "from": {
+        "transform": "translateX(0)"
+      },
+      "to": {
+        "transform": "translateX(calc(-100% - var(--gap)))"
+      }
+    },
+    "@keyframes marquee-vertical": {
+      "from": {
+        "transform": "translateY(0)"
+      },
+      "to": {
+        "transform": "translateY(calc(-100% - var(--gap)))"
+      }
+    }
+  },
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "type": "registry:ui"
+}

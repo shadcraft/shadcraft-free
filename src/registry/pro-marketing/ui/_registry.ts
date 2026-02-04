@@ -16,6 +16,43 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "marquee",
+    title: "Marquee",
+    type: "registry:ui",
+    description:
+      "A smooth, endlessly looping scroller ideal for showcasing logos, testimonials, images, or sponsor lists. Features auto-play with customizable speed, pause-on-hover, reverse direction, and seamless loop behavior.",
+    files: [
+      {
+        path: "ui/marquee.tsx",
+        type: "registry:ui",
+      },
+    ],
+    cssVars: {
+      theme: {
+        "animate-marquee": "marquee var(--duration) infinite linear",
+        "animate-marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+    },
+    css: {
+      "@keyframes marquee": {
+        from: {
+          transform: "translateX(0)",
+        },
+        to: {
+          transform: "translateX(calc(-100% - var(--gap)))",
+        },
+      },
+      "@keyframes marquee-vertical": {
+        from: {
+          transform: "translateY(0)",
+        },
+        to: {
+          transform: "translateY(calc(-100% - var(--gap)))",
+        },
+      },
+    },
+  },
+  {
     name: "page-heading",
     title: "Page Heading",
     type: "registry:ui",
