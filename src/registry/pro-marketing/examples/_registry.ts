@@ -16,6 +16,18 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "marquee-demo",
+    title: "Marquee Demo",
+    type: "registry:example",
+    registryDependencies: [getNamespacedRegistryDependency("marquee")],
+    files: [
+      {
+        path: "examples/marquee-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "page-heading-demo",
     title: "Page Heading Demo",
     type: "registry:example",
