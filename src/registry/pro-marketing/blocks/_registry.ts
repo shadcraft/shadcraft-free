@@ -21,6 +21,20 @@ export const blocks: Registry["items"] = [
     categories: ["banners"],
   },
   {
+    name: "banner-11",
+    title: "Banner 11",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "blocks/banners/11/index.tsx",
+        type: "registry:component",
+        target: "components/banner-11.tsx",
+      },
+    ],
+    categories: ["banners"],
+  },
+  {
     name: "benefits-13",
     title: "Benefits 13",
     type: "registry:block",
@@ -88,6 +102,20 @@ export const blocks: Registry["items"] = [
     categories: ["faqs"],
   },
   {
+    name: "features-1",
+    title: "Features 1",
+    type: "registry:block",
+    registryDependencies: ["badge", getNamespacedRegistryDependency("section-heading")],
+    files: [
+      {
+        path: "blocks/features/1/index.tsx",
+        type: "registry:component",
+        target: "components/features-1.tsx",
+      },
+    ],
+    categories: ["features"],
+  },
+  {
     name: "footer-4",
     title: "Footer 4",
     type: "registry:block",
@@ -104,6 +132,28 @@ export const blocks: Registry["items"] = [
       },
     ],
     categories: ["footers"],
+    meta: {
+      containerClassName: "min-h-svh content-end",
+    },
+  },
+  {
+    name: "help-1",
+    title: "Help 4",
+    type: "registry:block",
+    registryDependencies: [
+      "accordion",
+      "button",
+      "input",
+      ...getNamespacedRegistryDependencies("section-heading"),
+    ],
+    files: [
+      {
+        path: "blocks/help/1/index.tsx",
+        type: "registry:component",
+        target: "components/help-1.tsx",
+      },
+    ],
+    categories: ["help"],
     meta: {
       containerClassName: "min-h-svh content-end",
     },
@@ -174,6 +224,24 @@ export const blocks: Registry["items"] = [
         path: "blocks/pricing/8/index.tsx",
         type: "registry:component",
         target: "components/pricing-8.tsx",
+      },
+    ],
+    categories: ["pricing"],
+  },
+  {
+    name: "pricing-9",
+    title: "Pricing 9",
+    type: "registry:block",
+    registryDependencies: [
+      "card",
+      "button",
+      ...getNamespacedRegistryDependencies("section-heading"),
+    ],
+    files: [
+      {
+        path: "blocks/pricing/9/index.tsx",
+        type: "registry:component",
+        target: "components/pricing-9.tsx",
       },
     ],
     categories: ["pricing"],
