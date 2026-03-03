@@ -112,7 +112,7 @@ function FreeKitCTA() {
         <motion.div variants={itemVariants} className="w-fit pt-4">
           <Button asChild>
             <Link
-              href="https://polar.sh/checkout/polar_c_SSYfXGEcxZ1gwY6ekbmFe7v7fOn1vhyW5FqR24Qnj3v"
+              href="https://buy.polar.sh/polar_cl_bJpVcr6y9y57jYnXKCLOYGoHicZ85OC8wKUeW4RlHEs"
               target="_blank"
               rel="noopener noreferrer"
             >
