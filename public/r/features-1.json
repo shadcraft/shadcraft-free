@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "features-1",
+  "title": "Features 1",
+  "registryDependencies": [
+    "badge",
+    "@shadcraft/section-heading",
+    "https://free.shadcraft.com/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/features/1/index.tsx",
+      "content": "\"use client\";\n\nimport { BarChart3Icon, SearchIcon, SparklesIcon, ZapIcon } from \"lucide-react\";\n\nimport { Badge } from \"@/components/ui/badge\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  SectionHeading,\n  SectionHeadingBody,\n  SectionHeadingTitle,\n} from \"@/components/ui/section-heading\";\n\nconst features = [\n  {\n    icon: SearchIcon,\n    type: \"Discovery\",\n    title: \"Instant Model Discovery\",\n    image: \"https://free.shadcraft.com/logo-mark.svg\",\n    description:\n      \"Access the latest AI models from OpenAI, Anthropic, Google, xAI, Meta, and more—all in one place. New releases and versions appear automatically as soon as they launch.\",\n  },\n  {\n    icon: ZapIcon,\n    type: \"Comparison\",\n    title: \"Real-Time Side-by-Side Testing\",\n    image: \"https://free.shadcraft.com/logo-mark.svg\",\n    description:\n      \"Enter a single prompt and watch multiple models respond simultaneously. Instantly compare speed, style, accuracy, and creativity without switching tabs or apps.\",\n  },\n  {\n    icon: BarChart3Icon,\n    type: \"Benchmarks\",\n    title: \"Objective Performance Metrics\",\n    image: \"https://free.shadcraft.com/logo-mark.svg\",\n    description:\n      \"Dive into standardized benchmarks like MMLU, GPQA, HumanEval, and LiveCodeBench. See clear scores, rankings, and detailed breakdowns to make informed decisions.\",\n  },\n  {\n    icon: SparklesIcon,\n    type: \"Insights\",\n    title: \"Deep Analysis & Context\",\n    image: \"https://free.shadcraft.com/logo-mark.svg\",\n    description:\n      \"Get model-specific strengths, weaknesses, use-case recommendations, and cost analysis. Understand not just what performs best, but why and when to choose each model.\",\n  },\n];\n\nexport default function Features1() {\n  return (\n    <section className={\"flex py-14\"}>\n      <div className={\"container mx-auto w-full\"}>\n        <SectionHeading alignment=\"center\" className=\"mx-auto w-full max-w-3xl\">\n          <SectionHeadingTitle>Our Core Features</SectionHeadingTitle>\n        </SectionHeading>\n        <div\n          className={\n            \"mx-auto mt-10 grid max-w-7xl gap-2 rounded-xl border bg-muted p-2 md:grid-cols-2\"\n          }\n        >\n          {features.map(({ icon: Icon, ...feature }, index, array) => (\n            <div\n              key={index}\n              className={cn(\n                \"flex flex-col gap-8 rounded border bg-background p-6\",\n                index === 0 && \"rounded-t-xl lg:rounded-ss-xl lg:rounded-se\",\n                index === 1 && \"lg:rounded-se-xl\",\n                index === array.length - 2 && \"lg:rounded-es-xl\",\n                index === array.length - 1 &&\n                  \"rounded-b-xl lg:rounded-ee-xl lg:rounded-es\"\n              )}\n            >\n              <div\n                className={\n                  \"grid place-content-center rounded bg-muted py-10 sm:min-h-[300px]\"\n                }\n              >\n                <img src={feature.image} alt={\"Placeholder\"} className={\"size-20\"} />\n              </div>\n              <div className={\"flex flex-col gap-4\"}>\n                <Badge>\n                  <Icon size={16} />\n                  <p>{feature.type}</p>\n                </Badge>\n                <h5 className={\"font-medium text-primary\"}>{feature.title}</h5>\n                <p className={\"text-muted-foreground\"}>{feature.description}</p>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/features-1.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "features"
+  ],
+  "type": "registry:block"
+}
