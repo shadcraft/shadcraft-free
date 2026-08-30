@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "banner-11",
+  "title": "Banner 11",
+  "registryDependencies": [
+    "button",
+    "https://free.shadcraft.com/r/index.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/banners/11/index.tsx",
+      "content": "\"use client\";\n\nimport { BadgeCheckIcon, XIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport default function Banner11({\n  isVisible = true,\n  link = \"#\",\n}: {\n  isVisible?: boolean;\n  link?: string;\n}) {\n  const [showBanner, setShowBanner] = useState(isVisible);\n\n  if (!showBanner) {\n    return;\n  }\n\n  return (\n    <aside role=\"banner\" aria-label=\"Promotional banner\">\n      <div className={\"flex items-center justify-between border bg-primary/10 p-4\"}>\n        <div className={\"flex items-start gap-4\"}>\n          <span className={\"grid size-fit rounded-full bg-primary/10 p-2\"}>\n            <BadgeCheckIcon className={\"fill-primary text-background\"} />\n          </span>\n          <span>\n            <h4 className={\"font-semibold text-primary\"}>New version available</h4>\n            <p className={\"text-muted-foreground\"}>Check out all the new features!</p>\n            <a href={link} className={\"hover:underline md:hidden\"}>\n              Learn more\n            </a>\n          </span>\n        </div>\n        <div className={\"flex items-center gap-4\"}>\n          <a href={link} className={\"hidden md:block\"}>\n            <Button>Learn more</Button>\n          </a>\n          <Button variant={\"ghost\"} onClick={() => setShowBanner(false)}>\n            <XIcon />\n          </Button>\n        </div>\n      </div>\n    </aside>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/banner-11.tsx"
+    }
+  ],
+  "meta": {
+    "bundle": "pro-marketing"
+  },
+  "categories": [
+    "banners"
+  ],
+  "type": "registry:block"
+}
